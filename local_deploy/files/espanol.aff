@@ -1,0 +1,4046 @@
+# espa~nol.aff by Jesus Carretero and Santiago Rodriguez March 2005 V1.8
+# Dpto. Arquitectura y Tecnología de Sistemas Informáticos
+# Facultad de Informática. Universidad Politécnica de Madrid
+# Email: srodri@fi.upm.es or jcarrete@fi.upm.es
+# You can obtain the whole distribution in:
+#	http://www.datsi.fi.upm.es/~coes/espa~nol.tar.gz
+#
+# Notation in the conditions of the flagents:
+# [AE] S equivalent to: AS or ES
+# [^AE] S equivalent to: not AS and not ES
+#
+# Comments and bugs, please send mail to espanol-bugs@datsi.fi.upm.es
+# Modifications:
+# 
+# Dec. 12nd 1994
+# Flag G is not further necessary. It is cleared.
+# 
+# Jan. 4th 1995
+# Flag Z is enhanced including the complete enclithic set for the
+# infinitive.
+# 
+# Jan. 12nd 1995
+# The following flagents are wrong:
+# E R E R > -ER, RAMOS # querer > querramos
+# E R E R > -ER, RAMOS # querer > querramos
+# The correct ones are:
+# E R E R > -ER, AMOS  # querer > queramos
+# E R E R > -ER, AMOS  # querer > queramos
+#
+# Jan. 16th 1995
+# The flag U is changed. The flagents included in the R and T flags are
+# erased from the U flag to decrease the size of the hash file. So, every
+# word that had the flag U applied, it has applied the R, T and U flag.
+#
+# The flag Z is changed. The flagents included in the O and Q flags are
+# erased from the Z flag to decrease the size of the hash file. So, every
+# word that had the flag Z applied, it has applied the O, Q and Z flag.
+#
+# Jan. 23th 1995
+# The flag Y has been changed. The flagents belonging to the Y flag which
+# include verbs ending in AR has been
+# erased. There are no verb ending in AR that have irregular forms
+# in its participle or gerund forms.
+#
+# Jan. 24th 1995
+# The flag Y has been changed. The flagents belonging to the Y flag which
+# include the regular ending in the participle form has been erased.
+
+# Jan. 31st 1995
+# The flag W has been changed. There are some flagents that have been
+# changed because they are duplicated:
+# the following ones are erased
+# [FH] A C E R > -CER, GAMOS    # hacer > hagamos
+# E N C H I R  > -ENCHIR, INCHE # henchir > hinche
+# E R I R      > -IR, Í        # adquirir > adquirí
+#
+# the following ones are added
+# [FH] A C E R > -CER, GÁIS     # hacer > hagáis
+# E N C H I R  > -ENCHIR, INCHES # henchir > hinches
+# I R I R      > -IR, Í         # adquirir > adquirí
+#
+# The following flagent is duplicated in the flag V. It is deleted.
+# [AEI] R      > ÍA    # amar > amará
+#
+# The following flagent is duplicated in the flag V.
+#    I R        > -R, ÉSEMOS
+# The correct one is
+#    I R        > -R, ÉRAMOS
+#
+# The following flagents are duplicated in the flag W. They are deleted.
+# E N E R	> -R, MOS	# tener > tenemos
+# A L I R	> -R, MOS	# salir > salimos
+# E B I R	> -R, MOS	# concebir > concibió
+# E D I R	> -R, MOS	# pedir > pidió
+# E G I R	> -R, MOS	# elegir > eligió
+# E G U I R	> -R, MOS	# seguir > siguió
+# E M I R	> -R, MOS	# gemir > gimió
+# E N D I R	> -R, MOS	# rendir > rindió
+# E N T I R	> -R, MOS	# sentir > sintió
+# E Í R	> -R, MOS	# reír > reímos
+# E Ñ I R	> -R, MOS	# ceñir > ciñió
+# E R I R	> -R, MOS	# herir > hirió
+# E R N I R	> -R, MOS	# discernir > discernimos
+# E R T I R	> -R, MOS	# invertir > invertimos
+# E R V I R	> -R, MOS	# servir > servimos
+# E S T I R	> -R, MOS	# vestir > vistió
+# E T I R	> -R, MOS	# derretir > derritió
+# I R I R	> -R, MOS	# adquirir > adquirió
+# O R I R	> -R, MOS	# morir > murió
+# O R M I R	> -R, MOS	# dormir > durmió
+# U I R		> -R, MOS	# huir > huyó
+#
+# Feb. 14th 1995
+# The following line is changed:
+# stringchar o	O
+# The correct one is:
+# wordchars o	O
+#
+# Feb. 20th 1995
+# TeX and plainTeX support is added
+#
+# Several flagents in the W flag have losed some characters. For example:
+# E G A R	> -R, ÁIS	# regar > regáis
+# The correct one is 
+# E G A R	> -AR, ÁIS	# regar > regáis
+#
+# Feb 21st 1995
+# The following flagents are wrong:
+# E N D A R	> -AR, UÉ	# derrengar > derrengué
+# E N D A R	> -ENGAR, IENGUE	# derrengar > derriengue
+# E N Z A R	> -ENZAR, CÉIS	# comenzar > comencéis
+# E Z A R	> -EZAR, CÉIS		# empezar > empecéis
+# E R E R	> -ERER, ISTEIS		# querer > quisisteis
+# E Ñ I R	> -EÑIR, Í		# ceñir > ciñen
+# U C I R	> -R, STE	# producir > produjiste
+# U C I R	> -R, JIMOS	# producir > produjimos
+# The correct ones are:
+# E N G A R	> -AR, UÉ	# derrengar > derrengué
+# E N G A R	> -ENGAR, IENGUE	# derrengar > derriengue
+# E N Z A R	> -ZAR, CÉIS	# comenzar > comencéis
+# E Z A R	> -ZAR, CÉIS		# empezar > empecéis
+# E R E R	> -ERER, ISISTEIS		# querer > quisisteis
+# E Ñ I R	> -IR, Í		# ceñir > ciñen
+# U C I R	> -CIR, JISTE	# producir > produjiste
+# U C I R	> -CIR, JIMOS	# producir > produjimos
+# 
+# The affixes for verbs ending in COCER are added.
+# 
+# The following flagents are duplicated in the flag V. They are deleted.
+# A R		> -AR, A
+# [EI] R	> -ER, E
+#
+# The flag P is changed to optimize it. The following lines are deleted.
+# R           > A             # Como en impresor > impresora
+# R           > ES            # Como en impresor > impresores
+# R           > AS            # Como en impresor > impresoras
+#
+# The following lines are changed:
+# [^AO]       > A
+# [^AO]       > ES
+# [^AO]       > AS
+# The correct ones are:
+# [^AONS]	> A
+# [^AONS]	> ES
+# [^AONS]	> AS
+#
+# March 10th 1995
+# The flag S is changed. The following flagent:
+# [DJLRSY]	>	ES		# Imaginatelo
+# is changed to:
+# [DJLRY]	>	ES		# Imaginatelo
+# Also the following flagent is added:
+# [^É] S	>	ES		# gas gases
+#
+# The following flagents are added to the flag P.
+# Í N	> -ÍN,INA		# Como en mallorquín mallorquina
+# Í N	> -ÍN,INES		# Como en mallorquín mallorquines
+# Í N	> -ÍN,INAS		# Como en mallorquín mallorquinas
+#
+# March 24th 1995
+# Verbs ending in OER are included.
+#
+# April 5th 1995
+# The following flagent is added to the S flag
+# [^ÁÉÍÓÚ] N >	ES		# can canes
+#
+# April 5th 1995
+# Verbs ending in oír are included in the W and Y flags.
+# The following flagent is wrong. The correct one is
+#   E R I R	> -R, ERON		# adquirir > adquirieron
+# The correct one is:
+#   I R I R	> -R, ERON		# adquirir > adquirieron
+#
+# June 6th 1995
+# The following flagent is added to the w flag
+# Í R   	> -ÍR, ÍA		# reír > reía
+# Í R   	> -ÍR, ÍAS		# reír > reías
+# Í R   	> -ÍR, ÍAMOS		# reír > reíamos
+# Í R   	> -ÍR, ÍAIS		# reír > reíais
+# Í R   	> -ÍR, ÍAN		# reír > reían
+# 
+# The flag L is included.
+#
+# The following flagents are wrong in the flag W:
+#   E G I R	> -EGIR, IJES		# elegir > eliges
+#   [FH] A C E R > -CER, ÉIS		# hacer > haréis
+# The correct ones are:
+#   E G I R	> -EGIR, IGES		# elegir > eliges
+#   [FH] A C E R > -CER, RÉIS		# hacer > haréis
+#
+# July 6th 1995
+# Words ending in EGIR are included in the flag Z
+# The following flagent is added in the flag W
+#   [^G] U A R	> -AR, ÉIS		# situar > situéis
+#
+# The following flagent is  wrong in the flag W:
+# U A R	> -UAR, ÚAN		# situar > sitúan
+# E Ñ I R	> -EÑIR, IÑIÓ	# ceñir > ciñió
+# E Ñ I R	> -EÑIR, IÑIERON	# ceñir > ciñieron
+# They are replaced by:
+# G U A R	> -R, N			# averiguar > averiguan
+# [^G] U A R	> -UAR, ÚAN		# situar > sitúan
+# E Ñ I R	> -EÑIR, IÑÓ		# ceñir > ciñó
+# E Ñ I R	> -EÑIR, IÑERON	# ceñir > ciñeron
+#
+# September 13rd 1995
+# Words ending in Ú and Í are included in the flag S
+#
+# Words ending in OÍR are included in the O and Q flags.
+# The following flagent is add in the W flag:
+# G U A R	> -UAR, ÜES		# averiguar > averigües
+#
+# The flag J is completed for gender and number.
+# The following flagent is wrong
+# A L I R	> -R, S			# salir > sales
+# O R A R	> -AR, MOS		# encorar > encoremos
+# O S A R	> -AR, MOS		# engrosar > engrosemos
+# O V A R	> -AR, MOS		# encovar > encovamos
+# The correct one is:
+# A L I R	> -IR, ES		# salir > sales
+# O R A R	> -AR, EMOS		# encorar > encoremos
+# O S A R	> -AR, EMOS		# engrosar > engrosemos
+# O V A R	> -AR, EMOS		# encovar > encovemos
+# Flags H and I are added.
+#
+# June 13rd 1997
+# 	Conjugation for argüir is added
+#
+# July 28th 1997
+# 	Support for html formatter is included
+#
+# October 28th 1998
+# 	Support for msdos formatter is included
+#
+# April 10th 1999
+# 	Conjugation for verbs ending in [ae]izar, [ae]hi[jlnt]ar, [ae]huar,
+# and ohibir are included in flag W
+#
+# June 10th 1999
+# The following flagent is wrong
+#   G O N Z A R	> -ONZAR, ÜECEN	# avergonzar > avergüencen
+# The correct one is:
+#   G O N Z A R	> -ONZAR, ÜENCEN	# avergonzar > avergüencen
+#
+# December 10th 1999
+# The following flagent is wrong
+#   A L I R	> -R, N			# salir > salen
+# The correct one is:
+#   A L I R	> -IR, EN		# salir > salen
+#
+# January 22th 2001
+# The following flagent is wrong
+#   O L D A R	> -CAR, QUEMOS		# volcar > volquemos
+# The correct one is:
+#   O L C A R	> -CAR, QUEMOS		# volcar > volquemos
+#
+# October 29th 2001
+# The following flagents are wrong
+#    E Ñ I R	> -EMIR, IÑÁIS	# ceñir > ciñáis
+#   [^G] O L L A R > -OLAR, UELLA	# descollar > descuella
+#   [AE] H U S A R > -UMAR, ÚSE	# ahusar > ahúse
+# The correct ones are:
+#    E Ñ I R	> -EÑIR, IÑÁIS	# ceñir > ciñáis
+#   [^G] O L L A R > -OLLAR, UELLA	# descollar > descuella
+#   [AE] H U S A R > -USAR, ÚSE	# ahusar > ahúse
+#
+# February 4th 2002
+# Flagents for verbs ending in hervir are added in flag W
+#
+# March 4th 2002
+# Flagents for nouns/adjectives ending in Z are added in flag P
+# Flagents for nouns/adjectives ending in E are corrected in flag P
+# Words ending in M, are added in the flag S.
+#
+# May 3rd 2004
+# The following flagent is wrong
+#    O C A R	> -OCAR, QUÉIS		# trocar > troquéis
+# The correct one is:
+#    O C A R	> -CAR, QUÉIS		# trocar > troquéis
+# 
+# The affixes for verbs ending in ULLIR are added to W, Y, O, and Q.
+# 
+# The following flagent is added
+#    O M P E R	> -ER, IENDO		# romper > rompiendo
+# 
+# The affixes for verbs ending in UCIR are split in those endin in DUCIR
+# and [^D]UCIR in the W flag
+
+# ----------------------------------------
+# *** Beginning of Debian-only section ***
+# ----------------------------------------
+
+#  In debian the default charset has been changed to latin1
+
+nroffchars      ().\\*
+texchars        ()\[]{}<\>\\$*.%
+
+allaffixes on
+
+# normal latin1 encoding
+defstringtype "latin1" "tex" ".txt"
+
+wordchars       a       A
+stringchar      á       Á
+stringchar      à       À
+wordchars       [b-e]   [B-E]
+stringchar      é       É
+stringchar      è       È
+wordchars       [f-i]   [F-I]
+stringchar      í       Í
+stringchar      ì       Ì
+wordchars       [j-n]   [J-N]
+stringchar      ñ       Ñ
+wordchars       o       O
+stringchar      ó       Ó
+stringchar      ò       Ò
+wordchars       [p-u]   [P-U]
+stringchar      ù       Ù
+stringchar      ú       Ú
+stringchar      ü       Ü
+wordchars       [v-z]   [V-Z]
+stringchar      ç       Ç
+
+# Now the alternative charsets
+
+# spanish.sty old encoding ('a->á) 
+altstringtype "tex" "tex" ".tex"
+
+altstringchar    \'a    á
+altstringchar    \'A    Á
+altstringchar    \'e    é
+altstringchar    \'E    É
+altstringchar    \'i    í
+altstringchar    \'I    Í
+altstringchar    \'n    ñ
+altstringchar    \'N    Ñ
+altstringchar    \'o    ó
+altstringchar    \'O    Ó
+altstringchar    \'u    ú
+altstringchar    \'U    Ú
+altstringchar    \"u    ü
+altstringchar    \"U    Ü
+
+# One TeX encoding
+altstringtype "TeX" "tex" ".tex"
+
+altstringchar   "\\'a"         á
+altstringchar   "\\'e"         é
+altstringchar   "\\'{\\i}"     í
+altstringchar   "\\'o"         ó
+altstringchar   "\\'u"         ú
+altstringchar   "\\'A"         Á
+altstringchar   "\\'E"         É
+altstringchar   "\\'I"         Í
+altstringchar   "\\'O"         Ó
+altstringchar   "\\'U"         Ú
+altstringchar   "\\~n"         ñ
+altstringchar   "\\~N"         Ñ
+altstringchar   "\\\"u"        ü
+altstringchar   "\\\"U"        Ü
+
+# Another teX encoding
+altstringtype "plainTeX" "tex" ".tex"
+
+altstringchar   "\\'{a}"       á
+altstringchar   "\\'{e}"       é
+altstringchar   "\\'{\\i}"     í
+altstringchar   "\\'{o}"       ó
+altstringchar   "\\'{u}"       ú
+altstringchar   "\\'{A}"       Á
+altstringchar   "\\'{E}"       É
+altstringchar   "\\'{I}"       Í
+altstringchar   "\\'{O}"       Ó
+altstringchar   "\\'{U}"       Ú
+altstringchar   "\\~{n}"       ñ
+altstringchar   "\\~{N}"       Ñ
+altstringchar   "\\\"{u}"      ü
+altstringchar   "\\\"{U}"      Ü
+
+# html encoding
+altstringtype "html" "tex" ".html"
+
+altstringchar   "\&aacute;"    á
+altstringchar   "\&eacute;"    é
+altstringchar   "\&iacute;"    í
+altstringchar   "\&oacute;"    ó
+altstringchar   "\&uacute;"    ú
+altstringchar   "\&Aacute;"    Á
+altstringchar   "\&Eacute;"    É
+altstringchar   "\&Iacute;"    Í
+altstringchar   "\&Oacute;"    Ó
+altstringchar   "\&Uacute;"    Ú
+altstringchar   "\&ntilde;"    ñ
+altstringchar   "\&Ntilde;"    Ñ
+altstringchar   "\&uuml;"      ü
+altstringchar   "\&Uuml;"      Ü
+
+# msdos encoding
+altstringtype "msdos" "tex" ".txt"
+
+altstringchar   \xa0   á
+altstringchar   \xb5   Á
+altstringchar   \x82   é
+altstringchar   \x90   É
+altstringchar   \xa1   í
+altstringchar   \xd6   Í
+altstringchar   \xa4   ñ
+altstringchar   \xa5   Ñ
+altstringchar   \xa2   ó
+altstringchar   \xe0   Ó
+altstringchar   \xa3   ú
+altstringchar   \xe9   Ú
+altstringchar   \x81   ü
+altstringchar   \x9a   Ü
+
+
+# utf8 encoding.
+
+altstringtype "utf8" "tex" ".txt"
+
+altstringchar    Ã¡    á
+altstringchar    Ã    Á
+altstringchar    Ã©    é
+altstringchar    Ã‰    É
+altstringchar    Ã­    í
+altstringchar    Ã    Í
+altstringchar    Ã±    ñ
+altstringchar    Ã‘    Ñ
+altstringchar    Ã³    ó
+altstringchar    Ã“    Ó
+altstringchar    Ãº    ú
+altstringchar    Ãš    Ú
+altstringchar    Ã¼    ü
+altstringchar    Ãœ    Ü
+
+# End of debian charsets
+# ----------------------------------------
+# *** End of Debian-only section       ***
+# ----------------------------------------
+
+# 
+# Here's a record of flags used, in case you want to add new ones.
+#
+#            ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz
+# Used:             *** ***************                           
+#            ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz
+# Available: -------   -                --------------------------
+#
+# prefixes
+
+# flag *A:
+#     .		>	ANTE		# Como en pecho > antepecho
+# flag *a:
+#    .		>	A		# Como en moral > amoral
+# flag *b:
+#    .		>	ANTI		# Como en tanque > antitanque
+# flag *B:
+#    .		>	BI		# Como en plano > biplano
+# flag *c:
+#    .		>	AUTO		# Como en movil > automovil
+# flag *C:
+#    .		>	CONTRA		# Como en atacar > contratacar
+# flag *d:
+#    .		>	DE		# Como en preciar > depreciar
+# flag *e:
+#    .		>	EX		# Como en alumno > exalumno 
+# flag *E:
+#    .		>	EXTRA		# Como en ordinario > extraordinario 
+# flag *h:
+#    .		>	HIPO		# Como en termia > hipotermia 
+# flag *H:
+#    .		>	HIPER		# Como en termia > hipertermia 
+# flag *i:
+#    [^BP]	>	IN		# Como en sensato > insensato 
+#    [BP]	>	IM		# Como en personal > impersonal 
+# flag *I:
+#    .		>	INTER		# Como en cambio > intercambio 
+# flag *m:
+#    .		>	MULTI		# Como en procesador > multiprocesador 
+# flag *n:
+#    .		>	NEO		# Como en catolico > neocatolico 
+# flag *p:
+#    .		>	PARA		# Como en militar > paramilitar 
+# flag *P:
+#    .		>	POST		# Como en fijar > postfijar 
+# flag *o:
+#    .		>	PRE		# Como en fijar > prefijar 
+# flag *r:
+#     .		>	RE		# Como en batir > rebatir 
+# flag *R:
+#    .		>	SEMI		# Como en curado > semicurado 
+# flag *S:
+#    .		>	SUB		# Como en yacente > subyacente 
+# flag *u:
+#    .		>	SUPER		# Como en hombre > superhombre 
+# flag *U:
+#    .		>	SOBRE		# Como en entender > sobreentender 
+# flag *t:
+#    .		>	TELE		# Como en comunicacion > telecomunicacion 
+# flag *T:
+#    .		>	TRANS		# Como en fuga > transfuga
+
+suffixes
+
+flag *J:	# isimo
+    E	> -E, ÍSIMO	# grande grandísimo
+    E	> -E, ÍSIMOS	# grande grandísimos
+    E	> -E, ÍSIMA	# grande grandísima
+    E	> -E, ÍSIMAS	# grande grandísimas
+    O	> -O, ÍSIMO	# tonto tontísimo
+    O	> -O, ÍSIMA	# tonto tontísima
+    O	> -O, ÍSIMOS	# tonto tontísimos
+    O	> -O, ÍSIMAS	# tonto tontísimas
+    L	> ÍSIMO	# formal formalísimo
+    L	> ÍSIMA	# formal formalísima
+    L	> ÍSIMOS	# formal formalísimos
+    L	> ÍSIMAS	# formal formalísimas
+
+flag *M:	# Mente
+    O		> -O, AMENTE	# Como en claro > claramente
+    [ELNRSZ]	> MENTE		# Como en virtual > virtualmente
+
+flag *N:	# Mente. Verbos que admiten en su participio
+		# la terminación mente
+    [AI] R	> -R, DAMENTE	# amar > amadamente
+    E R 	> -ER, IDAMENTE	# comer > comidamente
+
+flag *P:	# Género y número
+    E		> -E, A			# presidente presidenta
+    O		> -O, A			# amigo amiga
+    [EO]	> S			# amigo amiga
+    O		> -O, AS		# amiga amigas
+    E		> -E, AS		# presidente presidentas
+    Z		> -Z, CES		# juez jueces
+    Á N	> -ÁN,ANA		# charlatán charlatana
+    Á N	> -ÁN,ANES		# charlatán charlatanes
+    Á N	> -ÁN,ANAS		# charlatán charlatanas
+    Í N	> -ÍN,INA		# mallorquín mallorquina
+    Í N	> -ÍN,INES		# mallorquín mallorquines
+    Í N	> -ÍN,INAS		# mallorquín mallorquinas
+    Ó N	> -ÓN,ONA		# charlatán anglosajona
+    Ó N	> -ÓN,ONES		# anglosajón anglosajona
+    Ó N	> -ÓN,ONAS		# anglosajón anglosajona
+    [^AEONS]	> A			# espectador espectadora
+    [^AEONSZ]	> ES			# espectador espectadores
+    [^AEONS]	> AS			# espectador espectadoras
+    É S	> -ÉS,ESA		# aragonés aragonesa
+    É S	> -ÉS,ESES		# aragonés aragoneses
+    É S	> -ÉS,ESAS		# aragonés aragonesas
+
+flag *H:	# Sustantivos acabados en -ción derivados de verbos 
+    [AI] R	> -R, CIÓN		# abolir abolición
+    [AI] R	> -R, CIONES		# abolir aboliciones
+
+flag *I:	# Sustantivos acabados en -iento derivados de verbos 
+    [AI] R	> -R, MIENTO		# abandonamiento
+    [AI] R	> -R, MIENTOS		#
+    E R		> -ER, IMIENTO		# aborrecer aborrecimiento
+    E R		> -ER, IMIENTOS		#
+
+flag *L:	# Participio activo para verbos regulares
+    A R		> -R, NTE		# amar amante amantes
+    A R		> -R, NTES
+    E R		> -ER, IENTE		# temer temiente temientes
+    E R		> -ER, IENTES
+    I R		> -R, ENTE		# vivir viviente vivientes
+    I R		> -R, ENTES
+
+flag *R:	# reflexivos
+    [AEI] R	> ME			# amar amarme
+    [AEI] R	> TE			# amar amarte
+    [AEI] R	> SE			# amar amarse
+    [AEI] R	> NOS			# amar amarse
+    [AEI] R	> OS			# amar amarse
+    A R		> -AR, ÁNDOME		# amar amándome
+    A R		> -AR, ÁNDOTE		# amar amándote
+    A R		> -AR, ÁNDOSE		# amar amándose
+    A R		> -AR, ÁNDONOS		# amar amándonos
+    A R		> -AR, ÁNDOOS		# amar amándoos
+    E R		> -ER, IÉNDOME		# comer comiéndose
+    E R		> -ER, IÉNDOTE		# comer comiéndote
+    E R		> -ER, IÉNDOSE		# comer comiéndose
+    E R		> -ER, IÉNDONOS	# comer comiéndonos
+    E R		> -ER, IÉNDOOS		# comer comiéndoos
+    I R		> -R, ÉNDOME		# vivir viviéndome
+    I R		> -R, ÉNDOTE		# vivir viviéndote
+    I R		> -R, ÉNDOSE		# vivir viviéndose
+    I R		> -R, ÉNDONOS		# vivir viviéndonos
+    I R		> -R, ÉNDOOS		# vivir viviéndoos
+
+				# Falta el imperativo (acento).
+
+flag *S:	# Plural
+    [AEIOUÁÉÓ]>	S		# vaca vacas
+					# sofá, café
+    [ÚÍDJLMRY] >	ES		# tabú tabúes
+    Z		>	-Z, CES		# audaz audaces
+    [^É] S	>	ES		# gas gases
+    [^ÁÉÍÓÚ] N >	ES		# can canes
+    Á N	>	-ÁN,ANES	# volcán volcanes
+    É N	>	-ÉN,ENES	# retén retenes
+    Í N	>	-ÍN,INES	# orín orines
+    Ó N	>	-ÓN,ONES	# camión camiones
+    Ú N	>	-ÚN,UNES	# atún atunes
+    É S	>	-ÉS,ESES	# aragonés aragoneses
+
+flag *T:	# Verbos transitivos con gerundio regular
+    [AEI] R	>	LO		# amar amarlo
+    [AEI] R	>	LA		# amar amarla
+    [AEI] R	>	LE		# amar amarle
+    [AEI] R	>	LOS		# amar amarlo
+    [AEI] R	>	LAS		# amar amarla
+    [AEI] R	>	LES		# amar amarle
+    A R		> -AR, ÁNDOLO		# amar amándolo
+    A R		> -AR, ÁNDOLA		# amar amándola
+    A R		> -AR, ÁNDOLE		# amar amándole
+    A R 	> -AR, ÁNDOLOS		# amar amándolo
+    A R 	> -AR, ÁNDOLAS		# amar amándola
+    A R 	> -AR, ÁNDOLES		# amar amándole
+    E R 	> -ER, IÉNDOLO		# comer comiéndolo
+    E R 	> -ER, IÉNDOLA		# comer comiéndola
+    E R 	> -ER, IÉNDOLE		# comer comiéndole
+    E R 	> -ER, IÉNDOLOS	# comer comiéndolo
+    E R 	> -ER, IÉNDOLAS	# comer comiéndola
+    E R 	> -ER, IÉNDOLES	# comer comiéndole
+    I R 	> -R, ÉNDOLO		# vivir viviéndolo
+    I R 	> -R, ÉNDOLA		# vivir viviéndola
+    I R 	> -R, ÉNDOLE		# vivir viviéndole
+    I R 	> -R, ÉNDOLOS		# vivir viviéndolo
+    I R 	> -R, ÉNDOLAS		# vivir viviéndola
+    I R 	> -R, ÉNDOLES		# vivir viviéndole
+
+			# Falta el imperativo (problema de acento)
+
+flag *U:	# Verbos pronominales y transitivos. Enclíticos compuestos.
+    A R		> -AR, ÁRMELO		# amar amarlo
+    A R		> -AR, ÁRTELO		# amar amarlo
+    A R 	> -AR, ÁRSELO		# amar amarlo
+    A R 	> -AR, ÁRNOSLO		# amar amarlo
+    A R 	> -AR, ÁROSLO		# amar amarlo
+    A R 	> -AR, ÁRMELA		# amar amarla
+    A R 	> -AR, ÁRTELA		# amar amarla
+    A R 	> -AR, ÁRSELA		# amar amarla
+    A R 	> -AR, ÁRNOSLA		# amar amarla
+    A R 	> -AR, ÁROSLA		# amar amarla
+    A R 	> -AR, ÁRMELOS		# amar amarle
+    A R 	> -AR, ÁRTELOS		# amar amarle
+    A R 	> -AR, ÁRSELOS		# amar amarle
+    A R 	> -AR, ÁRNOSLOS	# amar amarle
+    A R 	> -AR, ÁROSLOS		# amar amarle
+    A R 	> -AR, ÁRMELAS		# amar amarle
+    A R 	> -AR, ÁRTELAS		# amar amarle
+    A R 	> -AR, ÁRSELAS		# amar amarle
+    A R 	> -AR, ÁRNOSLAS	# amar amarle
+    A R 	> -AR, ÁROSLAS		# amar amarle
+    A R 	> -AR, ÁNDOMELO	# amar amarlo
+    A R 	> -AR, ÁNDOTELO	# amar amarlo
+    A R 	> -AR, ÁNDOSELO	# amar amarlo
+    A R 	> -AR, ÁNDONOSLO	# amar amarlo
+    A R 	> -AR, ÁNDOOSLO	# amar amarlo
+    A R 	> -AR, ÁNDOMELA	# amar amarlo
+    A R 	> -AR, ÁNDOTELA	# amar amarlo
+    A R 	> -AR, ÁNDOSELA	# amar amarlo
+    A R 	> -AR, ÁNDONOSLA	# amar amarlo
+    A R 	> -AR, ÁNDOOSLA	# amar amarlo
+    A R 	> -AR, ÁNDOMELOS	# amar amarlo
+    A R 	> -AR, ÁNDOTELOS	# amar amarlo
+    A R 	> -AR, ÁNDOSELOS	# amar amarlo
+    A R 	> -AR, ÁNDONOSLOS	# amar amarlo
+    A R 	> -AR, ÁNDOOSLOS	# amar amarlo
+    A R 	> -AR, ÁNDOMELAS	# amar amarlo
+    A R 	> -AR, ÁNDOTELAS	# amar amarlo
+    A R 	> -AR, ÁNDOSELAS	# amar amarlo
+    A R 	> -AR, ÁNDONOSLAS	# amar amarlo
+    A R 	> -AR, ÁNDOOSLAS	# amar amarlo
+    E R 	> -ER, ÉRMELO		# comer comerlo
+    E R 	> -ER, ÉRTELO		# comer comerlo
+    E R 	> -ER, ÉRSELO		# comer comerlo
+    E R 	> -ER, ÉRNOSLO		# comer comerlo
+    E R 	> -ER, ÉROSLO		# comer comerlo
+    E R 	> -ER, ÉRMELA		# comer comerla
+    E R 	> -ER, ÉRTELA		# comer comerla
+    E R 	> -ER, ÉRSELA		# comer comerla
+    E R 	> -ER, ÉRNOSLA		# comer comerla
+    E R 	> -ER, ÉROSLA		# comer comerla
+    E R 	> -ER, ÉRMELOS		# comer comerle
+    E R 	> -ER, ÉRTELOS		# comer comerle
+    E R 	> -ER, ÉRSELOS		# comer comerle
+    E R 	> -ER, ÉRNOSLOS	# comer comerle
+    E R 	> -ER, ÉROSLOS		# comer comerle
+    E R 	> -ER, ÉRMELAS		# comer comerle
+    E R 	> -ER, ÉRTELAS		# comer comerle
+    E R 	> -ER, ÉRSELAS		# comer comerle
+    E R 	> -ER, ÉRNOSLAS	# comer comerle
+    E R 	> -ER, ÉROSLAS		# comer comerle
+    E R 	> -ER, IÉNDOMELO	# comer amarlo
+    E R 	> -ER, IÉNDOTELO	# comer amarlo
+    E R 	> -ER, IÉNDOSELO	# comer amarlo
+    E R 	> -ER, IÉNDONOSLO	# comer amarlo
+    E R 	> -ER, IÉNDOOSLO	# comer amarlo
+    E R 	> -ER, IÉNDOMELA	# comer amarlo
+    E R 	> -ER, IÉNDOTELA	# comer amarlo
+    E R 	> -ER, IÉNDOSELA	# comer amarlo
+    E R 	> -ER, IÉNDONOSLA	# comer amarlo
+    E R 	> -ER, IÉNDOOSLA	# comer amarlo
+    E R 	> -ER, IÉNDOMELOS	# comer amarlo
+    E R 	> -ER, IÉNDOTELOS	# comer amarlo
+    E R 	> -ER, IÉNDOSELOS	# comer amarlo
+    E R 	> -ER, IÉNDONOSLOS	# comer amarlo
+    E R 	> -ER, IÉNDOOSLOS	# comer amarlo
+    E R 	> -ER, IÉNDOMELAS	# comer amarlo
+    E R 	> -ER, IÉNDOTELAS	# comer amarlo
+    E R 	> -ER, IÉNDOSELAS	# comer amarlo
+    E R 	> -ER, IÉNDONOSLAS	# comer amarlo
+    E R 	> -ER, IÉNDOOSLAS	# comer amarlo
+    I R 	> -IR, ÍRMELO		# vivir amalo
+    I R 	> -IR, ÍRTELO		# vivir amalo
+    I R 	> -IR, ÍRSELO		# vivir amalo
+    I R 	> -IR, ÍRNOSLO		# vivir amalo
+    I R 	> -IR, ÍROSLO		# vivir amalo
+    I R 	> -IR, ÍRMELA		# vivir amalo
+    I R 	> -IR, ÍRTELA		# vivir amalo
+    I R 	> -IR, ÍRSELA		# vivir amalo
+    I R 	> -IR, ÍRNOSLA		# vivir amalo
+    I R 	> -IR, ÍROSLA		# vivir amalo
+    I R 	> -IR, ÍRMELAS		# vivir amalo
+    I R 	> -IR, ÍRTELAS		# vivir amalo
+    I R 	> -IR, ÍRSELAS		# vivir amalo
+    I R 	> -IR, ÍRNOSLAS	# vivir amalo
+    I R 	> -IR, ÍROSLAS		# vivir amalo
+    I R 	> -IR, ÍRMELOS		# vivir amalo
+    I R 	> -IR, ÍRTELOS		# vivir amalo
+    I R 	> -IR, ÍRSELOS		# vivir amalo
+    I R 	> -IR, ÍRNOSLOS	# vivir amalo
+    I R 	> -IR, ÍROSLOS		# vivir amalo
+    I R 	> -R, ÉNDOMELO		# vivir amarlo
+    I R 	> -R, ÉNDOTELO		# vivir amarlo
+    I R 	> -R, ÉNDOSELO		# vivir amarlo
+    I R 	> -R, ÉNDONOSLO	# vivir amarlo
+    I R 	> -R, ÉNDOOSLO		# vivir amarlo
+    I R 	> -R, ÉNDOMELA		# vivir amarlo
+    I R 	> -R, ÉNDOTELA		# vivir amarlo
+    I R 	> -R, ÉNDOSELA		# vivir amarlo
+    I R 	> -R, ÉNDONOSLA	# vivir amarlo
+    I R 	> -R, ÉNDOOSLA		# vivir amarlo
+    I R 	> -R, ÉNDOMELOS	# vivir amarlo
+    I R 	> -R, ÉNDOTELOS	# vivir amarlo
+    I R 	> -R, ÉNDOSELOS	# vivir amarlo
+    I R 	> -R, ÉNDONOSLOS	# vivir amarlo
+    I R 	> -R, ÉNDOOSLOS	# vivir amarlo
+    I R 	> -R, ÉNDOMELAS	# vivir amarlo
+    I R 	> -R, ÉNDOTELAS	# vivir amarlo
+    I R 	> -R, ÉNDOSELAS	# vivir amarlo
+    I R 	> -R, ÉNDONOSLAS	# vivir amarlo
+    I R 	> -R, ÉNDOOSLAS	# vivir amarlo
+
+				# Falta el imperativo (problema de
+				# acento
+
+
+flag *V:	# Verbos de todas las conjugaciones regulares "amar" PRESENTE
+    A R		> -AR, O		# amar amo
+    [^CG] E R	> -ER, O		# comer como
+    C E R	> -CER, ZO		# vencer venzo
+    G E R	> -GER, JO		# coger cojo
+    [^CGU] I R	> -IR, O		# vivir vivo
+    C I R	> -CIR, ZO		# esparcir esparzo
+    G I R	> -GIR, JO		# fingir finjo
+    G U I R	> -UIR, O		# distinguir distingo
+    Q U I R	> -QUIR, CO		# delinquir delinco
+
+    [AE] R 	> -R, S			# amar amas
+    I R 	> -IR, ES		# vivir amas
+
+    A R 	> -AR, A		# amar ama
+    E R 	> -ER, E		# comer come
+    I R 	> -IR, E		# vivir vive
+
+    [AEI] R 	> -R, MOS		# amar amamos
+
+    A R 	> -AR, ÁIS		# amar amáis
+    E R 	> -ER, ÉIS		# comer coméis
+    I R 	> -IR, ÍS		# vivir vivís
+
+    [AE] R 	> -R, N			# amar aman
+    I R 	> -IR, EN		# vivir viven
+
+# Verbos de la primera conjugacion regular "amar" IMPERFECTO
+
+    A R 	> -R, BA		# amar amaba
+    E R 	> -ER, ÍA		# comer comía
+    I R 	> -IR, ÍA		# vivir vivía
+
+    A R 	> -R, BAS		# amar amabas
+    E R 	> -ER, ÍAS		# comer amaba
+    I R 	> -IR, ÍAS		# amar amaba
+
+    A R 	> -AR, ÁBAMOS		# amar amamos
+    E R 	> -ER, ÍAMOS		# comer amamos
+    I R 	> -IR, ÍAMOS		# amar amamos
+
+    A R 	> -R, BAIS		# amar amais
+    E R 	> -ER, ÍAIS		# comer amais
+    I R 	> -IR, ÍAIS		# amar amais
+
+    A R 	> -R, BAN		# amar aman
+    E R 	> -ER, ÍAN		# comer aman
+    I R 	> -IR, ÍAN		# amar aman
+
+# Verbos de la primera conjugacion regular "amar" PERFECTO
+
+    [^CZG] A R	> -AR, É		# amar amé
+    C A R	> -CAR, QUÉ		# cascar casqué
+    G A R	> -AR, UÉ		# cabalgar cabalgué
+    Z A R	> -ZAR, CÉ		# cazar cacé
+    E R 	> -ER, Í		# comer amaba
+    I R 	> -IR, Í		# amar amaba
+
+    [AI] R 	> -R, STE		# amar amaste
+    E R 	> -ER, ISTE		# comer comiste
+
+    A R 	> -AR, Ó		# amar amó
+    E R 	> -ER, IÓ		# comer comió
+    I R 	> -R, Ó		# vivir vivió
+
+    E R 	> -ER, IMOS		# comer comimos
+
+    [AI] R 	> -R, STEIS		# amar amasteis
+    E R 	> -ER, ISTEIS		# comer comisteis
+
+    A R 	> ON			# amar amaron
+    E R 	> -ER, IERON		# comer comieron
+    I R 	> -R, ERON		# vivir  vivieron
+
+# Verbos regulares FUTURO
+
+    [AEI] R	> É			# amar amaré
+
+    [AEI] R	> ÁS			# amar amarás
+
+    [AEI] R	> Á			# amar amará
+
+    [AEI] R	> EMOS			# amar amaremos
+
+    [AEI] R	> ÉIS			# amar amaréis
+
+    [AEI] R	> ÁN			# amar amarán
+
+# Verbos regulares CONDICIONAL
+
+    [AEI] R	> ÍA			# amar amaría
+
+    [AEI] R	> ÍAS			# amar amarías
+
+    [AEI] R	> ÍAMOS		# amar amaríamos
+
+    [AEI] R	> ÍAIS			# amar amaríais
+
+    [AEI] R	> ÍAN			# amar amarían
+
+# Verbos de conjugacion regular "amar" SUBJUNTIVO PRESENTE
+
+    [^CZG] A R	> -AR, E		# amar ame
+    C A R	> -CAR, QUE		# cascar casque
+    G A R	> -AR, UE		# cabalgar cabalgue
+    Z A R	> -ZAR, CE		# cazar cace
+    [^CG] E R	> -ER, A		# comer coma
+    C E R	> -CER, ZA		# vencer venza
+    G E R	> -GER, JA		# coger coja
+    [^CGU] I R	> -IR, A		# vivir viva
+    C I R	> -CIR, ZA		# esparcir esparza
+    G I R	> -GIR, JA		# fingir finja
+    G U I R	> -UIR, A		# distinguir distinga
+    Q U I R	> -QUIR, CA		# delinquir delinca
+
+    [^CZG] A R	> -AR, ES		# amar ames
+    C A R 	> -CAR, QUES		# cascar casques
+    G A R 	> -AR, UES		# cazar caces
+    Z A R 	> -ZAR, CES		# cazar caces
+    [^CG] E R 	> -ER, AS		# comer comas
+    C E R 	> -CER, ZAS		# coger venzas
+    G E R 	> -GER, JAS		# coger cojas
+    [^CGU] I R	> -IR, AS		# vivir vivas
+    C I R	> -CIR, ZAS		# esparcir esparzas
+    G I R	> -GIR, JAS		# fingir finjas
+    G U I R	> -UIR, AS		# distinguir distingas
+    Q U I R	> -QUIR, CAS		# delinquir delincas
+
+    [^CZG] A R	> -AR, EMOS		# amar amemos
+    C A R	> -CAR, QUEMOS		# cabalgar cabalguemos
+    G A R	> -AR, UEMOS		# cabalgar cabalguemos
+    Z A R	> -ZAR, CEMOS		# realizar realicemos
+    [^CG] E R	> -ER, AMOS		# comer comamos
+    C E R	> -CER, ZAMOS		# vencer venzamos
+    G E R	> -GER, JAMOS		# coger cojamos
+    [^CGU] I R	> -IR, AMOS		# vivir vivamos
+    C I R	> -CIR, ZAMOS		# esparcir esparzamos
+    G I R	> -GIR, JAMOS		# fingir finjamos
+    G U I R	> -UIR, AMOS		# distinguir distingamos
+    Q U I R	> -QUIR, CAMOS		# delinquir delincamos
+
+    [^CZG] A R	> -AR, ÉIS		# amar amais
+    C A R	> -CAR, QUÉIS		# cascar casquéis
+    G A R	> -AR, UÉIS		# cabalgar cabalguéis
+    Z A R	> -ZAR, CÉIS		# amar amais
+    [^CG] E R	> -ER, ÁIS		# comer comáis
+    C E R	> -CER, ZÁIS		# vencer venzáis
+    G E R	> -GER, JÁIS		# coger cojáis
+    [^CGU] I R	> -IR, ÁIS		# amar amais
+    C I R 	> -CIR, ZÁIS		# esparcir esparzáis
+    G I R 	> -GIR, JÁIS		# fingir finjáis
+    G U I R 	> -UIR, ÁIS		# distinguir distingáis
+    Q U I R 	> -QUIR, CÁIS		# delinquir delincáis
+
+    [^CZG] A R	> -AR, EN		# amar aman
+    C A R	> -CAR, QUEN		# cascar casquen
+    G A R	> -AR, UEN		# cabalgar cabalguen
+    Z A R	> -ZAR, CEN		# cazar cacen
+    [^CG] E R	> -ER, AN		# comer coman
+    C E R	> -CER, ZAN		# vencer venzan
+    G E R	> -GER, JAN		# coger cojan
+    [^CGU] I R	> -IR, AN		# vivir vivan
+    C I R	> -CIR, ZAN		# esparcir esparzan
+    G I R	> -GIR, JAN		# fingir finjan
+    G U I R	> -UIR, AN		# distinguir distingan
+    Q U I R	> -QUIR, CAN		# delinquir delincan
+
+# Verbos de conjugacion regular "amar" SUBJUNTIVO PRETÉRITO IMPERFECTO
+    A R 	> -R, SE		# amar amase o amara
+    A R 	> -R, RA		# 
+    E R 	> -ER, IESE		# comer comiese o comiera
+    E R 	> -ER, IERA		# 
+    I R 	> -R, ESE		# vivir viviese o viviera
+    I R 	> -R, ERA		#
+
+    A R 	> -R, SES		# amar amasees o amaras
+    A R 	> -R, RAS		#
+    E R 	> -ER, IESES		# comer comieses o comieras
+    E R 	> -ER, IERAS		# 
+    I R 	> -R, ESES		# vivir vivieses o vivieras
+    I R 	> -R, ERAS		#
+
+    A R 	> -AR, ÁSEMOS		# amar amásemos o amáramos
+    A R 	> -AR, ÁRAMOS		#
+    E R 	> -ER, IÉSEMOS		# comer comiésemos o comiéramos
+    E R 	> -ER, IÉRAMOS		#
+    I R 	> -R, ÉSEMOS		# vivir viviésemos o viviéramos
+    I R		> -R, ÉRAMOS		#
+
+    A R 	> -R, SEIS		# amar amarais o  amaseis
+    A R 	> -R, RAIS		#
+    E R		> -ER, IESEIS		# comer comieseis o comierais
+    E R 	> -ER, IERAIS		#
+    I R 	> -R, ESEIS		# vivir vivieseis o vivierais
+    I R 	> -R, ERAIS		#
+
+    A R 	> -R, SEN		# amar amaran o amasen
+    A R 	> -R, RAN		# 
+    E R 	> -ER, IESEN		# comer comiesen o comieran
+    E R 	> -ER, IERAN		#
+    I R 	> -R, ESEN		# vivir viviesen o vivieran
+    I R 	> -R, ERAN		#
+
+# Verbos de conjugacion regular "amar" SUBJUNTIVO FUTURO
+    A R 	> -R, RE		# amar amare
+    E R 	> -ER, IERE		# comer comiere
+    I R 	> -R, ERE		# vivir viviere
+
+    A R 	> -R, RES		# amar amares
+    E R 	> -ER, IERES		# comer comieres
+    I R 	> -R, ERES		# vivir vivieres
+
+    A R 	> -AR, ÁREMOS		# amar amáremos
+    E R 	> -ER, IÉREMOS		# comer comiéremos
+    I R 	> -R, ÉREMOS		# vivir viviéremos
+
+    A R 	> -R, REIS		# amar amareis
+    E R 	> -ER, IEREIS		# comer comiereis
+    I R 	> -R, EREIS		# vivir viviereis
+
+    A R 	> -R, REN		# amar amaren
+    E R 	> -ER, IEREN		# comer comieren
+    I R 	> -R, EREN		# vivir vivieren
+
+# Imperativo
+    R		> -R, D			# amar amad
+
+
+flag *X:	# Participios y Gerundio. Verbos Regulares
+    [AI] R 	> -R, DO		# amar amado
+    [AI] R 	> -R, DOS		# amar amados
+    [AI] R 	> -R, DA		# amar amada
+    [AI] R 	> -R, DAS		# amar amadas
+
+    E R 	> -ER, IDO		# comer comido
+    E R 	> -ER, IDOS		# comer comidos
+    E R 	> -ER, IDA		# comer comida
+    E R 	> -ER, IDAS		# comer comidas
+
+    A R 	> -R, NDO		# amar amando
+    E R 	> -ER, IENDO		# comer comiendo
+    I R 	> -R, ENDO		# vivir viviendo
+
+# FINAL de las conjugaciones verbales regulares.
+
+flag *W:	# Conjugación de los verbos irregulares
+    I A R	> -IAR, ÍO		# enviar > envío
+    E B R A R	> -EBRAR, IEBRO		# quebrar > quiebro
+    E D R A R	> -EDRAR, IEDRO		# empedrar > empiedro
+    E G A R	> -EGAR, IEGO		# regar > riego
+    E L A R	> -ELAR, IELO		# helar > hielo
+    E V A R	> -EVAR, IEVO		# nevar > nievo
+    E M B L A R	> -EMBLAR, IEMBLO	# temblar > tiemblo
+    E M B R A R	> -EMBRAR, IEMBRO	# desmembrar > desmiembro
+    A N D A R	> -AR, O		# andar > ando
+    E N D A R	> -ENDAR, IENDO		# arrendar > arriendo
+    E N D R A R	> -ENDRAR, IENDRO	# deslendrar > desliendro
+    E N G A R	> -ENGAR, IENGO		# derrengar > derriengo
+    E N S A R	> -ENSAR, IENSO		# incensar > incienso
+    E N T A R	> -ENTAR, IENTO		# calentar > caliento
+    E N Z A R	> -ENZAR, IENZO		# comenzar > comienzo
+    E R B A R	> -ERBAR, IERBO		# herbar > hierbo
+    E R N A R	> -ERNAR, IERNO		# apernar > apierno
+    E R R A R	> -ERRAR, IERRO		# cerrar > cierro
+    E R T A R	> -ERTAR, IERTO		# acertar > acierto
+    E S A R	> -ESAR, IESO		# atravesar > atravieso
+    E S T A R	> -ESTAR, IESTO		# enhestar > enhiesto
+    E T A R	> -ETAR, IETO		# apretar > aprieto
+    E Z A R	> -EZAR, IEZO		# empezar > empiezo
+    [AE] H I J A R > -IJAR, ÍJO	# ahijar > ahíjo
+    [AE] H I L A R > -ILAR, ÍLO	# ahilar > ahílo
+    [AEO] H I N A R > -INAR, ÍNO	# amohinar > amohíno
+    [AE] H I T A R > -ITAR, ÍTO	# ahitar > ahíto
+    [AE] H U M A R > -UMAR, ÚMO	# ahumar > ahúmo
+    [AE] H U S A R > -USAR, ÚSO	# ahusar > ahúso
+    [AE] I Z A R > -IZAR, ÍZO		# enraizar > enraízo
+    [^G] U A R	> -UAR, ÚO		# situar > sitúo
+    G U A R	> -AR, O		# averiguar > averiguo
+    G O N Z A R	> -ONZAR, ÜENZO	# avergonzar > avergüenzo
+    O B A R	> -OBAR, UEBO		# probar > pruebo
+    O B L A R	> -OBLAR, UEBLO		# poblar > pueblo
+    O C A R	> -OCAR, UECO		# trocar > trueco
+    O D A R	> -ODAR, UEDO		# rodar > ruedo
+    O G A R	> -OGAR, UEGO		# rogar > ruego
+    O L A R	> -OLAR, UELO		# abuñolar > abuñuelo
+    [^G] O L L A R > -OLLAR, UELLO	# descollar > descuello
+    G O L D A R	> -OLDAR, ÜELDO	# regoldar > regüeldo
+    [^G] O L D A R > -OLDAR, UELDO	# soldar > sueldo
+    G O L L A R	> -OLLAR, ÜELLO	# descollar > descuello
+    O L C A R	> -OLCAR, UELCO		# volcar > vuelco
+    O L G A R	> -OLGAR, UELGO		# colgar > cuelgo
+    O L T A R	> -OLTAR, UELTO		# soltar > suelto
+    O N A R	> -ONAR, UENO		# sonar > sueno
+    O Ñ A R	> -OÑAR, UEÑO		# soñar > sueño
+    O N T A R	> -ONTAR, UENTO		# contar > cuento
+    O N T R A R	> -ONTRAR, UENTRO	# encontrar > encuentro
+    [^G] O R A R > -ORAR, UERO		# encorar > encuero
+    G O R A R	> -ORAR, ÜERO		# agorar > agüero
+    O R C A R	> -ORCAR, UERCO		# emporcar > empuerco
+    O R D A R	> -ORDAR, UERDO		# acordar > acuerdo
+    O R N A R	> -ORNAR, UERNO		# acornar > acuerno
+    O R T A R	> -ORTAR, UERTO		# entortar > entuerto
+    O R Z A R	> -ORZAR, UERZO		# forzar > fuerzo
+    O S A R	> -OSAR, UESO		# engrosar > engrueso
+    O S T A R	> -OSTAR, UESTO		# acostar > acuesto
+    O S T R A R	> -OSTRAR, UESTRO	# mostrar > muestro
+    O V A R	> -OVAR, UEVO		# encovar > encuervo
+    U G A R	> -GAR, EGO		# jugar > juego
+    [CR] A E R	> -ER, IGO		# caer > caigo
+    [^FH] A C E R > -CER, ZCO		# nacer > nazco
+    [FH] A C E R > -CER, GO		# hacer > hago
+    A L E R	> -ER, GO		# valer > valgo
+    C A B E R	> -CABER, QUEPO		# caber > quepo
+    E C E R	> -CER, ZCO		# parecer > parezco
+    E D E R	> -EDER, IEDO		# heder > hiedo
+    [EO] E R	> -ER, O		# leer > leo
+    O E R	> -ER, IGO		# roer > roigo
+    O E R	> -ER, YO		# roer > roigo
+    E N D E R	> -ENDER, IENDO		# tender > tiendo
+    E N E R	> -ER, GO		# tener > tengo
+    E R E R	> -ERER, IERO		# querer > quiero
+    E R N E R	> -ERNER, IERNO		# cerner > cierno
+    E R D E R	> -ERDER, IERDO		# perder > pierdo
+    E R T E R	> -ERTER, IERTO		# verter > vierto
+    C O C E R	> -OCER, UEZO		# cocer > cuezo
+    [^C] O C E R > -CER, ZCO		# conocer > conozco
+    O D E R	> -ODER, UEDO		# poder > puedo
+    O L E R	> -OLER, UELO		# soler > suelo
+    O L V E R	> -OLVER, UELVO		# volver > vuelvo
+    O N E R	> -ER, GO		# poner > pongo
+    O R C E R	> -ORCER, UERZO		# torcer > tuerzo
+    O R D E R	> -ORDER, UERDO		# morder > muerdo
+    O V E R	> -OVER, UEVO		# mover > muevo
+    S A B E R	> -ABER, É		# saber > sé
+    A L I R	> -IR, GO		# salir > salgo
+    E B I R	> -EBIR, IBO		# concebir > concibo
+    E C I R	> -ECIR, IGO		# decir > digo
+    E D I R	> -EDIR, IDO		# pedir > pido
+    E G I R	> -EGIR, IJO		# elegir > elijo
+    E M I R	> -EMIR, IMO		# gemir > gimo
+    E Í R	> -EÍR, ÍO		# reír > río
+    E Ñ I R 	> -EÑIR, IÑO		# ceñir > ciño
+    E N C H I R	> -ENCHIR, INCHO	# henchir > hincho
+    E N D I R	> -ENDIR, INDO		# rendir > rindo
+    E N I R	> -IR, GO		# venir > vengo
+    E N T I R	> -ENTIR, IENTO		# sentir > siento
+    E R N I R	> -ERNIR, IERNO		# discernir > discierno
+    E R T I R	> -ERTIR, IERTO		# invertir > invierto
+    [^H] E R V I R	> -ERVIR, IRVO	# servir > sirvo
+    E S T I R	> -ESTIR, ISTO		# vestir > visto
+    E G U I R	> -EGUIR, IGO		# seguir > sigo
+    E U N I R	> -UNIR, ÚNO		# reunir > reúno
+    E R I R	> -ERIR, IERO		# herir > hiero
+    E T I R	> -ETIR, ITO		# derretir > derrito
+    H E R V I R	> -ERVIR, IERVO		# hervir > hiervo
+    I R I R	> -IRIR, IERO		# adquirir > adquiero
+    O H I B I R > -IBIR, ÍBO		# prohibir > prohíbo
+    O Í R	> -ÍR, IGO		# oír > oigo
+    O R I R	> -ORIR, UERO		# morir > muero
+    O R M I R	> -ORMIR, UERMO		# dormir > duermo
+    U C I R	> -UCIR, UZCO		# producir > produzco
+    [^G] U I R	> -UIR, UYO		# huir > huyo
+    G Ü I R	> -ÜIR, UYO		# argüir > arguyo
+    U L L I R	> -IR, O		# mullir > mullo
+
+    I A R	> -IAR, ÍAS		# enviar > envías
+    E B R A R	> -EBRAR, IEBRAS	# quebrar > quiebras
+    E D R A R	> -EDRAR, IEDRAS	# empedrar > empiedras
+    E G A R	> -EGAR, IEGAS		# regar > riegas
+    E L A R	> -ELAR, IELAS		# helar > hielas
+    E V A R	> -EVAR, IEVAS		# nevar > nievas
+    E M B L A R	> -EMBLAR, IEMBLAS	# temblar > tiemblas
+    E M B R A R	> -EMBRAR, IEMBRAS	# desmembrar > desmiembras
+    A N D A R	>  -R, S		# andar > andas
+    E N D A R	> -ENDAR, IENDAS	# arrendar > arriendas
+    E N D R A R	> -ENDRAR, IENDRAS	# deslendrar > desliendras
+    E N G A R	> -ENGAR, IENGAS	# derrengar > derriengas
+    E N S A R	> -ENSAR, IENSAS	# incensar > inciensas
+    E N T A R	> -ENTAR, IENTAS	# calentar > calientas
+    E N Z A R	> -ENZAR, IENZAS	# comenzar > comienzas
+    E R B A R	> -ERBAR, IERBAS	# herbar > hierbas
+    E R N A R	> -ERNAR, IERNAS	# apernar > apiernas
+    E R R A R	> -ERRAR, IERRAS	# cerrar > cierras
+    E R T A R	> -ERTAR, IERTAS	# acertar > aciertas
+    E S A R	> -ESAR, IESAS		# atravesar > atraviesas
+    E S T A R	> -ESTAR, IESTAS	# enhestar > enhiestas
+    E T A R	> -ETAR, IETAS		# apretar > aprietas
+    E Z A R	> -EZAR, IEZAS		# empezar > empiezas
+    [AE] H I J A R > -IJAR, ÍJAS	# ahijar > ahíjas
+    [AE] H I L A R > -ILAR, ÍLAS	# ahilar > ahílas
+    [AEO] H I N A R > -INAR, ÍNAS	# amohinar > amohínas
+    [AE] H I T A R > -ITAR, ÍTAS	# ahitar > ahítas
+    [AE] H U M A R > -UMAR, ÚMAS	# ahumar > ahúmas
+    [AE] H U S A R > -USAR, ÚSAS	# ahusar > ahúsas
+    [AE] I Z A R > -IZAR, ÍZAS		# enraizar > enraízas
+    [^G] U A R	> -UAR, ÚAS		# situar > sitúas
+    G U A R	> -R, S			# averiguar > averiguas
+    G O N Z A R	> -ONZAR, ÜENZAS	# avergonzar > avergüenzas
+    O B A R	> -OBAR, UEBAS		# probar > pruebas
+    O B L A R	> -OBLAR, UEBLAS	# poblar > pueblas
+    O C A R	> -OCAR, UECAS		# trocar > truecas
+    O D A R	> -ODAR, UEDAS		# rodar > ruedas
+    O G A R	> -OGAR, UEGAS		# rogar > ruegas
+    O L A R	> -OLAR, UELAS		# abuñolar > abuñuelas
+    [^G] O L L A R  > -OLLAR, UELLAS	# descollar > descuellas
+    G O L D A R	> -OLDAR, ÜELDAS	# regoldar > regüeldas
+    [^G] O L D A R > -OLDAR, UELDAS	# soldar > sueldas
+    G O L L A R  > -OLLAR, ÜELLAS	# degollar > degüellas
+    O L C A R	> -OLCAR, UELCAS	# volcar > vuelcas
+    O L G A R	> -OLGAR, UELGAS	# colgar > cuelgas
+    O L T A R	> -OLTAR, UELTAS	# soltar > sueltas
+    O N A R	> -ONAR, UENAS		# sonar > suenas
+    O Ñ A R	> -OÑAR, UEÑAS	# soñar > sueñas
+    O N T A R	> -ONTAR, UENTAS	# contar > cuentas
+    O N T R A R	> -ONTRAR, UENTRAS	# encontrar > encuentras
+    [^G] O R A R > -ORAR, UERAS		# emporcar > encueras
+    G O R A R	> -ORAR, ÜERAS	# agorar > agüeras
+    O R C A R	> -ORCAR, UERCAS	# emporcar > empuercas
+    O R D A R	> -ORDAR, UERDAS	# acordar > acuerdas
+    O R N A R	> -ORNAR, UERNAS	# acornar > acuernas
+    O R T A R	> -ORTAR, UERTAS	# entortar > entuertas
+    O R Z A R	> -ORZAR, UERZAS	# forzar > fuerzas
+    O S A R	> -OSAR, UESAS		# engrosar > engruesas
+    O S T A R	> -OSTAR, UESTAS	# acostar > acuestas
+    O S T R A R	> -OSTRAR, UESTRAS	# mostrar > muestras
+    O V A R	> -OVAR, UEVAS		# encovar > encuervas
+    U G A R	> -GAR, EGAS		# jugar > juegas
+    A [BCL] E R	> -R, S			# saber > sabes
+    [CR] A E R	> -R, S			# caer > caes
+    E C E R	> -R, S			# parecer > pareces
+    E D E R	> -EDER, IEDES		# heder > hiedes
+    [EO] E R	> -R, S			# leer > lees
+    E N E R	> -ENER, IENES		# tener > tienes
+    E N D E R	> -ENDER, IENDES	# tender > tiendes
+    E R D E R	> -ERDER, IERDES	# perder > pierdes
+    E R E R	> -ERER, IERES		# querer > quieres
+    E R N E R	> -ERNER, IERNES	# cerner > ciernes
+    E R T E R	> -ERTER, IERTES	# verter > viertes
+    C O C E R	> -OCER, UECES		# cocer > cueces
+    [^C] O C E R > -R, S		# conocer > conoces
+    O D E R	> -ODER, UEDES		# poder > puedes
+    O L E R	> -OLER, UELES		# soler > sueles
+    O L V E R	> -OLVER, UELVES	# volver > vuelves
+    O N E R	> -R, S			# poner > pones
+    O R C E R	> -ORCER, UERCES	# torcer > tuerces
+    O R D E R	> -ORDER, UERDES	# morder > muerdes
+    O V E R	> -OVER, UEVES		# mover > mueves
+    A L I R	> -R, ES		# salir > sales
+    E B I R	> -EBIR, IBES		# concebir > concibes
+    E C I R	> -ECIR, ICES		# decir > dices
+    E D I R	> -EDIR, IDES		# pedir > pides
+    E G I R	> -EGIR, IGES		# elegir > eliges
+    E M I R	> -EMIR, IMES		# gemir > gimes
+    E Í R	> -EÍR, ÍES		# reír > ríes
+    E Ñ I R	> -EÑIR, IÑES		# ceñir > ciñes
+    E G U I R	> -EGUIR, IGUES		# seguir > sigues
+    E N C H I R	> -ENCHIR, INCHES	# henchir > hinche
+    E N D I R	> -ENDIR, INDES		# rendir > rindes
+    E N I R	> -ENIR, IENES		# venir > vienes
+    E N T I R	> -ENTIR, IENTES	# sentir > sientes
+    E R N I R	> -ERNIR, IERNES	# discernir > disciernes
+    E R T I R	> -ERTIR, IERTES	# invertir > inviertes
+    [^H] E R V I R	> -ERVIR, IRVES	# servir > sirves
+    E U N I R	> -UNIR, ÚNES		# reunir > reúnes
+    E R I R	> -ERIR, IERES		# herir > hieres
+    I R I R	> -IRIR, IERES		# adquirir > adquieres
+    E T I R	> -ETIR, ITES		# derretir > derrites
+    E S T I R	> -ESTIR, ISTES		# vestir > vistes
+    H E R V I R	> -ERVIR, IERVES	# hervir > hierves
+    O H I B I R > -IBIR, ÍBES		# prohibir > prohíbes
+    O Í R	> -ÍR, YES		# oír > oyes
+    O R I R	> -ORIR, UERES		# morir > mueres
+    O R M I R	> -ORMIR, UERMES	# dormir > duermes
+    U C I R	> -IR, ES		# producir > produces
+    [^G] U I R	> -UIR, UYES		# huir > huyes
+    G Ü I R	> -ÜIR, UYES		# argüir > arguyes
+    U L L I R	> -IR, ES		# mullir > mulles
+
+    I A R	> -IAR, ÍA		# enviar > envía
+    E B R A R	> -EBRAR, IEBRA		# quebrar > quiebra
+    E D R A R	> -EDRAR, IEDRA		# empedrar > empiedra
+    E G A R	> -EGAR, IEGA		# regar > riega
+    E L A R	> -ELAR, IELA		# helar > hiela
+    E V A R	> -EVAR, IEVA		# nevar > nieva
+    E M B L A R	> -EMBLAR, IEMBLA	# temblar > tiembla
+    E M B R A R	> -EMBRAR, IEMBRA	# desmembrar > desmiembra
+    A N D A R	>  -AR, A		# andar > anda
+    E N D A R	> -ENDAR, IENDA		# arrendar > arrienda
+    E N D R A R	> -ENDRAR, IENDRA	# deslendrar > desliendra
+    E N G A R	> -ENGAR, IENGA		# derrengar > derrienga
+    E N S A R	> -ENSAR, IENSA		# incensar > inciensa
+    E N T A R	> -ENTAR, IENTA		# calentar > calienta
+    E N Z A R	> -ENZAR, IENZA		# comenzar > comienzas
+    E R B A R	> -ERBAR, IERBA		# herbar > hierba
+    E R N A R	> -ERNAR, IERNA		# apernar > apierna
+    E R R A R	> -ERRAR, IERRA		# cerrar > cierra
+    E R T A R	> -ERTAR, IERTA		# acertar > acierta
+    E S A R	> -ESAR, IESA		# atravesar > atraviesa
+    E S T A R	> -ESTAR, IESTA		# enhestar > enhiesta
+    E T A R	> -ETAR, IETA		# apretar > aprieta
+    E Z A R	> -EZAR, IEZA		# empezar > empieza
+    [AE] H I J A R > -IJAR, ÍJA	# ahijar > ahíja
+    [AE] H I L A R > -ILAR, ÍLA	# ahilar > ahíla
+    [AEO] H I N A R > -INAR, ÍNA	# amohinar > amohína
+    [AE] H I T A R > -ITAR, ÍTA	# ahitar > ahíta
+    [AE] H U M A R > -UMAR, ÚMA	# ahumar > ahúma
+    [AE] H U S A R > -USAR, ÚSA	# ahusar > ahúsa
+    [AE] I Z A R > -IZAR, ÍZA		# enraizar > enraíza
+    [^G] U A R	> -UAR, ÚA		# situar > sitúa
+    G U A R	> -AR, A		# averiguar > averigua
+    G O N Z A R	> -ONZAR, ÜENZA	# avergonzar > avergüenza
+    O B A R	> -OBAR, UEBA		# probar > prueba
+    O B L A R	> -OBLAR, UEBLA		# poblar > puebla
+    O C A R	> -OCAR, UECA		# trocar > trueca
+    O D A R	> -ODAR, UEDA		# rodar > rueda
+    O G A R	> -OGAR, UEGA		# rogar > ruega
+    O L A R	> -OLAR, UELA		# abuñolar > abuñuela
+    [^G] O L L A R > -OLLAR, UELLA	# descollar > descuella
+    G O L D A R	> -OLDAR, ÜELDA	# regoldar > regüelda
+    [^G] O L D A R > -OLDAR, UELDA	# soldar > suelda
+    G O L L A R	> -OLLAR, ÜELLA	# degollar > degüella
+    O L C A R	> -OLCAR, UELCA		# volcar > vuelca
+    O L G A R	> -OLGAR, UELGA		# colgar > cuelga
+    O L T A R	> -OLTAR, UELTA		# soltar > suelta
+    O N A R	> -ONAR, UENA		# sonar > suena
+    O Ñ A R	> -OÑAR, UEÑA		# soñar > sueña
+    O N T A R	> -ONTAR, UENTA		# contar > cuenta
+    O N T R A R	> -ONTRAR, UENTRA	# encontrar > encuentra
+    [^G] O R A R > -ORAR, UERA		# emporcar > encuera
+    G O R A R	> -ORAR, ÜERA		# agorar > agüera
+    O R C A R	> -ORCAR, UERCA		# emporcar > empuerca
+    O R D A R	> -ORDAR, UERDA		# acordar > acuerda
+    O R N A R	> -ORNAR, UERNA		# acornar > acuerna
+    O R T A R	> -ORTAR, UERTA		# entortar > entuerta
+    O R Z A R	> -ORZAR, UERZA		# forzar > fuerza
+    O S A R	> -OSAR, UESA		# engrosar > engruesa
+    O S T A R	> -OSTAR, UESTA		# acostar > acuesta
+    O S T R A R	> -OSTRAR, UESTRA	# mostrar > muestra
+    O V A R	> -OVAR, UEVA		# encovar > encuerva
+    U G A R	> -GAR, EGA		# jugar > juega
+    A [BCL] E R	> -ER, E		# saber > sabe
+    [CR] A E R	> -ER, E		# caer > cae
+    E C E R	> -ER, E		# parecer > parece
+    E D E R	> -EDER, IEDE		# heder > hiede
+    [EO] E R	> -ER, E		# leer > lee
+    E N D E R	> -ENDER, IENDE		# tender > tiende
+    E N E R	> -ENER, IENE		# tener > tiene
+    E R D E R	> -ERDER, IERDE		# perder > pierde
+    E R E R	> -ERER, IERE		# querer > quiere
+    E R N E R	> -ERNER, IERNE		# cerner > cierne
+    E R T E R	> -ERTER, IERTE		# verter > vierte
+    C O C E R	> -OCER, UECE		# cocer > cuece
+    [^C] O C E R > -ER, E		# conocer > conoce
+    O D E R	> -ODER, UEDE		# poder > puede
+    O L E R	> -OLER, UELE		# soler > suele
+    O L V E R	> -OLVER, UELVE		# volver > vuelve
+    O N E R	> -ER, E		# poner > pone
+    O R C E R	> -ORCER, UERCE		# torcer > tuerce
+    O R D E R	> -ORDER, UERDE		# morder > muerde
+    O V E R	> -OVER, UEVE		# mover > mueve
+    A L I R	> -IR, E		# salir > sale
+    E B I R	> -EBIR, IBE		# concebir > concibe
+    E C I R	> -ECIR, ICE		# decir > dice
+    E D I R	> -EDIR, IDE		# pedir > pide
+    E G I R	> -EGIR, IGE		# elegir > elige
+    E M I R	> -EMIR, IME		# gemir > gime
+    E Í R	> -EÍR, ÍE		# reír > ríe
+    E Ñ I R   	> -EÑIR, IÑE		# ceñir > ciñe
+    E G U I R	> -EGUIR, IGUE		# seguir > sigue
+    E N C H I R	> -ENCHIR, INCHE	# henchir > hinche
+    E N D I R	> -ENDIR, INDE		# rendir > rinde
+    E N I R	> -ENIR, IENE		# venir > viene
+    E N T I R	> -ENTIR, IENTE		# sentir > siente
+    E R I R	> -ERIR, IERE		# herir > hiere
+    E R N I R	> -ERNIR, IERNE		# discernir > discierne
+    E R T I R	> -ERTIR, IERTE		# invertir > invierte
+    [^H] E R V I R > -ERVIR, IRVE	# servir > sirve
+    E T I R	> -ETIR, ITE		# derretir > derrite
+    E S T I R	> -ESTIR, ISTE		# vestir > viste
+    E U N I R	> -UNIR, ÚNE		# reunir > reúne
+    H E R V I R	> -ERVIR, IERVE		# hervir > hierve
+    I R I R	> -IRIR, IERE		# adquirir > adquiere
+    O H I B I R > -IBIR, ÍBE		# prohibir > prohíbe
+    O Í R	> -ÍR, YE		# oír > oye
+    O R I R	> -ORIR, UERE		# morir > muere
+    O R M I R	> -ORMIR, UERME		# dormir > duerme
+    U C I R	> -IR, E		# producir > produce
+    [^G] U I R	> -UIR, UYE		# huir > huye
+    G Ü I R	> -ÜIR, UYE		# argüir > arguye
+    U L L I R	> -IR, E		# mullir > mulle
+
+    R		> -R, MOS		# enviar > enviamos
+
+    A R		> -AR, ÁIS		# amar > amáis
+    E R		> -ER, ÉIS		# saber > sabéis
+    I R		> -IR, ÍS		# salir > salís
+    Í R	> -ÍR, ÍS		# freir > freís
+
+    I A R	> -IAR, ÍAN		# enviar > envían
+    E B R A R	> -EBRAR, IEBRAN	# quebrar > quiebran
+    E D R A R	> -EDRAR, IEDRAN	# empedrar > empiedran
+    E G A R	> -EGAR, IEGAN		# regar > riegan
+    E L A R	> -ELAR, IELAN		# helar > hielan
+    E V A R	> -EVAR, IEVAN		# nevar > nievan
+    E M B L A R	> -EMBLAR, IEMBLAN	# temblar > tiemblan
+    E M B R A R	> -EMBRAR, IEMBRAN	# desmembrar > desmiembran
+    A N D A R	> -R, N			# andar > andan
+    E N D A R	> -ENDAR, IENDAN	# arrendar > arriendan
+    E N D R A R	> -ENDRAR, IENDRAN	# deslendrar > desliendran
+    E N G A R	> -ENGAR, IENGAN	# derrengar > derriengan
+    E N S A R	> -ENSAR, IENSAN	# incensar > inciensan
+    E N T A R	> -ENTAR, IENTAN	# calentar > calientan
+    E N Z A R	> -ENZAR, IENZAN	# comenzar > comienzan
+    E R B A R	> -ERBAR, IERBAN	# herbar > hierban
+    E R N A R	> -ERNAR, IERNAN	# apernar > apiernan
+    E R R A R	> -ERRAR, IERRAN	# cerrar > cierran
+    E R T A R	> -ERTAR, IERTAN	# acertar > aciertan
+    E S A R	> -ESAR, IESAN		# atravesar > atraviesan
+    E S T A R	> -ESTAR, IESTAN	# enhestar > enhiestan
+    E T A R	> -ETAR, IETAN		# apretar > aprietan
+    E Z A R	> -EZAR, IEZAN		# empezar > empiezan
+    [AE] H I J A R > -IJAR, ÍJAN	# ahijar > ahíjan
+    [AE] H I L A R > -ILAR, ÍLAN	# ahilar > ahílan
+    [AEO] H I N A R > -INAR, ÍNAN	# amohinar > amohínan
+    [AE] H I T A R > -ITAR, ÍTAN	# ahitar > ahítan
+    [AE] H U M A R > -UMAR, ÚMAN	# ahumar > ahúman
+    [AE] H U S A R > -USAR, ÚSAN	# ahusar > ahúsan
+    [AE] I Z A R > -IZAR, ÍZAN		# enraizar > enraízan
+    G O N Z A R	> -ONZAR, ÜENZAN 	# avergonzar > avergüenzan
+    O B A R	> -OBAR, UEBAN		# probar > prueban
+    O B L A R	> -OBLAR, UEBLAN	# poblar > pueblan
+    O C A R	> -OCAR, UECAN		# trocar > truecan
+    O D A R	> -ODAR, UEDAN		# rodar > ruedan
+    O G A R	> -OGAR, UEGAN		# rogar > ruegan
+    O L A R	> -OLAR, UELAN		# abuñolar > abuñuelan
+    G O L D A R	> -OLDAR, ÜELDAN	# regoldar > regüeldan
+    [^G] O L D A R  > -OLDAR, UELDAN	# soldar > sueldan
+    G O L L A R	> -OLLAR, ÜELLAN	# degollar > degüellan
+    [^G] O L L A R > -OLLAR, UELLAN	# descollar > descuellan
+    G U A R	> -R, N			# averiguar > averiguan
+    [^G] U A R	> -UAR, ÚAN		# situar > sitúan
+    O L C A R	> -OLCAR, UELCAN	# volcar > vuelcan
+    O L G A R	> -OLGAR, UELGAN	# colgar > cuelgan
+    O L T A R	> -OLTAR, UELTAN	# soltar > sueltan
+    O N A R	> -ONAR, UENAN		# sonar > suenan
+    O Ñ A R	> -OÑAR, UEÑAN	# soñar > sueñan
+    O N T A R	> -ONTAR, UENTAN	# contar > cuentan
+    O N T R A R	> -ONTRAR, UENTRAN	# encontrar > encuentran
+    [^G] O R A R > -ORAR, UERAN 	# encorar > encueran
+    G O R A R	> -ORAR, ÜERAN 	# agorar > agueran
+    O R C A R	> -ORCAR, UERCAN 	# emporcar > empuercan
+    O R D A R	> -ORDAR, UERDAN 	# acordar > acuerdan
+    O R N A R	> -ORNAR, UERNAN 	# acornar > acuernan
+    O R T A R	> -ORTAR, UERTAN 	# entortar > entuertan
+    O R Z A R	> -ORZAR, UERZAN 	# forzar > fuerzan
+    O S A R	> -OSAR, UESAN 		# engrosar > engruesan
+    O S T A R	> -OSTAR, UESTAN 	# acostar > acuestan
+    O S T R A R	> -OSTRAR, UESTRAN 	# mostrar > muestran
+    O V A R	> -OVAR, UEVAN		# encovar > encuevan
+    U G A R	> -GAR, EGAN		# jugar > juegan
+    A [BCL] E R	> -R, N			# saber > saben
+    [CR] A E R	> -R, N			# caer > caen
+    E C E R	> -R, N			# parecer > parecen
+    E D E R	> -EDER, IEDEN		# heder > hieden
+    [EO] E R	> -R, N			# leer > leen
+    E N D E R	> -ENDER, IENDEN	# tender > tienden
+    E N E R	> -ENER, IENEN		# tener > tienen
+    E R D E R	> -ERDER, IERDEN	# perder > pierden
+    E R E R	> -ERER, IEREN		# querer > quieren
+    E R N E R	> -ERNER, IERNEN	# cerner > ciernen
+    E R T E R	> -ERTER, IERTEN	# verter > vierten
+    C O C E R	> -OCER, UECEN		# cocer > cuecen
+    [^C] O C E R > -R, N		# conocer > conocen
+    O D E R	> -ODER, UEDEN		# poder > pueden
+    O L E R	> -OLER, UELEN		# soler > suelen
+    O L V E R	> -OLVER, UELVEN	# volver > vuelven
+    O N E R	> -R, N			# poner > ponen
+    O R C E R	> -ORCER, UERCEN	# torcer > tuercen
+    O R D E R	> -ORDER, UERDEN	# morder > muerden
+    O V E R	> -OVER, UEVEN		# mover > mueven
+    A L I R	> -IR, EN		# salir > salen
+    E B I R	> -EBIR, IBEN		# concebir > conciben
+    E C I R	> -ECIR, ICEN		# decir > dicen
+    E D I R	> -EDIR, IDEN		# pedir > piden
+    E G I R	> -EGIR, IGEN		# elegir > eligen
+    E M I R	> -EMIR, IMEN		# gemir > gimen
+    E Í R	> -EÍR, ÍEN		# reír > ríen
+    E Ñ I R	> -EÑIR, IÑEN		# ceñir > ciñen
+    E G U I R	> -EGUIR, IGUEN		# seguir > siguen
+    E N C H I R	> -ENCHIR, INCHEN	# henchir > hinchen
+    E N D I R	> -ENDIR, INDEN		# rendir > rinden
+    E N I R	> -ENIR, IENEN		# venir > vienen
+    E N T I R	> -ENTIR, IENTEN	# sentir > sienten
+    E R I R	> -ERIR, IEREN		# herir > hieren
+    E R N I R	> -ERNIR, IERNEN	# discernir > disciernen
+    E R T I R	> -ERTIR, IERTEN	# invertir > invierten
+    [^H] E R V I R > -ERVIR, IRVEN	# servir > sirven
+    E S T I R	> -ESTIR, ISTEN		# vestir > visten
+    E U N I R	> -UNIR, ÚNEN		# reunir > reúnen
+    E T I R	> -ETIR, ITEN		# derretir > derriten
+    H E R V I R	> -ERVIR, IERVEN	# hervir > hierven
+    I R I R	> -IRIR, IEREN		# adquirir > adquieren
+    O H I B I R > -IBIR, ÍBEN		# prohibir > prohíben
+    O Í R	> -ÍR, YEN		# oír > oyen
+    O R I R	> -ORIR, UEREN		# morir > mueren
+    O R M I R	> -ORMIR, UERMEN	# dormir > duermen
+    U C I R	> -IR, EN		# producir > producen
+    [^G] U I R	> -IR, YEN		# huir > huyen
+    G Ü I R	> -ÜIR, UYEN		# argüir > arguyen
+    U L L I R	> -IR, EN		# mullir > mullen
+
+# IMPERFECTO
+
+    A R   	> -R, BA		# amar > amaba
+    E R   	> -ER, ÍA		# comer > comía
+    I R   	> -IR, ÍA		# vivir > vivía
+    Í R   	> -ÍR, ÍA		# reír > reía
+
+    A R   	> -R, BAS		# amar > amabas
+    E R   	> -ER, ÍAS		# amar > amaba
+    I R   	> -IR, ÍAS		# amar > amaba
+    Í R   	> -ÍR, ÍAS		# reír > reías
+
+    A R   	> -AR, ÁBAMOS		# amar > amamos
+    E R   	> -ER, ÍAMOS		# amar > amamos
+    I R   	> -IR, ÍAMOS		# amar > amamos
+    Í R   	> -ÍR, ÍAMOS		# reír > reíamos
+
+    A R   	> -R, BAIS		# amar > amais
+    E R   	> -ER, ÍAIS		# amar > amais
+    I R   	> -IR, ÍAIS		# amar > amais
+    Í R   	> -ÍR, ÍAIS		# reír > reíais
+
+    A R   	> -R, BAN		# amar > amaba
+    E R   	> -ER, ÍAN		# amar > aman
+    I R   	> -IR, ÍAN		# vivir > vivían
+    Í R   	> -ÍR, ÍAN		# reír > reían
+
+# PERFECTO
+
+    C A R	> -CAR, QUÉ		# trocar > troqué
+    G A R	> -AR, UÉ		# regar > regué
+    Z A R	> -ZAR, CÉ 		# forzar > forcé
+    A N D A R	> -AR, UVE 		# andar > anduve
+    [^A] N D A R> -AR, É 		# recomendar > recomendé
+    [^N] D A R	> -AR, É 		# recordar > recordé
+    [^CGUZD] A R> -AR, É 		# quebrar > quebré
+    [^G] U A R	> -AR, É		# actuar > actué
+    G U A R	> -UAR, ÜÉ		# averiguar > averigüé
+    [^FH] A C E R > -ER, Í		# nacer > nací
+    A B E R	> -ABER, UPE		# saber > supe
+    [FH] A C E R > -ACER, ICE		# hacer > hice
+    A L E R	> -ER, Í		# valer > valí
+    C A E R	> -ER, Í		# caer > caí
+    E [CD] E R	> -ER, Í		# parecer > parecí
+    [EO] E R	> -ER, Í		# leer > leí
+    E N D E R	> -ER, Í		# tender > tendí
+    E N E R	> -ENER, UVE		# tener > tuve
+    E R [DNT] E R > -ER, Í		# perder > perdí
+    E R E R	> -ERER, ISE		# querer > quise
+    O [CLV] E R	> -ER, Í		# conocer > conocí
+    O D E R	> -ODER, UDE		# poder > pude
+    O L V E R	> -ER, Í		# volver > volví
+    O N E R	> -ONER, USE		# poner > puse
+    O R [CD] E R > -ER, Í		# torcer > torcí
+    R A E R	> -ER, JE		# traer > traje
+    A L I R	> -IR, Í		# salir > salí
+    E B I R	> -IR, Í		# concebir > concebí
+    E C I R	> -ECIR, IJE		# decir > dije
+    E D I R	> -IR, Í		# pedir > piden
+    E G I R	> -IR, Í		# elegir > eligen
+    E M I R	> -IR, Í		# gemir > gimen
+    [EO] Í R	> -ÍR, Í		# reir > reí
+    E Ñ I R	> -IR, Í		# ceñir > ciñen
+    E N C H I R	> -IR, Í		# henchir > hinchen
+    E N D I R	> -IR, Í		# rendir > rinden
+    E N I R	> -ENIR, INE		# venir > vine
+    E N T I R	> -IR, Í		# sentir > sienten
+    E R I R	> -IR, Í		# herir > hieren
+    E R N I R	> -IR, Í		# discernir > disciernen
+    E R T I R	> -IR, Í		# invertir > invierten
+    E R V I R	> -IR, Í		# servir > serví
+    E S T I R	> -IR, Í		# vestir > visten
+    E U N I R	> -IR, Í		# reunir > reuní
+    E T I R   	> -IR, Í		# derretir > derriten
+    I R I R   	> -IR, Í		# adquirir > adquirí
+    O R I R   	> -IR, Í		# morir > mueren
+    O R M I R	> -IR, Í		# dormir > dormí
+    D U C I R	> -CIR, JE		# producir > produje
+    [^D] U C I R > -IR, Í		# lucir > lucí
+    [ÜU] I R	> -IR, Í		# seguir > seguí
+    U L L I R	> -IR, Í		# mullir > mullí
+
+    A N D A R	> -AR, UVISTE		# andar > anduviste
+    [^A] N D A R> -R, STE		# recomendar > recomendaste
+    [^N] D A R	> -R, STE		# recordar > recordaste
+    [^D] A R	> -R, STE		# amar > amaste
+    A B E R	> -ABER, UPISTE		# saber > supiste
+    [^FH] A C E R > -ER, ISTE		# nacer > nacen
+    [FH] A C E R > -ACER, ICISTE	# hacer > hiciste
+    A L E R	> -ER, ISTE		# valer > valiste
+    C A E R	> -ER, ÍSTE		# caer > caíste
+    E [CD] E R	> -ER, ISTE		# parecer > parecen
+    [EO] E R	> -ER, ÍSTE		# leer > leíste
+    E N E R	> -ENER, UVISTE		# tener > tuviste
+    E N D E R	> -ER, ISTE		# tender > tienden
+    E R [DNT] E R > -ER, ISTE		# perder > pierden
+    E R E R   	> -ERER, ISISTE		# querer > quisiste
+    O [CLV] E R	> -ER, ISTE		# conocer > conociste
+    O D E R	> -ODER, UDISTE		# poder > pudiste
+    O L V E R	> -ER, ISTE		# volver > vuelven
+    O N E R	> -ONER, USISTE		# poner > pusiste
+    O R [CD] E R > -ER, ISTE		# torcer > tuercen
+    R A E R	> -ER, JISTE		# traer > trajiste
+    A L I R	> -R, STE		# salir > saliste
+    E B I R	> -R, STE		# concebir > concebiste
+    E C I R	> -ECIR, IJISTE		# decir > dijiste
+    E D I R	> -R, STE		# pedir > pediste
+    E G I R	> -R, STE		# elegir > elegiste
+    E M I R	> -R, STE		# gemir > gemiste
+    [EO] Í R	> -R, STE		# reir > reíste
+    E Ñ I R	> -R, STE		# ceñir > ceñiste
+    E N C H I R	> -R, STE		# henchir > hinchen
+    E N D I R	> -R, STE		# rendir > rinden
+    E N I R	> -ENIR, INISTE		# venir > viniste
+    E N T I R	> -R, STE		# sentir > sienten
+    E R I R	> -R, STE		# herir > hieren
+    E R N I R	> -R, STE		# discernir > disciernen
+    E R T I R	> -R, STE		# invertir > invierten
+    E R V I R	> -R, STE		# servir > serviste
+    E S T I R	> -R, STE		# vestir > visten
+    E U N I R	> -R, STE		# reunir > reuniste
+    E T I R	> -R, STE		# derretir > derriten
+    I R I R	> -R, STE		# adquirir > adquiriste
+    O R I R	> -R, STE		# morir > moriste
+    O R M I R	> -R, STE		# dormir > dormiste
+    D U C I R	> -CIR, JISTE		# producir > produjiste
+    [^D] U C I R > -R, STE		# lucir > luciste
+    [ÜU] I R 	> -R, STE		# seguir > seguiste
+    U L L I R	> -R, STE		# mullir > mulliste
+
+    A N D A R	> -AR, UVO		# andar > anduvo
+    [^A] N D A R> -AR, Ó		# recomendar > recomendó
+    [^N] D A R	> -AR, Ó		# recordar > recordó
+    [^D] A R	> -AR, Ó		# amar > amó
+    A B E R	> -ABER, UPO		# saber > supo
+    [^FH] A C E R > -ER, IÓ		# nacer > nació
+    [FH] A C E R > -ACER, IZO		# hacer > hizo
+    A L E R	> -ER, IÓ		# valer > valió
+    C A E R	> -ER, YÓ		# caer > cayó
+    E [CD] E R	> -ER, IÓ		# parecer > pareció
+    [EO] E R	> -ER, YÓ		# leer > leyó
+    E N D E R	> -ER, IÓ		# tender > tendió
+    E N E R	> -ENER, UVO		# tener > tuvo
+    E R [DNT] E R > -ER, IÓ		# perder > pierden
+    E R E R	> -ERER, ISO		# querer > quiso
+    O [CLV] E R	> -ER, IÓ		# conocer > conocen
+    O D E R	> -ODER, UDO		# poder > pudo
+    O L V E R	> -ER, IÓ		# volver > vuelven
+    O N E R	> -ONER, USO		# poner > puso
+    O R [CD] E R > -ER, IÓ		# torcer > tuercen
+    O R D E R	> -ER, IÓ		# morder > muerden
+    R A E R	> -ER, JO		# traer > trajo
+    A L I R	> -R, Ó		# salir > salió
+    E B I R	> -EBIR, IBIÓ		# concebir > concibió
+    E C I R	> -ECIR, IJO		# decir > dijo
+    E D I R	> -EDIR, IDIÓ		# pedir > pidió
+    E G I R	> -EGIR, IGIÓ		# elegir > eligió
+    E M I R	> -EMIR, IMIÓ		# gemir > gimió
+    E Í R	> -EÍR, IÓ		# reir > rió
+    E Ñ I R	> -EÑIR, IÑÓ		# ceñir > ciñó
+    E G U I R	> -EGUIR, IGUIÓ	# seguir > siguió
+    E N C H I R	> -ENCHIR, INCHIÓ	# henchir > hinchió
+    E N D I R	> -ENDIR, INDIÓ	# rendir > rindió
+    E N I R	> -ENIR, INO		# venir > vino
+    E N T I R	> -ENTIR, INTIÓ	# sentir > sintió
+    E R I R	> -ERIR, IRIÓ		# herir > hirió
+    E R N I R	> -R, Ó		# discernir > discernió
+    E R T I R	> -ERTIR, IRTIÓ	# invertir > invirtió
+    E R V I R	> -ERVIR, IRVIÓ	# servir > sirvió
+    E S T I R	> -ESTIR, ISTIÓ	# vestir > vistió
+    E U N I R	> -R, Ó		# reunir > reunió
+    E T I R	> -ETIR, ITIÓ		# derretir > derritió
+    I R I R	> -R, Ó		# adquirir > adquirió
+    O H I B I R > -R, Ó		# prohibir > prohibió
+    O Í R	> -ÍR, YÓ		# oír > oyó
+    O R I R	> -ORIR, URIÓ		# morir > murió
+    O R M I R	> -ORMIR, URMIÓ	# dormir > durmió
+    D U C I R	> -CIR, JO		# producir > produjo
+    [^D] U C I R > -R, Ó		# lucir > lució
+    [^G] U I R	> -IR, YÓ		# huir > huyó
+    G Ü I R	> -ÜIR, UYÓ		# argüir > arguyó
+    U L L I R	> -IR, Ó		# mullir > mulló
+
+    A N D A R	> -AR, UVIMOS		# andar > anduvimos
+    A B E R	> -ABER, UPIMOS		# saber > supimos
+    [^FH] A C E R > -ER, IMOS		# nacer > nacimos
+    [FH] A C E R > -ACER, ICIMOS	# hacer > hicimos
+    A L E R	> -ER, IMOS		# valer > valimos
+    C A E R	> -ER, ÍMOS		# caer > caímos
+    E [CD] E R	> -ER, IMOS		# parecer > parecimos
+    [EO] E R	> -ER, ÍMOS		# leer > leímos
+    E N D E R	> -ER, IMOS		# tender > tendimos
+    E N E R	> -ENER, UVIMOS		# tener > tuvimos
+    E R [DNT] E R > -ER, IMOS		# perder > perdimos
+    E R E R	> -ERER, ISIMOS		# querer > quisimos
+    O [CLV] E R	> -ER, IMOS		# conocer > conocimos
+    O D E R	> -ODER, UDIMOS		# poder > pudimos
+    O L V E R	> -ER, IMOS		# volver > volvimos
+    O N E R	> -ONER, USIMOS		# poner > pusimos
+    O R [CD] E R > -ER, IMOS		# torcer > torcimos
+    R A E R	> -ER, JIMOS		# traer > trajimos
+    E C I R	> -ECIR, IJIMOS		# decir > dijimos
+    E N I R	> -ENIR, INIMOS		# venir > vinimos
+    D U C I R	> -CIR, JIMOS		# producir > produjimos
+
+    A N D A R	> -AR, UVISTEIS		# andar > anduvisteis
+    [^A] N D A R> -R, STEIS		# recomendar > recomendasteis
+    [^N] D A R	> -R, STEIS		# recordar > recordasteis
+    [^D] A R	> -R, STEIS		# amar > amais
+    A B E R	> -ABER, UPISTEIS	# saber > supisteis
+    [^FH] A C E R > -ER, ISTEIS		# nacer > nacisteis
+    [FH] A C E R > -ACER, ICISTEIS	# hacer > hicisteis
+    A L E R	> -ER, ISTEIS		# valer > valisteis
+    C A E R	> -ER, ÍSTEIS		# caer > caísteis
+    E [CD] E R	> -ER, ISTEIS		# parecer > parecisteis
+    [EO] E R	> -ER, ÍSTEIS		# leer > leísteis
+    E N D E R	> -ER, ISTEIS		# tender > tendisteis
+    E N E R	> -ENER, UVISTEIS	# tener > tuvisteis
+    E R [DNT] E R > -ER, ISTEIS		# perder > perdisteis
+    E R E R	> -ERER, ISISTEIS	# querer > quisisteis
+    O [CLV] E R	> -ER, ISTEIS		# conocer > conocisteis
+    O D E R	> -ODER, UDISTEIS	# poder > pudisteis
+    O L V E R	> -ER, ISTEIS		# volver > volvisteis
+    O N E R	> -ONER, USISTEIS	# poner > pusisteis
+    O R [CD] E R > -ER, ISTEIS		# torcer > torcisteis
+    R A E R	> -ER, JISTEIS		# traer > trajisteis
+    A L I R	> -R, STEIS		# salir > salisteis
+    E B I R	> -R, STEIS		# concebir > concibieron
+    E C I R	> -ECIR, IJISTEIS	# decir > dijisteis
+    E D I R	> -R, STEIS		# pedir > pidieron
+    E G I R	> -R, STEIS		# elegir > eligieron
+    E M I R	> -R, STEIS		# gemir > gimieron
+    [EO] Í R	> -R, STEIS		# reír > reísteis
+    E Ñ I R	> -R, STEIS		# ceñir > ceñisteis
+    E N C H I R	> -R, STEIS		# henchir > hinchieron
+    E N D I R	> -R, STEIS		# rendir > rindieron
+    E N I R	> -ENIR, INISTEIS	# venir > vinisteis
+    E N T I R	> -R, STEIS		# sentir > sintieron
+    E R I R	> -R, STEIS		# herir > hirieron
+    E R N I R	> -R, STEIS
+    E R T I R	> -R, STEIS		# invertir > invirtieron
+    E R V I R	> -R, STEIS		# servir > servisteis
+    E S T I R	> -R, STEIS		# vestir > vestisteis
+    E U N I R	> -R, STEIS		# reunir > reunisteis
+    E T I R	> -R, STEIS		# derretir > derretisteis
+    I R I R	> -R, STEIS		# adquirir > adquiristeis
+    O R I R	> -R, STEIS		# morir > murieron
+    O R M I R	> -R, STEIS		# dormir > durmieron
+    D U C I R	> -CIR, JISTEIS		# producir > produjisteis
+    [^D] U C I R > -R, STEIS		# lucir > lucisteis
+    [ÜU] I R	> -R, STEIS		# huir > huisteis
+    U L L I R	> -R, STEIS		# mullir > mullisteis
+
+    A N D A R	> -AR, UVIERON		# andar > anduvieron
+    [^A] N D A R> ON			# recomendar > recomendaron
+    [^N] D A R	> ON			# recordar > recordaron
+    [^D] A R	> ON			# amar > amaron
+    A B E R	> -ABER, UPIERON	# saber > supieron
+    [^FH] A C E R > -ER, IERON		# nacer > nacieron
+    [FH] A C E R > -ACER, ICIERON	# hacer > hicieron
+    A L E R	> -ER, IERON		# valer > valieron
+    C A E R	> -ER, YERON		# caer > cayeron
+    E [CD] E R	> -ER, IERON		# parecer > parecieron
+    [EO] E R	> -ER, YERON		# leer > leyeron
+    E N D E R	> -ER, IERON		# tender > tendieron
+    E N E R	> -ENER, UVIERON	# tener > tuvieron
+    E R [DNT] E R > -ER, IERON		# perder > perdieron
+    E R E R	> -ERER, ISIERON	# querer > quisieron
+    O [CLV] E R	> -ER, IERON		# conocer > conocieron
+    O D E R	> -ODER, UDIERON	# poder > pudieron
+    O L V E R	> -ER, IERON		# volver > volvieron
+    O N E R	> -ONER, USIERON	# poner > puso
+    O R [CD] E R > -ER, IERON		# torcer > torcieron
+    R A E R	> -ER, JERON		# traer > trajeron
+    A L I R	> -R, ERON		# salir > salieron
+    E B I R	> -EBIR, IBIERON	# concebir > concibieron
+    E C I R	> -ECIR, IJERON		# decir > dijeron
+    E D I R	> -EDIR, IDIERON	# pedir > pidieron
+    E G I R	> -EGIR, IGIERON	# elegir > eligieron
+    E M I R	> -EMIR, IMIERON	# gemir > gimieron
+    E Í R	> -EÍR, IERON		# reír > rieron
+    E Ñ I R	> -EÑIR, IÑERON	# ceñir > ciñeron
+    E G U I R	> -EGUIR, IGUIERON	# seguir > siguieron
+    E N C H I R	> -ENCHIR, INCHIERON	# henchir > hinchieron
+    E N D I R	> -ENDIR, INDIERON	# rendir > rindieron
+    E N I R	> -ENIR, INIERON	# venir > vinieron
+    E N T I R	> -ENTIR, INTIERON	# sentir > sintieron
+    E R I R	> -ERIR, IRIERON	# herir > hirieron
+    E R N I R	> -R, ERON		# discernir > discernieron
+    E R T I R	> -ERTIR, IRTIERON	# invertir > invirtieron
+    E R V I R	> -ERVIR, IRVIERON	# servir > sirvieron
+    E S T I R	> -ESTIR, ISTIERON	# vestir > vistieron
+    E U N I R	> -R, ERON		# reunir > reunieron
+    E T I R	> -ETIR, ITIERON	# derretir > derritieron
+    I R I R	> -R, ERON		# adquirir > adquirieron
+    O H I B I R > -R, ERON		# prohibir > prohibieron
+    O Í R	> -ÍR, YERON		# oír > oyeron
+    O R I R	> -ORIR, URIERON	# morir > murieron
+    O R M I R	> -ORMIR, URMIERON	# dormir > durmieron
+    D U C I R	> -CIR, JERON		# producir > produjeron
+    [^D] U C I R > -R, ERON		# lucir > lucieron
+    [^G] U I R	> -IR, YERON		# huir > huyeron
+    G Ü I R	> -ÜIR, UYERON	# argüir > arguyeron
+    U L L I R	> -IR, ERON		# mullir > mulleron
+
+# FUTURO
+
+    A R		> É			# amar > amaré
+    A B E R	> -ER, RÉ		# saber > sabré
+    [^FH] A C E R > É			# nacer > naceré
+    [FH] A C E R > -CER, RÉ		# hacer > haré
+    A L E R	> -ER, DRÉ		# valer > valdré
+    [AEO] E R	> É			# leer > leeré
+    E [CD] E R	> É			# parecer > parecieron
+    E N D E R	> É			# tender > tendieron
+    [EO] N E R	> -ER, DRÉ		# tener > tendré
+    E R [DNT] E R > É			# perder > perdieron
+    E R E R	> -ER, RÉ		# querer > querré
+    O [CLV] E R	> É			# conocer > conocieron
+    O D E R	> -ER, RÉ		# poder > podré
+    O L V E R	> É			# volver > volvieron
+    O R [CD] E R > É			# torcer > torcieron
+    A L I R	> -IR, DRÉ		# salir > saldré
+    E [BDGMRTÑ] I R > É		# concebir > concebiré
+    E C I R	> -ECIR, IRÉ		# decir > diré
+    [EO] Í R	> -ÍR, IRÉ		# reír > reiré
+    E N C H I R	> É			# henchir > henchiré
+    E N D I R	> É			# rendir > rendiré
+    E N I R	> -IR, DRÉ		# venir > vendré
+    E [NS] T I R > É			# sentir > sentiré
+    E R [NTV] I R > É			# servir > serviré
+    E U N I R	> É			# reunir > reuniré
+    [IO] R I R	> É			# adquirir > adquiriré
+    O R M I R	> É			# dormir > dormiré
+    U C I R	> É			# producir > produciré
+    [ÜU] I R	> É			# huir > huiré
+    U L L I R	>  É			# mullir > mulliré
+
+    A R		> ÁS			# amar > amarás
+    A B E R	> -ER, RÁS		# saber > sabrás
+    [^FH] A C E R > ÁS			# nacer > nacieron
+    [FH] A C E R > -CER, RÁS		# hacer > harás
+    A L E R	> -ER, DRÁS		# valer > valdrás
+    [AEO] E R	> ÁS			# leer > leerás
+    E [CD] E R	> ÁS			# parecer > parecieron
+    E N D E R	> ÁS			# tender > tendieron
+    [EO] N E R	> -ER, DRÁS		# tener > tendrás
+    E R [DNT] E R > ÁS			# perder > perdieron
+    E R E R	> -ER, RÁS		# querer > querrás
+    O [CLV] E R	> ÁS			# conocer > conocieron
+    O D E R	> -ER, RÁS		# poder > podrás
+    O L V E R	> ÁS			# volver > volvieron
+    O R [CD] E R > ÁS			# torcer > torcieron
+    A L I R	> -IR, DRÁS		# salir > saldrás
+    E [BDGMRTÑ] I R > ÁS		# concebir > concebirá
+    E C I R	> -ECIR, IRÁS		# decir > dirás
+    [EO] Í R	> -ÍR, IRÁS		# reír > reirás
+    E N C H I R	> ÁS			# henchir > henchirás
+    E N D I R	> ÁS			# rendir > rendirás
+    E N I R	> -IR, DRÁS		# venir > vendrás
+    E [NS] T I R > ÁS			# sentir > sentirás
+    E R [NTV] I R > ÁS			# servir > servirás
+    E U N I R	> ÁS			# reunir > reunirás
+    [IO] R I R	> ÁS			# adquirir > adquirirás
+    O R M I R	> ÁS			# dormir > dormirás
+    U C I R	> ÁS			# producir > producirás
+    [ÜU] I R	> ÁS			# huir > huirás
+    U L L I R	>  ÁS			# mullir > mullirás
+
+    A R		> Á			# amar > amará
+    A B E R	> -ER, RÁ		# saber > sabrá
+    [^FH] A C E R > Á			# nacer > nacieron
+    [FH] A C E R > -CER, RÁ		# hacer > hará
+    A L E R	> -ER, DRÁ		# valer > valdrá
+    [AEO] E R	> Á			# leer > leerá
+    E [CD] E R	> Á			# parecer > parecieron
+    E N D E R	> Á			# tender > tenderá
+    [EO] N E R	> -ER, DRÁ		# tener > tendrá
+    E R [DNT] E R > Á			# perder > perdieron
+    E R E R	> -ER, RÁ		# querer > querrá
+    O [CLV] E R	> Á			# conocer > conocieron
+    O D E R	> -ER, RÁ		# poder > podrá
+    O L V E R	> Á			# volver > volvieron
+    O R [CD] E R > Á			# torcer > torcieron
+    A L I R	> -IR, DRÁ		# salir > saldrá
+    E [BDGMRTÑ] I R > Á		# concebir > concebirá
+    E C I R	> -ECIR, IRÁ		# decir > dirá
+    [EO] Í R	> -ÍR, IRÁ		# reír > reirá
+    E N C H I R	> Á			# henchir > henchirá
+    E N D I R	> Á			# rendir > rendirá
+    E N I R	> -IR, DRÁ		# venir > vendrá
+    E [NS] T I R > Á			# sentir > sentirá
+    E R [NTV] I R > Á			# servir > servirá
+    E U N I R	> Á			# reunir > reunirá
+    [IO] R I R	> Á			# adquirir > adquirirá
+    O R M I R	> Á			# dormir > dormirá
+    U C I R	> Á			# producir > producirá
+    [ÜU] I R	> Á			# huir > huirá
+    U L L I R	>  Á			# mullir > mullirá
+
+    A R   	> EMOS			# amar > amaremos
+    A B E R	> -ER, REMOS		# saber > sabremos
+    [^FH] A C E R > EMOS		# nacer > naceremos
+    [FH] A C E R > -CER, REMOS		# hacer > haremos
+    A L E R	> -ER, DREMOS		# valer > valdremos
+    E [CD] E R	> EMOS			# parecer > pareceremos
+    [AEO] E R	> EMOS			# leer > leeremos
+    E N D E R	> EMOS			# tender > tenderemos
+    [EO] N E R	> -ER, DREMOS		# tener > tendremos
+    E R [DNT] E R > EMOS		# perder > perderemos
+    E R E R	> -ER, REMOS		# querer > querremos
+    O [CLV] E R	> EMOS			# conocer > conoceremos
+    O D E R	> -ER, REMOS		# poder > podremos
+    O L V E R	> EMOS			# volver > volveremos
+    O R [CD] E R > EMOS			# morder > morderemos
+    A L I R	> -IR, DREMOS		# salir > saldremos
+    E [BDGMRTÑ] I R > EMOS		# concebir > concebiremos
+    E C I R	> -ECIR, IREMOS		# decir > diremos
+    [EO] Í R	> -ÍR, IREMOS		# reír > reiremos
+    E N C H I R	> EMOS			# henchir > henchiremos
+    E N D I R	> EMOS			# rendir > rendiremos
+    E N I R	> -IR, DREMOS		# venir > vendremos
+    E [NS] T I R > EMOS			# vestir > vestiremos
+    E R [NTV] I R > EMOS		# servir > serviremos
+    E U N I R	> EMOS			# reunir > reuniremos
+    [IO] R I R	> EMOS			# adquirir > adquiriremos
+    O R M I R	> EMOS			# dormir > dormiremos
+    U C I R	> EMOS			# producir > produciremos
+    [ÜU] I R	> EMOS			# huir > huiremos
+    U L L I R	> EMOS			# mullir > mulliremos
+
+    A R	 	> ÉIS			# amar > amais
+    A B E R	> -ER, RÉIS		# saber > sabréis
+    [^FH] A C E R > ÉIS		# nacer > naceréis
+    [FH] A C E R > -CER, RÉIS		# hacer > haréis
+    A L E R	> -ER,DRÉIS		# valer > valdréis
+    [AEO] E R	> ÉIS			# leer > leeréis
+    E [CD] E R	> ÉIS			# parecer > parecieron
+    E N D E R	> ÉIS			# tender > tendieron
+    [EO] N E R	> -ER, DRÉIS		# tener > tendréis
+    E R [DNT] E R > ÉIS		# cerner > cernieron
+    E R E R	> -ER, RÉIS		# querer > querremos
+    O [CLV] E R	> ÉIS			# mover > movieron
+    O D E R	> -ER, RÉIS		# poder > podréis
+    O L V E R	> ÉIS			# volver > volveréis
+    O R [CD] E R > ÉIS			# morder > morderéis
+    A L I R	> -IR, DRÉIS		# salir > saldréis
+    E [BDGMRTÑ] I R > ÉIS		# concebir > concebiréis
+    E C I R	> -ECIR, IRÉIS		# decir > diréis
+    [EO] Í R	> -ÍR, IRÉIS		# reír > reiréis
+    E N C H I R	> ÉIS			# henchir > henchiréis
+    E N D I R	> ÉIS			# rendir > rendiréis
+    E N I R	> -IR, DRÉIS		# venir > vendréis
+    E [NS] T I R > ÉIS			# sentir > sentiréis
+    E R [NTV] I R > ÉIS		# servir > serviréis
+    E U N I R	> ÉIS			# reunir > reuniréis
+    [IO] R I R	> ÉIS			# adquirir > adquiriréis
+    O R M I R	> ÉIS			# dormir > dormiréis
+    U C I R	> ÉIS			# producir > produciréis
+    [ÜU] I R	> ÉIS			# huir > huiréis
+    U L L I R	> ÉIS			# mullir > mulliréis
+
+    A R		> ÁN			# amar > amarán
+    A B E R	> -ER, RÁN		# saber > sabrán
+    [^FH] A C E R > ÁN			# nacer > nacieron
+    [FH] A C E R > -CER, RÁN		# hacer > harán
+    A L E R	> -ER, DRÁN		# valer > valdrán
+    [AEO] E R	> ÁN			# leer > leerán
+    E [CD] E R	> ÁN			# parecer > parecieron
+    E N D E R	> ÁN			# tender > tendieron
+    [EO] N E R	> -ER, DRÁN		# tener > tendrán
+    E R [DNT] E R > ÁN			# verter > vertieron
+    E R E R	> -ER, RÁN		# querer > querrán
+    O [CLV] E R	> ÁN			# conocer > conocieron
+    O D E R	> -ER, RÁN		# poder > podrán
+    O L V E R	> ÁN			# volver > volvieron
+    O R [CD] E R > ÁN			# torcer > torcieron
+    A L I R	> -IR, DRÁN		# salir > saldrán
+    E [BDGMRTÑ] I R > ÁN		# concebir > concebirán
+    E C I R	> -ECIR, IRÁN		# decir > dirán
+    [EO] Í R	> -ÍR, IRÁN		# reír > reirán
+    E N C H I R	> ÁN			# henchir > henchirán
+    E N D I R	> ÁN			# rendir > rendirán
+    E N I R	> -IR, DRÁN		# venir > vendrán
+    E [NS] T I R > ÁN			# sentir > sentirán
+    E R [NTV] I R > ÁN			# servir > servirán
+    E U N I R	> ÁN			# reunir > reunirán
+    [IO] R I R	> ÁN			# adquirir > adquirirán
+    O R M I R	> ÁN			# dormir > dormirán
+    U C I R	> ÁN			# producir > producirán
+    [ÜU] I R	> ÁN			# huir > huirán
+    U L L I R	> ÁN			# mullir > mullirán
+
+# CONDICIONAL
+
+    A R		> ÍA			# amar > amaré
+    A B E R	> -ER, RÍA		# saber > sabría
+    [^FH] A C E R > ÍA			# nacer > nacieron
+    [FH] A C E R > -CER, RÍA		# hacer > haría
+    A L E R   	> -ER, DRÍA		# valer > valdría
+    [AEO] E R	> ÍA			# leer > leería
+    E [CD] E R	> ÍA			# parecer > parecieron
+    E N D E R	> ÍA			# tender > tendieron
+    [EO] N E R	> -ER, DRÍA		# tener > tendría
+    E R [DNT] E R > ÍA			# cerner > cernieron
+    E R E R	> -ER, RÍA		# querer > querría
+    O [CLV] E R	> ÍA			# conocer > conocieron
+    O D E R	> -ER, RÍA		# poder > podría
+    O L V E R	> ÍA			# volver > volvieron
+    O R [CD] E R > ÍA			# torcer > torcieron
+    A L I R	> -IR, DRÍA		# salir > saldría
+    E [BDGMRTÑ] I R > ÍA		# concebir > concebiría
+    E C I R	> -ECIR, IRÍA		# decir > diría
+    [EO] Í R	> -ÍR, IRÍA		# reír > reiría
+    E N C H I R	> ÍA			# henchir > henchiría
+    E N D I R	> ÍA			# rendir > rendiría
+    E N I R	> -IR, DRÍA		# venir > vendría
+    E [NS] T I R > ÍA			# sentir > sentiría
+    E R [NTV] I R > ÍA			# servir > serviría
+    E U N I R	> ÍA			# reunir > reuniría
+    [IO] R I R	> ÍA			# adquirir > adquiriría
+    O R M I R	> ÍA			# dormir > dormiría
+    U C I R	> ÍA			# producir > produciría
+    [ÜU] I R	> ÍA			# huir > huiría
+    U L L I R	> ÍA			# mullir > mulliría
+
+    A R		> ÍAS			# amar > amarás
+    A B E R	> -ER, RÍAS		# saber > sabrías
+    [^FH] A C E R > ÍAS		# nacer > nacieron
+    [FH] A C E R > -CER, RÍAS		# hacer > harías
+    A L E R	> -ER, DRÍAS		# valer > valdrías
+    [AEO] E R	> ÍAS			# leer > leerías
+    E [CD] E R	> ÍAS			# parecer > parecieron
+    E N D E R	> ÍAS			# tender > tendieron
+    [EO] N E R	> -ER, DRÍAS		# tener > tendrías
+    E R [DNT] E R > ÍAS		# perder > perdieron
+    E R E R	> -ER, RÍAS		# querer > querrías
+    O [CLV] E R	> ÍAS			# conocer > conocieron
+    O D E R	> -ER, RÍAS		# poder > podrías
+    O L V E R	> ÍAS			# volver > volvieron
+    O R [CD] E R > ÍAS			# torcer > torcieron
+    A L I R	> -IR, DRÍAS		# salir > saldrías
+    E [BDGMRTÑ] I R > ÍAS		# concebir > concebirías
+    E C I R	> -ECIR, IRÍAS		# decir > dirías
+    [EO] Í R	> -ÍR, IRÍAS		# reír > reirías
+    E N C H I R	> ÍAS			# henchir > henchirías
+    E N D I R	> ÍAS			# rendir > rendirías
+    E N I R	> -IR, DRÍAS		# venir > vendrías
+    E [NS] T I R > ÍAS			# sentir > sentirías
+    E R [NTV] I R > ÍAS		# servir > servirías
+    E U N I R	> ÍAS			# reunir > reunirías
+    [IO] R I R	> ÍAS			# adquirir > adquirirías
+    O R M I R	> ÍAS			# dormir > dormirías
+    U C I R	> ÍAS			# producir > producirías
+    [ÜU] I R	> ÍAS			# huir > huirías
+    U L L I R	> ÍAS			# mullir > mullirías
+
+    A R		> ÍAMOS		# amar > amaremos
+    A B E R	> -ER, RÍAMOS		# saber > sabríamos
+    [^FH] A C E R > ÍAMOS		# nacer > nacieron
+    [FH] A C E R > -CER, RÍAMOS	# hacer > haríamos
+    A L E R	> -ER, DRÍAMOS		# valer > valdríamos
+    E [CD] E R	> ÍAMOS		# parecer > parecieron
+    [AEO] E R	> ÍAMOS		# leer > leeríamos
+    E N D E R	> ÍAMOS		# tender > tendieron
+    [EO] N E R	> -ER, DRÍAMOS		# tener > tendríamos
+    E R [DNT] E R > ÍAMOS		# perder > perdieron
+    E R E R	> -ER, RÍAMOS		# querer > querríamos
+    O [CLV] E R	> ÍAMOS		# conocer > conocieron
+    O D E R   	> -ER, RÍAMOS		# poder > podríamos
+    O L V E R	> ÍAMOS		# volver > volvieron
+    O R [CD] E R > ÍAMOS		# torcer > torcieron
+    A L I R	> -IR, DRÍAMOS		# salir > saldríamos
+    E [BDGMRTÑ] I R > ÍAMOS		# concebir > concebiríamos
+    E C I R	> -ECIR, IRÍAMOS	# decir > diríamos
+    [EO] Í R	> -ÍR, IRÍAMOS	# reír > reiríamos
+    E N C H I R	> ÍAMOS		# henchir > henchiríamos
+    E N D I R	> ÍAMOS		# rendir > rendiríamos
+    E N I R	> -IR, DRÍAMOS		# venir > vendríamos
+    E [NS] T I R > ÍAMOS		# sentir > sentiríamos
+    E R [NTV] I R > ÍAMOS		# servir > serviríamos
+    E U N I R	> ÍAMOS		# reunir > reuniríamos
+    [IO] R I R	> ÍAMOS		# morir > moriríamos
+    O R M I R	> ÍAMOS		# dormir > dormiríamos
+    U C I R	> ÍAMOS		# producir > produciríamos
+    [ÜU] I R	> ÍAMOS		# huir > huiríamos
+    U L L I R	> ÍAMOS		# mullir > mulliríamos
+
+    A R   	> ÍAIS			# amar > amais
+    A B E R	> -ER, RÍAIS		# saber > sabríais
+    [^FH] A C E R > ÍAIS		# nacer > nacieron
+    [FH] A C E R > -CER, RÍAIS		# hacer > haríais
+    A L E R	> -ER, DRÍAIS		# valer > valdríais
+    [AEO] E R	> ÍAIS			# leer > leeríais
+    E [CD] E R	> ÍAIS			# parecer > parecieron
+    E N D E R	> ÍAIS			# tender > tendieron
+    [EO] N E R	> -ER, DRÍAIS		# tener > tendríais
+    E R [DNT] E R > ÍAIS		# perder > perdieron
+    E R E R	> -ER, RÍAIS		# querer > querríais
+    O [CLV] E R	> ÍAIS			# conocer > conocieron
+    O D E R	> -ER, RÍAIS		# poder > podríamos
+    O L V E R	> ÍAIS			# volver > volvieron
+    O R [CD] E R > ÍAIS		# torcer > torcieron
+    A L I R	> -IR, DRÍAIS		# salir > saldríais
+    E [BDGMRTÑ] I R > ÍAIS		# concebir > concebiríamos
+    E C I R	> -ECIR, IRÍAIS	# decir > diríais
+    [EO] Í R	> -ÍR, IRÍAIS		# reír > reiríamos
+    E N C H I R	> ÍAIS			# henchir > henchiríamos
+    E N D I R	> ÍAIS			# rendir > rendiríamos
+    E N I R	> -IR, DRÍAIS		# venir > vendríamos
+    E [NS] T I R > ÍAIS		# sentir > sentiríamos
+    E R [NTV] I R > ÍAIS
+    E U N I R	> ÍAIS			# reunir > reuniríais
+    [IO] R I R	> ÍAIS			# adquirir > adquiriríamos
+    O R M I R	> ÍAIS			# dormir > dormiríamos
+    U C I R	> ÍAIS			# producir > produciríamos
+    [ÜU] I R	> ÍAIS			# huir > huiríais
+    U L L I R	> ÍAIS			# mullir > mulliríais
+
+    A R 	> ÍAN			# amar > amaran
+    A B E R	> -ER, RÍAN		# saber > sabrían
+    [^FH] A C E R > ÍAN		# nacer > nacieron
+    [FH] A C E R > -CER, RÍAN		# hacer > harían
+    A L E R	> -ER, DRÍAN		# valer > valdrían
+    [AEO] E R	> ÍAN			# leer > leerían
+    E [CD] E R	> ÍAN			# parecer > parecieron
+    E N D E R	> ÍAN			# tender > tendieron
+    [EO] N E R	> -ER, DRÍAN		# tener > tendrían
+    E R [DNT] E R > ÍAN		# perder > perdieron
+    E R E R	> -ER, RÍAN		# querer > querríais
+    O [CLV] E R	> ÍAN			# conocer > conocieron
+    O D E R	> -ER, RÍAN		# poder > podrían
+    O L V E R	> ÍAN			# volver > volvieron
+    O R [CD] E R > ÍAN			# torcer > torcieron
+    A L I R	> -IR, DRÍAN		# salir > saldrían
+    E [BDGMRTÑ] I R > ÍAN		# concebir > concebirían
+    E C I R	> -ECIR, IRÍAN		# decir > dirían
+    [EO] Í R	> -ÍR, IRÍAN		# reír > reirían
+    E N C H I R	> ÍAN			# henchir > henchirían
+    E N D I R	> ÍAN			# rendir > rendirían
+    E N I R	> -IR, DRÍAN		# venir > vendrían
+    E [NS] T I R > ÍAN			# vestir > vestirían
+    E R [NTV] I R > ÍAN		# cernir > cernirían
+    E U N I R	> ÍAN			# reunir > reunirían
+    [IO] R I R	> ÍAN			# morir > morirían
+    O R M I R	> ÍAN			# dormir > dormirían
+    U C I R	> ÍAN			# producir > producirían
+    [ÜU] I R	> ÍAN			# huir > huirían
+    U L L I R	> ÍAN			# mullir > mullirían
+
+# SUBJUNTIVO PRESENTE
+
+    I A R	> -IAR, ÍE		# enviar > envíe
+    E B R A R	> -EBRAR, IEBRE		# quebrar > quiebre
+    E D R A R	> -EDRAR, IEDRE		# empedrar > empiedre
+    E G A R	> -EGAR, IEGUE		# regar > riegue
+    E L A R	> -ELAR, IELE		# helar > hiele
+    E V A R	> -EVAR, IEVE		# nevar > nieve
+    E M B L A R	> -EMBLAR, IEMBLE	# temblar > tiemble
+    E M B R A R	> -EMBRAR, IEMBRE	# desmembrar > desmiembre
+    A N D A R	> -AR, E		# andar > ande
+    E N D A R	> -ENDAR, IENDE		# arrendar > arriende
+    E N D R A R	> -ENDRAR, IENDRE	# deslendrar > desliendre
+    E N G A R	> -ENGAR, IENGUE	# derrengar > derriengue
+    E N S A R	> -ENSAR, IENSE		# incensar > inciense
+    E N T A R	> -ENTAR, IENTE		# calentar > caliente
+    E N Z A R	> -ENZAR, IENCE		# comenzar > comience
+    E R B A R	> -ERBAR, IERBE		# herbar > hierbe
+    E R N A R	> -ERNAR, IERNE		# apernar > apierne
+    E R R A R	> -ERRAR, IERRE		# cerrar > cierre
+    E R T A R	> -ERTAR, IERTE		# acertar > acierte
+    E S A R	> -ESAR, IESE		# atravesar > atraviese
+    E S T A R	> -ESTAR, IESTE		# enhestar > enhieste
+    E T A R	> -ETAR, IETE		# apretar > apriete
+    E Z A R	> -EZAR, IECE		# empezar > empiece
+    [AE] H I J A R > -IJAR, ÍJE	# ahijar > ahíje
+    [AE] H I L A R > -ILAR, ÍLE	# ahilar > ahíle
+    [AEO] H I N A R > -INAR, ÍNE	# amohinar > amohíne
+    [AE] H I T A R > -ITAR, ÍTE	# ahitar > ahíte
+    [AE] H U M A R > -UMAR, ÚME	# ahumar > ahúme
+    [AE] H U S A R > -USAR, ÚSE	# ahusar > ahúse
+    [AE] I Z A R > -IZAR, ÍCE		# enraizar > enraíce
+    G O N Z A R	> -ONZAR, ÜENCE	# avergonzar > avergüence
+    [^G] U A R	> -UAR, ÚE		# situar > sitúe
+    G U A R	> -UAR, ÜE		# averiguar > averigüe
+    O B A R	> -OBAR, UEBE		# probar > pruebe
+    O B L A R	> -OBLAR, UEBLE		# poblar > pueble
+    O C A R	> -OCAR, UEQUE		# trocar > trueque
+    O D A R	> -ODAR, UEDE		# rodar > ruede
+    O G A R	> -OGAR, UEGUE		# rogar > ruegue
+    O L A R	> -OLAR, UELE		# abuñolar > abuñuele
+    [^G] O L L A R > -OLLAR, UELLE	# descollar > descuelle
+    G O L D A R	> -OLDAR, ÜELDE	# regoldar > regüelde
+    [^G] O L D A R > -OLDAR, UELDE	# soldar > suelde
+    G O L L A R	> -OLLAR, ÜELLE	# degollar > degüelle
+    O L C A R	> -OLCAR, UELQUE	# volcar > vuelque
+    O L G A R	> -OLGAR, UELGUE	# colgar > cuelgue
+    O L T A R	> -OLTAR, UELTE		# soltar > suelte
+    O N A R	> -ONAR, UENE		# sonar > suene
+    O Ñ A R	> -OÑAR, UEÑE		# soñar > sueñe
+    O N T A R	> -ONTAR, UENTE		# contar > cuente
+    O N T R A R	> -ONTRAR, UENTRE	# encontrar > encuentre
+    [^G] O R A R > -ORAR, UERE		# encorar > encuere
+    G O R A R	> -ORAR, ÜERE		# agorar > agüere
+    O R C A R	> -ORCAR, UERQUE	# emporcar > empuerque
+    O R D A R	> -ORDAR, UERDE		# acordar > acuerde
+    O R N A R	> -ORNAR, UERNE		# acornar > acuerne
+    O R T A R	> -ORTAR, UERTE		# entortar > entuerte
+    O R Z A R	> -ORZAR, UERCE		# forzar > fuerce
+    O S A R	> -OSAR, UESE		# engrosar > engruese
+    O S T A R	> -OSTAR, UESTE		# acostar > acueste
+    O S T R A R	> -OSTRAR, UESTRE	# mostrar > muestre
+    O V A R	> -OVAR, UEVE		# encovar > encueve
+    U G A R	> -GAR, EGUE		# jugar > juegue
+    [^FH] A C E R > -CER, ZCA		# nacer > nazca
+    [FH] A C E R > -CER, GA		# hacer > haga
+    A L E R	> -ER, GA		# valer > valga
+    A E R	> -ER, IGA		# caer > caiga
+    C A B E R	> -CABER, QUEPA		# valer > valga
+    E C E R	> -CER, ZCA		# parecer > parezca
+    E D E R	> -EDER, IEDA		# heder > hieda
+    [EO] E R	> -ER, A		# leer > lea
+    O E R	> -ER, IGA		# roer > roiga
+    O E R	> -ER, YA		# roer > royas
+    E N D E R	> -ENDER, IENDA		# tender > tienda
+    [EO] N E R	> -ER, GA		# tener > tenga
+    E R D E R	> -ERDER, IERDA		# perder > pierda
+    E R E R	> -ERER, IERA		# querer > quiera
+    E R N E R	> -ERNER, IERNA		# cerner > cierna
+    E R T E R	> -ERTER, IERTA		# verter > vierta
+    C O C E R	> -OCER, UEZA		# cocer > cueza
+    [^C] O C E R > -CER, ZCA		# conocer > conozca
+    O D E R	> -ODER, UEDA		# poder > pueda
+    O L E R	> -OLER, UELA		# soler > suela
+    O L V E R	> -OLVER, UELVA		# volver > vuelva
+    O R C E R	> -ORCER, UERZA		# torcer > tuerza
+    O R D E R	> -ORDER, UERDA		# morder > muerda
+    O V E R	> -OVER, UEVA		# mover > mueva
+    S A B E R	> -ABER, EPA		# saber > sepa
+    A L I R	> -IR, GA		# salir > salga
+    E B I R	> -EBIR, IBA		# concebir > conciba
+    E C I R	> -ECIR, IGA		# decir > diga
+    E D I R	> -EDIR, IDA		# pedir > pida
+    E G I R	> -EGIR, IJA		# elegir > elija
+    E M I R	> -EMIR, IMA		# gemir > gima
+    E Í R	> -EÍR, ÍA		# reír > ría
+    E Ñ I R	> -EÑIR, IÑA		# ceñir > ciña
+    E G U I R	> -EGUIR, IGA		# seguir > siga
+    E N C H I R	> -ENCHIR, INCHA	# henchir > hincha
+    E N D I R	> -ENDIR, INDA		# rendir > rinda
+    E N I R	> -ENIR, ENGA		# venir > venga
+    E N T I R	> -ENTIR, IENTA		# sentir > sienta
+    E R I R	> -ERIR, IERA		# herir > hiera
+    E R N I R	> -ERNIR, IERNA		# discernir > discierna
+    E R T I R	> -ERTIR, IERTA		# invertir > invierta
+    [^H] E R V I R > -ERVIR, IRVA	# servir > sirva
+    E S T I R	> -ESTIR, ISTA		# vestir > vista
+    E T I R	> -ETIR, ITA		# derretir > derrita
+    E U N I R	> -UNIR, ÚNA		# reunir > reúna
+    H E R V I R	> -ERVIR, IERVA		# hervir > hierva
+    I R I R	> -IRIR, IERA		# adquirir > adquiera
+    O H I B I R > -IBIR, ÍBA		# prohibir > prohíba
+    O Í R	> -ÍR, IGA		# oír > oiga
+    O R I R	> -ORIR, UERA		# morir > muera
+    O R M I R	> -ORMIR, UERMA		# dormir > duerma
+    U C I R	> -CIR, ZCA		# producir > produzca
+    [^G] U I R	> -IR, YA		# huir > huya
+    G Ü I R	> -ÜIR, UYA		# argüir > arguya
+    U L L I R	> -IR, A		# mullir > mulla
+
+    I A R	> -IAR, ÍES		# enviar > envíes
+    E B R A R	> -EBRAR, IEBRES	# quebrar > quiebres
+    E D R A R	> -EDRAR, IEDRES	# empedrar > empiedres
+    E G A R	> -EGAR, IEGUES		# regar > riegues
+    E L A R	> -ELAR, IELES		# helar > hieles
+    E V A R	> -EVAR, IEVES		# nevar > nieves
+    E M B L A R	> -EMBLAR, IEMBLES	# temblar > tiembles
+    E M B R A R	> -EMBRAR, IEMBRES	# desmembrar > desmiembres
+    A N D A R	> -AR, ES		# andar > andes
+    E N D A R	> -ENDAR, IENDES	# arrendar > arriendes
+    E N D R A R	> -ENDRAR, IENDRES	# deslendrar > desliendres
+    E N G A R	> -ENGAR, IENGUES	# derrengar > derriengues
+    E N S A R	> -ENSAR, IENSES	# incensar > incienses
+    E N T A R	> -ENTAR, IENTES	# calentar > calientes
+    E N Z A R	> -ENZAR, IENCES	# comenzar > comiences
+    E R B A R	> -ERBAR, IERBES	# herbar > hierbes
+    E R N A R	> -ERNAR, IERNES	# apernar > apiernes
+    E R R A R	> -ERRAR, IERRES	# cerrar > cierres
+    E R T A R	> -ERTAR, IERTES	# acertar > aciertes
+    E S A R	> -ESAR, IESES		# atravesar > atravieses
+    E S T A R	> -ESTAR, IESTES	# enhestar > enhiestes
+    E T A R	> -ETAR, IETES		# apretar > aprietes
+    E Z A R	> -EZAR, IECES		# empezar > empieces
+    [AE] H I J A R > -IJAR, ÍJES	# ahijar > ahíjes
+    [AE] H I L A R > -ILAR, ÍLES	# ahilar > ahíles
+    [AEO] H I N A R > -INAR, ÍNES	# amohinar > amohínes
+    [AE] H I T A R > -ITAR, ÍTES	# ahitar > ahítes
+    [AE] H U M A R > -UMAR, ÚMES	# ahumar > ahúmes
+    [AE] H U S A R > -USAR, ÚSES	# ahusar > ahúses
+    [AE] I Z A R > -IZAR, ÍCES		# enraizar > enraíces
+    [^G] U A R	> -UAR, ÚES		# situar > sitúes
+    G O N Z A R	> -ONZAR, ÜENCES	# avergonzar > avergüences
+    G U A R	> -UAR, ÜES		# averiguar > averigües
+    O B A R	> -OBAR, UEBES		# probar > pruebes
+    O B L A R	> -OBLAR, UEBLES	# poblar > puebles
+    O C A R	> -OCAR, UEQUES		# trocar > trueques
+    O D A R	> -ODAR, UEDES		# rodar > ruedes
+    O G A R	> -OGAR, UEGUES		# rogar > ruegues
+    O L A R	> -OLAR, UELES		# abuñolar > abuñueles
+    [^G] O L L A R > -OLLAR, UELLES	# descollar > descuelles
+    G O L D A R  > -OLDAR, ÜELDES	# regoldar > regüeldes
+    [^G] O L D A R  > -OLDAR, UELDES	# soldar > sueldes
+    G O L L A R  > -OLLAR, ÜELLES	# descollar > descuelles
+    O L C A R	> -OLCAR, UELQUES	# volcar > vuelques
+    O L G A R	> -OLGAR, UELGUES	# colgar > cuelgues
+    O L T A R	> -OLTAR, UELTES	# soltar > sueltes
+    O N A R	> -ONAR, UENES		# sonar > suenes
+    O Ñ A R	> -OÑAR, UEÑES	# soñar > sueñes
+    O N T A R	> -ONTAR, UENTES	# contar > cuentes
+    O N T R A R	> -ONTRAR, UENTRES	# encontrar > encuentres
+    [^G] O R A R > -ORAR, UERES		# encorar > encueres
+    G O R A R	> -ORAR, ÜERES	# agorar > agüeres
+    O R C A R	> -ORCAR, UERQUES	# emporcar > empuerques
+    O R D A R	> -ORDAR, UERDES	# acordar > acuerdes
+    O R N A R	> -ORNAR, UERNES	# acornar > acuernes
+    O R T A R	> -ORTAR, UERTES	# entortar > entuertes
+    O R Z A R	> -ORZAR, UERCES	# forzar > fuerces
+    O S A R	> -OSAR, UESES		# engrosar > engrueses
+    O S T A R	> -OSTAR, UESTES	# acostar > acuestes
+    O S T R A R	> -OSTRAR, UESTRES	# mostrar > muestres
+    O V A R	> -OVAR, UEVES		# encovar > encueves
+    U G A R	> -GAR, EGUES		# jugar > juegues
+    [^FH] A C E R > -CER, ZCAS		# nacer > nazcas
+    [FH] A C E R > -CER, GAS		# hacer > hagas
+    A L E R	> -ER, GAS		# valer > valgas
+    A E R	> -ER, IGAS		# caer > caigas
+    C A B E R	> -CABER, QUEPAS	# caber > quepas
+    E C E R	> -CER, ZCAS		# parecer > parezcas
+    E D E R	> -EDER, IEDAS		# heder > hiedas
+    [EO] E R	> -ER, AS		# leer > leas
+    O E R	> -ER, IGAS		# roer > roigas
+    O E R	> -ER, YAS		# roer > royas
+    E N D E R	> -ENDER, IENDAS	# tender > tiendas
+    [EO] N E R	> -ER, GAS		# tener > tengas
+    E R D E R	> -ERDER, IERDAS	# perder > pierdas
+    E R E R	> -ERER, IERAS		# querer > quieras
+    E R N E R	> -ERNER, IERNAS	# cerner > ciernas
+    E R T E R	> -ERTER, IERTAS	# verter > viertas
+    C O C E R	> -OCER, UEZAS		# cocer > cuezas
+    [^C] O C E R > -CER, ZCAS		# conocer > conozcas
+    O D E R	> -ODER, UEDAS		# poder > puedas
+    O L E R	> -OLER, UELAS		# soler > suelas
+    O L V E R	> -OLVER, UELVAS	# volver > vuelvas
+    O R C E R	> -ORCER, UERZAS	# torcer > tuerzas
+    O R D E R	> -ORDER, UERDAS	# morder > muerdas
+    O V E R	> -OVER, UEVAS		# mover > muevas
+    S A B E R	> -ABER, EPAS		# saber > sepas
+    A L I R	> -IR, GAS		# salir > salgas
+    E B I R	> -EBIR, IBAS		# concebir > concibas
+    E C I R	> -ECIR, IGAS		# decir > digas
+    E D I R	> -EDIR, IDAS		# pedir > pidas
+    E G I R	> -EGIR, IJAS		# elegir > elijas
+    E M I R	> -EMIR, IMAS		# gemir > gimas
+    E Í R	> -EÍR, ÍAS		# reír > rías
+    E Ñ I R	> -EÑIR, IÑAS		# ceñir > ciñas
+    E G U I R	> -EGUIR, IGAS		# seguir > sigas
+    E N C H I R	> -ENCHIR, INCHAS	# henchir > hinchas
+    E N D I R	> -ENDIR, INDAS		# rendir > rindas
+    E N I R	> -ENIR, ENGAS		# venir > vengas
+    E N T I R	> -ENTIR, IENTAS	# sentir > sientas
+    E R I R	> -ERIR, IERAS		# herir > hieras
+    E R N I R	> -ERNIR, IERNAS	# discernir > disciernas
+    E R T I R	> -ERTIR, IERTAS	# invertir > inviertas
+    [^H] E R V I R > -ERVIR, IRVAS	# servir > sirvas
+    E S T I R	> -ESTIR, ISTAS		# vestir > vistas
+    E U N I R	> -UNIR, ÚNAS		# reunir > reúnas
+    E T I R	> -ETIR, ITAS		# derretir > derritas
+    H E R V I R	> -ERVIR, IERVAS	# hervir > hiervas
+    I R I R	> -IRIR, IERAS		# adquirir > adquieras
+    O H I B I R > -IBIR, ÍBAS		# prohibir > prohíbas
+    O Í R	> -ÍR, IGAS		# oír > oigas
+    O R I R	> -ORIR, UERAS		# morir > mueras
+    O R M I R	> -ORMIR, UERMAS	# dormir > duermas
+    U C I R	> -CIR, ZCAS		# producir > produzcas
+    [^G] U I R	> -IR, YAS		# huir > huyas
+    G Ü I R	> -ÜIR, UYAS		# argüir > arguyas
+    U L L I R	> -IR, AS		# mullir > mullas
+
+    I A R	> -IAR, IEMOS		# enviar > enviemos
+    E B R A R	> -AR, EMOS		# quebrar > quebremos
+    E D R A R	> -AR, EMOS		# empedrar > empedremos
+    E G A R	> -GAR, GUEMOS		# regar > reguemos
+    E L A R	> -AR, EMOS		# helar > helemos
+    E V A R	> -AR, EMOS		# nevar > nevemos
+    E M B L A R	> -AR, EMOS		# temblar > temblemos
+    E M B R A R	> -AR, EMOS		# desmembrar > desmembremos
+    [AE] N D A R> -AR, EMOS		# arrendar > arrendemos
+    E N D R A R	> -AR, EMOS		# deslendrar > deslendremos
+    E N G A R	> -GAR, GUEMOS		# derrengar > derrenguemos
+    E N S A R	> -AR, EMOS		# incensar > incensemos
+    E N T A R	> -AR, EMOS		# calentar > calentemos
+    E N Z A R	> -ZAR, CEMOS		# comenzar > comencemos
+    E R B A R	> -AR, EMOS		# herbar > herbemos
+    E R N A R	> -AR, EMOS		# apernar > apernemos
+    E R R A R	> -AR, EMOS		# cerrar > cerremos
+    E R T A R	> -AR, EMOS		# acertar > acertemos
+    E S A R	> -AR, EMOS		# atravesar > atravesemos
+    E S T A R	> -AR, EMOS		# enhestar > enhestemos
+    E T A R	> -AR, EMOS		# apretar > apretemos
+    E Z A R	> -ZAR, CEMOS		# empezar > empecemos
+    [AEO] H I [JLNT] A R > -AR, EMOS	# ahijar > ahijemos
+    					# ahilar > ahilemos
+    					# ahitar > ahitemos
+    					# amohinar > amohinemos
+    [AE] H U [MS] A R > -AR, EMOS	# ahumar > ahumemos
+    					# ahusar > ahusemos
+    [AE] I Z A R > -ZAR, CEMOS		# enraizar > enraicemos
+    G O N Z A R	> -ZAR, CEMOS		# avergonzar > avergoncemos
+    [^G] U A R	> -AR, EMOS		# situar > situemos
+    G U A R	> -UAR, ÜEMOS		# averiguar > averigüemos
+    O B A R	> -AR, EMOS		# trocar > troquemos
+    O B L A R	> -AR, EMOS		# poblar > poblemos
+    O C A R	> -CAR, QUEMOS		# trocar > troquemos
+    O D A R	> -AR, EMOS		# rodar > rodemos
+    O G A R	> -GAR, GUEMOS		# rogar > roguemos
+    O L A R	> -AR, EMOS		# abuñolar > abuñolemos
+    O L C A R	> -CAR, QUEMOS		# volcar > volquemos
+    O L G A R	> -AR, UEMOS		# colgar > colguemos
+    O L D A R	> -AR, EMOS		# regoldar > regoldemos
+    O L L A R	> -AR, EMOS		# descollar > descollemos
+    O L T A R	> -AR, EMOS		# soltar > soltemos
+    O N A R	> -AR, EMOS		# sonar > sonemos
+    O Ñ A R	> -AR, EMOS		# soñar > soñemos
+    O N T A R	> -AR, EMOS		# contar > contemos
+    O N T R A R	> -AR, EMOS		# encontrar > encontremos
+    O R A R	> -AR, EMOS		# encorar > encoremos
+    O R C A R	> -CAR, QUEMOS		# emporcar > emporquemos
+    O R D A R	> -AR, EMOS		# acordar > acordemos
+    O R N A R	> -AR, EMOS		# acornar > acornemos
+    O R T A R	> -AR, EMOS		# entortar > entortemos
+    O R Z A R	> -ZAR, CEMOS		# forzar > forcemos
+    O S A R	> -AR, EMOS		# engrosar > engrosemos
+    O S T A R	> -AR, EMOS		# acostar > acostemos
+    O S T R A R	> -AR, EMOS		# mostrar > mostremos
+    O V A R	> -AR, EMOS		# encovar > encovemos
+    U G A R	> -GAR, GUEMOS		# jugar > juguemos
+    [^FH] A C E R > -CER, ZCAMOS	# nacer > nazcamos
+    [FH] A C E R > -CER, GAMOS		# hacer > hagamos
+    A L E R	> -ER, GAMOS		# valer > valgamos
+    A E R	> -ER, IGAMOS		# caer > caigamos
+    C A B E R	> -CABER, QUEPAMOS	# caber > quepamos
+    E C E R	> -CER, ZCAMOS		# parecer > parezcamos
+    E D E R	> -ER, AMOS		# heder > hedamos
+    [EO] E R	> -ER, AMOS		# leer > leamos
+    O E R	> -ER, IGAMOS		# roer > roigamos
+    O E R	> -ER, YAMOS		# roer > royamos
+    E N D E R	> -ER, AMOS		# tender > tendamos
+    [EO] N E R	> -ER, GAMOS		# tender > tengamos
+    E R D E R	> -ER, AMOS		# perder > perdamos
+    E R E R	> -ER, AMOS		# querer > queramos
+    E R N E R	> -ER, AMOS		# cerner > cernamos
+    E R T E R	> -ER, AMOS		# verter > vertamos
+    C O C E R	> -CER, ZAMOS		# cocer > cozamos
+    [^C] O C E R > -CER, ZCAMOS		# conocer > conozcamos
+    O D E R	> -ER, AMOS		# poder > podamos
+    O L E R	> -ER, AMOS		# soler > solamos
+    O L V E R	> -ER, AMOS		# volver > volvamos
+    O R C E R	> -CER, ZAMOS		# torcer > torzamos
+    O R D E R	> -ER, AMOS		# morder > mordamos
+    O V E R	> -ER, AMOS		# mover > movamos
+    S A B E R	> -ABER, EPAMOS		# saber > sepamos
+    A L I R	> -IR, GAMOS		# salir > salgamos
+    E B I R	> -EBIR, IBAMOS		# concebir > concibamos
+    E C I R	> -ECIR, IGAMOS		# decir > digamos
+    E D I R	> -EDIR, IDAMOS		# pedir > pidamos
+    E G I R	> -EGIR, IJAMOS		# elegir > elijamos
+    E M I R	> -EMIR, IMAMOS		# gemir > gimamos
+    E Í R	> -EÍR, IAMOS		# reír > riamos
+    E Ñ I R	> -EÑIR, IÑAMOS	# ceñir > ciñamos
+    E G U I R	> -EGUIR, IGAMOS	# seguir > sigamos
+    E N C H I R	> -ENCHIR, INCHAMOS	# henchir > hinchamos
+    E N D I R	> -ENDIR, INDAMOS	# rendir > rindamos
+    E N I R	> -ENIR, ENGAMOS	# venir > vengamos
+    E N T I R	> -ENTIR, INTAMOS	# sentir > sintamos
+    E R I R	> -ERIR, IRAMOS		# herir > hiramos
+    E R N I R	> -IR, AMOS		# discernir > disciernas
+    E R T I R	> -ERTIR, IRTAMOS	# invertir > invirtamos
+    E R V I R	> -ERVIR, IRVAMOS	# servir > sirvamos
+    E S T I R	> -ESTIR, ISTAMOS	# vestir > vistamos
+    E U N I R	> -IR, AMOS		# reunir > reunamos
+    E T I R	> -ETIR, ITAMOS		# derretir > derritamos
+    I R I R	> -IR, AMOS		# adquirir > adquiramos
+    O H I B I R > -IR, AMOS		# prohibir > prohíbas
+    O Í R	> -ÍR, IGAMOS		# oír > oigamos
+    O R I R	> -ORIR, URAMOS		# morir > muramos
+    O R M I R	> -ORMIR, URMAMOS	# dormir > durmamos
+    U C I R	> -CIR, ZCAMOS		# producir > produzcamos
+    [^G] U I R	> -IR, YAMOS		# huir > huyamos
+    G Ü I R	> -ÜIR, UYAMOS	# argüir > arguyamos
+    U L L I R	> -IR, AMOS		# mullir > mullamos
+
+    I A R	> -AR, ÉIS		# enviar > enviéis
+    E B R A R	> -AR, ÉIS		# quebrar > quebréis
+    E D R A R	> -AR, ÉIS		# empedrar > empedréis
+    E G A R	> -GAR, GUÉIS		# regar > reguéis
+    E L A R	> -AR, ÉIS		# helar > heléis
+    E V A R	> -AR, ÉIS		# nevar > nevéis
+    E M B L A R	> -AR, ÉIS		# temblar > tembléis
+    E M B R A R	> -AR, ÉIS		# desmembrar > desmembréis
+    [AE] N D A R> -AR, ÉIS		# arrendar > arrendéis
+    E N D R A R	> -AR, ÉIS		# deslendrar > deslendréis
+    E N G A R	> -GAR, GUÉIS		# derrengar > derrenguéis
+    E N S A R	> -AR, ÉIS		# incensar > incenséis
+    E N T A R	> -AR, ÉIS		# calentar > calentéis
+    E N Z A R	> -ZAR, CÉIS		# comenzar > comencéis
+    E R B A R	> -AR, ÉIS		# herbar > herbéis
+    E R N A R	> -AR, ÉIS		# apernar > apernéis
+    E R R A R	> -AR, ÉIS		# cerrar > cerréis
+    E R T A R	> -AR, ÉIS		# acertar > acertéis
+    E S A R	> -AR, ÉIS		# atravesar > atraveséis
+    E S T A R	> -AR, ÉIS		# enhestar > enhestéis
+    E T A R	> -AR, ÉIS		# apretar > apretéis
+    E Z A R	> -ZAR, CÉIS		# empezar > empecéis
+    [AEO] H I [JLNT] A R > -AR, ÉIS	# ahijar > ahijéis
+    					# ahilar > ahiléis
+    					# ahitar > ahitéis
+    					# amohinar > amohinéis
+    [AE] H U [MS] A R > -AR, ÉIS	# ahumar > ahuméis
+					# ahusar > ahuséis
+    [AE] I Z A R > -ZAR, CÉIS		# enraizar > enraicéis
+    G O N Z A R	> -ZAR, CÉIS		# avergonzar > avergoncéis
+    [^G] U A R	> -AR, ÉIS		# situar > situéis
+    G U A R	> -UAR, ÜÉIS		# averiguar > averigüéis
+    O B A R	> -AR, ÉIS		# probar > probéis
+    O B L A R	> -AR, ÉIS		# poblar > pobléis
+    O C A R	> -CAR, QUÉIS		# trocar > troquéis
+    O D A R	> -AR, ÉIS		# rodar > rodéis
+    O G A R	> -OGAR, GUÉIS		# rogar > roguéis
+    O L A R	> -AR, ÉIS		# abuñolar > abuñoléis
+    O L C A R  	> -CAR, QUÉIS		# volcar > volquéis
+    O L D A R  	> -AR, ÉIS		# regoldar > regoldéis
+    O L G A R  	> -AR, UÉIS		# colgar > colguéis
+    O L L A R	> -AR, ÉIS		# descollar > descolléis
+    O L T A R	> -AR, ÉIS		# soltar > soltéis
+    O N A R	> -AR, ÉIS		# sonar > sonéis
+    O Ñ A R	> -AR, ÉIS		# soñar > soñéis
+    O N T A R	> -AR, ÉIS		# contar > contéis
+    O N T R A R	> -AR, ÉIS		# encontrar > encontréis
+    O R A R	> -AR, ÉIS		# encorar > encoréis
+    O R C A R	> -CAR, QUÉIS		# emporcar > emporquéis
+    O R D A R	> -AR, ÉIS		# acordar > acordéis
+    O R N A R	> -AR, ÉIS		# acornar > acornéis
+    O R T A R	> -AR, ÉIS		# entortar > entortéis
+    O R Z A R	> -ZAR, CÉIS		# forzar > forcéis
+    O S A R	> -AR, ÉIS		# engrosar > engroséis
+    O S T A R	> -AR, ÉIS		# acostar > acostéis
+    O S T R A R	> -AR, ÉIS		# mostrar > mostréis
+    O V A R	> -AR, ÉIS		# encovar > encovéis
+    U G A R	> -GAR, GUÉIS		# jugar > juguéis
+    [^FH] A C E R > -CER, ZCÁIS	# nacer > nazcáis
+    [FH] A C E R > -CER, GÁIS		# hacer > hagamos
+    A L E R	> -ER, GÁIS		# valer > valgáis
+    A E R	> -ER, IGÁIS		# caer > caigáis
+    C A B E R	> -CABER, QUEPÁIS	# caber > quepáis
+    E C E R	> -CER, ZCÁIS		# parecer > parezcáis
+    E D E R	> -ER, ÁIS		# heder > hedáis
+    [EO] E R	> -ER, ÁIS		# leer > leáis
+    O E R	> -ER, IGÁIS		# roer > roigáis
+    O E R	> -ER, YÁIS		# roer > royáis
+    E N D E R	> -ER, ÁIS		# tender > tendáis
+    [EO] N E R	> -ER, GÁIS		# tener > tengáis
+    E R D E R	> -ER, ÁIS		# perder > perdáis
+    E R E R	> -ER, ÁIS		# querer > queráis
+    E R N E R	> -ER, ÁIS		# cerner > cernáis
+    E R T E R	> -ER, ÁIS		# verter > vertáis
+    C O C E R	> -CER, ZÁIS		# cocer > cozáis
+    [^C] O C E R > -CER, ZCÁIS		# conocer > conozcáis
+    O D E R	> -ER, ÁIS		# poder > podáis
+    O L E R	> -ER, ÁIS		# soler > soláis
+    O L V E R	> -ER, ÁIS		# volver > volváis
+    O R C E R	> -CER, ZÁIS		# torcer > torzáis
+    O R D E R	> -ER, ÁIS		# morder > mordáis
+    O V E R	> -ER, ÁIS		# mover > mováis
+    S A B E R	> -ABER, EPÁIS		# saber > sepáis
+    A L I R	> -IR, GÁIS		# salir > salgáis
+    E B I R	> -EBIR, IBÁIS		# concebir > concibáis
+    E C I R	> -ECIR, IGÁIS		# decir > digáis
+    E D I R	> -EDIR, IDÁIS		# pedir > pidáis
+    E G I R	> -EGIR, IJÁIS		# elegir > elijáis
+    E M I R	> -EMIR, IMÁIS		# gemir > gimáis
+    E Í R	> -EÍR, IÁIS		# reír > riáis
+    E Ñ I R	> -EÑIR, IÑÁIS	# ceñir > ciñáis
+    E G U I R	> -EGUIR, IGÁIS	# seguir > sigáis
+    E N C H I R	> -ENCHIR, INCHÁIS	# henchir > hincháis
+    E N D I R	> -ENDIR, INDÁIS	# rendir > rindáis
+    E N I R	> -ENIR, ENGÁIS	# venir > vengáis
+    E N T I R	> -ENTIR, INTÁIS	# sentir > sintáis
+    E R I R	> -ERIR, IRÁIS		# herir > hiráis
+    E R N I R	> -IR, ÁIS		# discernir > discernáis
+    E R T I R	> -ERTIR, IRTÁIS	# invertir > invirtáis
+    E R V I R	> -ERVIR, IRVÁIS	# servir > sirváis
+    E S T I R	> -ESTIR, ISTÁIS	# vestir > vistáis
+    E U N I R	> -IR, ÁIS		# reunir > reunáis
+    E T I R	> -ETIR, ITÁIS		# derretir > derritáis
+    I R I R	> -IR, ÁIS		# adquirir > adquiráis
+    O H I B I R > -IR, ÁIS		# prohibir > prohibáis
+    O Í R	> -ÍR, IGÁIS		# oír > oigáis
+    O R I R	> -ORIR, URÁIS		# morir > muráis
+    O R M I R	> -ORMIR, URMÁIS	# dormir > durmáis
+    U C I R	> -CIR, ZCÁIS		# producir > produzcáis
+    [^G] U I R	> -IR, YÁIS		# huir > huyáis
+    G Ü I R	> -ÜIR, UYÁIS	# argüir > arguyáis
+    U L L I R	> -IR, ÁIS		# mullir > mulláis
+
+    I A R	> -IAR, ÍEN		# enviar > envíen
+    E B R A R	> -EBRAR, IEBREN	# quebrar > quiebren
+    E D R A R	> -EDRAR, IEDREN	# empedrar > empiedren
+    E G A R	> -EGAR, IEGUEN		# regar > rieguen
+    E L A R	> -ELAR, IELEN		# helar > hielen
+    E V A R	> -EVAR, IEVEN		# nevar > nieven
+    E M B L A R	> -EMBLAR, IEMBLEN	# temblar > tiemblen
+    E M B R A R	> -EMBRAR, IEMBREN	# desmembrar > desmiembren
+    A N D A R	> -AR, EN		# andar > anden
+    E N D A R	> -ENDAR, IENDEN	# arrendar > arrienden
+    E N D R A R	> -ENDRAR, IENDREN	# deslendrar > desliendren
+    E N G A R	> -ENGAR, IENGUEN	# derrengar > derrienguen
+    E N S A R	> -ENSAR, IENSEN	# incensar > inciensen
+    E N T A R	> -ENTAR, IENTEN	# calentar > calienten
+    E N Z A R	> -ENZAR, IENCEN	# comenzar > comiencen
+    E R B A R	> -ERBAR, IERBEN	# hebar > hierben
+    E R N A R	> -ERNAR, IERNEN	# apernar > apiernen
+    E R R A R	> -ERRAR, IERREN	# cerrar > cierren
+    E R T A R	> -ERTAR, IERTEN	# acertar > acierten
+    E S A R	> -ESAR, IESEN		# atravesar > atraviese
+    E S T A R	> -ESTAR, IESTEN	# enhestar > enhiesten
+    E T A R	> -ETAR, IETEN		# apretar > aprieten
+    E Z A R	> -EZAR, IECEN		# empezar > empiecen
+    [AE] H I J A R > -IJAR, ÍJEN	# ahijar > ahíjen
+    [AE] H I L A R > -ILAR, ÍLEN	# ahilar > ahílen
+    [AEO] H I N A R > -INAR, ÍNEN	# amohinar > amohínen
+    [AE] H I T A R > -ITAR, ÍTEN	# ahitar > ahíten
+    [AE] H U M A R > -UMAR, ÚMEN	# ahumar > ahúmen
+    [AE] H U S A R > -USAR, ÚSEN	# ahusar > ahúsen
+    [AE] I Z A R > -IZAR, ÍCEN		# enraizar > enraícen
+    [^G] U A R 	> -UAR, ÚEN		# situar > sitúen
+    G O N Z A R	> -ONZAR, ÜENCEN	# avergonzar > avergüencen
+    G U A R	> -UAR, ÜEN		# averiguar > averigüen
+    O B A R	> -OBAR, UEBEN		# probar > prueben
+    O B L A R	> -OBLAR, UEBLEN	# poblar > pueblen
+    O C A R	> -OCAR, UEQUEN		# trocar > truequen
+    O D A R	> -ODAR, UEDEN		# rodar > rueden
+    O G A R	> -OGAR, UEGUEN		# rogar > rueguen
+    O L A R	> -OLAR, UELEN		# abuñolar > abuñuelen
+    [^G] O L L A R > -OLLAR, UELLEN	# descollar > descuellen
+    G O L D A R	> -OLDAR, ÜELDEN	# regoldar > regüelden
+    [^G] O L D A R > -OLDAR, UELDEN	# soldar > suelden
+    G O L L A R	> -OLLAR, ÜELLEN	# degollar > degüellen
+    O N A R	> -ONAR, UENEN		# sonar > suenen
+    O Ñ A R	> -OÑAR, UEÑEN	# soñar > sueñen
+    O L C A R	> -OLCAR, UELQUEN	# volcar > vuelquen
+    O L G A R	> -OLGAR, UELGUEN	# colgar > cuelguen
+    O L T A R	> -OLTAR, UELTEN	# soltar > suelten
+    O N T A R	> -ONTAR, UENTEN	# contar > cuenten
+    O N T R A R	> -ONTRAR, UENTREN	# encontrar > encuentren
+    [^G] O R A R > -ORAR, UEREN		# encorar > encueren
+    G O R A R	> -ORAR, ÜEREN	# agorar > agüeren
+    O R C A R	> -ORCAR, UERQUEN	# emporcar > empuerquen
+    O R D A R	> -ORDAR, UERDEN	# acordar > acuerden
+    O R N A R	> -ORNAR, UERNEN	# acornar > acuernen
+    O R T A R	> -ORTAR, UERTEN	# entortar > entuerten
+    O R Z A R	> -ORZAR, UERCEN	# forzar > fuercen
+    O S A R	> -OSAR, UESEN		# engrosar > engruesen
+    O S T A R	> -OSTAR, UESTEN	# acostar > acuesten
+    O S T R A R	> -OSTRAR, UESTREN	# mostrar > muestren
+    O V A R	> -OVAR, UEVEN		# encovar > encueven
+    U G A R	> -GAR, EGUEN		# jugar > jueguen
+    [^FH] A C E R > -CER, ZCAN		# nacer > nazcan
+    [FH] A C E R > -CER, GAN		# hacer > hagan
+    A L E R	> -ER, GAN		# valer > valgan
+    A E R	> -ER, IGAN		# caer > caigan
+    C A B E R	> -CABER, QUEPAN	# caber > quepan
+    E C E R	> -CER, ZCAN		# parecer > parezcan
+    E D E R	> -EDER, IEDAN		# heder > hiedan
+    [EO] E R	> -ER, AN		# leer > lean
+    O E R	> -ER, IGAN		# roer > roigan
+    O E R	> -ER, YAN		# roer > royan
+    E N D E R	> -ENDER, IENDAN	# tender > tiendan
+    [EO] N E R	> -ER, GAN		# tener > tengan
+    E R D E R	> -ERDER, IERDAN	# perder > pierdan
+    E R E R	> -ERER, IERAN		# querer > quieran
+    E R N E R	> -ERNER, IERNAN	# cerner > ciernan
+    E R T E R	> -ERTER, IERTAN	# verter > viertan
+    O D E R	> -ODER, UEDAN		# poder > puedan
+    C O C E R	> -OCER, UEZAN		# cocer > cuezan
+    [^C] O C E R > -CER, ZCAN		# conocer > conozcan
+    O L E R	> -OLER, UELAN		# soler > suelan
+    O L V E R	> -OLVER, UELVAN	# volver > vuelvan
+    O R C E R	> -ORCER, UERZAN	# torcer > tuerzan
+    O R D E R	> -ORDER, UERDAN	# morder > muerdan
+    O V E R	> -OVER, UEVAN		# mover > muevan
+    S A B E R	> -ABER, EPAN		# caber > quepan
+    A L I R	> -IR, GAN		# salir > salgan
+    E B I R	> -EBIR, IBAN		# concebir > conciban
+    E C I R	> -ECIR, IGAN		# decir > digan
+    E D I R	> -EDIR, IDAN		# pedir > pidan
+    E G I R	> -EGIR, IJAN		# elegir > elijan
+    E M I R	> -EMIR, IMAN		# gemir > giman
+    E Í R	> -EÍR, ÍAN		# reír > rían
+    E Ñ I R	> -EÑIR, IÑAN		# ceñir > ciñan
+    E G U I R	> -EGUIR, IGAN		# seguir > sigan
+    E N C H I R	> -ENCHIR, INCHAN	# henchir > hinchan
+    E N I R	> -ENIR, ENGAN		# venir > vengan
+    E N D I R	> -ENDIR, INDAN		# rendir > rindan
+    E R I R	> -ERIR, IERAN		# herir > hieran
+    E N T I R	> -ENTIR, IENTAN	# sentir > sientan
+    E R N I R	> -ERNIR, IERNAN	# discernir > disciernan
+    E R T I R	> -ERTIR, IERTAN	# invertir > inviertan
+    [^H] E R V I R > -ERVIR, IRVAN	# servir > sirvan
+    E S T I R	> -ESTIR, ISTAN		# vestir > vistan
+    E U N I R	> -UNIR, ÚNAN		# reunir > reúnan
+    E T I R	> -ETIR, ITAN		# derretir > derritan
+    H E R V I R	> -ERVIR, IERVAN	# hervir > hiervan
+    I R I R	> -IRIR, IERAN		# adquirir > adquieran
+    O H I B I R > -IBIR, ÍBAN		# prohibir > prohíban
+    O Í R	> -ÍR, IGAN		# oír > oigan
+    O R I R	> -ORIR, UERAN		# morir > mueran
+    O R M I R	> -ORMIR, UERMAN	# dormir > duerman
+    U C I R	> -CIR, ZCAN		# producir > produzcan
+    [^G] U I R	> -IR, YAN		# huir > huyan
+    G Ü I R	> -ÜIR, UYAN		# argüir > arguyan
+    U L L I R	> -IR, AN		# mullir > mullan
+
+# SUBJUNTIVO PRETÉRITO IMPERFECTO
+    A N D A R	> -AR, UVIESE		# andar > anduviese o anduviera
+    A N D A R 	> -AR, UVIERA
+    [^A] N D A R	> -R, SE	# recomendar > recomendase o recomendara
+    [^A] N D A R 	> -R, RA
+    [^N] D A R	> -R, SE		# recordar > recordase o recordara
+    [^N] D A R 	> -R, RA
+    [^D] A R	> -R, SE		# amar > amase o amara
+    [^D] A R 	> -R, RA
+    A B E R	> -ABER, UPIERA		# caber > cupiera o cupiese
+    A B E R	> -ABER, UPIESE
+    [^FH] A C E R > -ER, IERA		# nacer > naciera o naciese
+    [^FH] A C E R > -ER, IESE
+    [FH] A C E R > -ACER, ICIERA	# hacer > hiciera o hiciese
+    [FH] A C E R > -ACER, ICIESE
+    A L E R	> -ER, IERA		# valer > valiera o valiese
+    A L E R	> -ER, IESE
+    C A E R	> -ER, YESE		# caer >  cayera o cayese
+    C A E R	> -ER, YERA
+    E [CD] E R	> -ER, IERA		# parecer > pareciera o pareciese 
+    E [CD] E R	> -ER, IESE
+    [EO] E R	> -ER, YERA		# leer > leyera o leyese
+    [EO] E R	> -ER, YESE
+    E N D E R	> -ER, IERA		# tender > tendiera o tendiese
+    E N D E R	> -ER, IESE
+    E N E R	> -ENER, UVIERA		# tener > tuviera o tuviese
+    E N E R	> -ENER, UVIESE
+    E R [DNT] E R > -ER, IERA		# perder > perdiera o perdiese
+    E R [DNT] E R > -ER, IESE
+    E R E R	> -ERER, ISIERA		# querer > quisiera o quisiese
+    E R E R	> -ERER, ISIESE
+    O [CLV] E R	> -ER, IERA		# conocer > conociera o conociese
+    O [CLV] E R	> -ER, IESE
+    O D E R	> -ODER, UDIERA		# poder > pudiera o pudiese
+    O D E R	> -ODER, UDIESE
+    O L V E R	> -ER, IERA		# volver > volviera o volviese
+    O L V E R	> -ER, IESE
+    O N E R	> -ONER, USIERA		# poner > pusiera o pusiese
+    O N E R	> -ONER, USIESE
+    O R [CD] E R > -ER, IERA		# torcer > torciera o torciese
+    O R [CD] E R > -ER, IESE
+    R A E R	> -ER, JESE		# traer > trajera o trajese 
+    R A E R	> -ER, JERA
+    A L I R	> -R, ERA		# salir > saliera o saliese
+    A L I R	> -R, ESE
+    E B I R	> -EBIR, IBIESE		# concebir > concibiese o concibiera
+    E B I R	> -EBIR, IBIERA
+    E C I R	> -ECIR, IJESE		# decir > dijese o dijera
+    E C I R	> -ECIR, IJERA
+    E D I R	> -EDIR, IDIESE		# pedir > pidiese o pidiera
+    E D I R	> -EDIR, IDIERA
+    E G I R	> -EGIR, IGIESE		# elegir > eligiese o eligiera
+    E G I R	> -EGIR, IGIERA
+    E M I R	> -EMIR, IMIESE		# gemir > gimiese o gimiera
+    E M I R	> -EMIR, IMIERA
+    E Í R	> -EÍR, IESE		# reír > riese o riera
+    E Í R	> -EÍR, IERA
+    E Ñ I R	> -EÑIR, IÑESE	# ceñir > ciñese o ciñera
+    E Ñ I R	> -EÑIR, IÑERA
+    E G U I R	> -EGUIR, IGUIESE	# seguir > siguiese siguiera
+    E G U I R	> -EGUIR, IGUIERA
+    E N C H I R	> -ENCHIR, INCHIESE	# henchir > hinchiese o hinchiera
+    E N C H I R	> -ENCHIR, INCHIERA
+    E N D I R	> -ENDIR, INDIESE	# rendir > rindiese o rindiera
+    E N D I R	> -ENDIR, INDIERA
+    E N I R	> -ENIR, INIESE		# venir > viniese o viniera
+    E N I R	> -ENIR, INIERA
+    E N T I R	> -ENTIR, INTIERA	# sentir > sintiera o sintiese
+    E N T I R	> -ENTIR, INTIESE
+    E R I R	> -ERIR, IRIERA		# herir > hiriera o hiriese
+    E R I R	> -ERIR, IRIESE
+    E R N I R	> -R, ESE		# discernir > discerniera o discerniese
+    E R N I R	> -R, ERA
+    E R T I R	> -ERTIR, IRTIERA	# invertir > invirtiera o invirtiese
+    E R T I R	> -ERTIR, IRTIESE
+    E R V I R	> -ERVIR, IRVIERA	# servir > sirviera o sirviese
+    E R V I R	> -ERVIR, IRVIESE
+    E S T I R	> -ESTIR, ISTIERA	# vestir > vistiera o vistiese
+    E S T I R	> -ESTIR, ISTIESE
+    E U N I R	> -R, ESE		# reunir > reuniera o reuniese
+    E U N I R	> -R, ERA
+    E T I R	> -ETIR, ITIERA		# derretir > derritiera o derritiese
+    E T I R	> -ETIR, ITIESE
+    I R I R	> -IRIR, IRIERA		# adquirir > adquiriese
+    I R I R	> -IRIR, IRIESE
+    O H I B I R > -R, ESE		# prohibir > prohibiera o prohibiese
+    O H I B I R > -R, ERA
+    O Í R	> -ÍR, YERA		# oír > oyera u oyese
+    O Í R	> -ÍR, YESE
+    O R I R	> -ORIR, URIERA		# morir > muriera
+    O R I R	> -ORIR, URIESE
+    O R M I R	> -ORMIR, URMIERA	# dormir > durmiera
+    O R M I R	> -ORMIR, URMIESE
+    D U C I R	> -CIR, JERA		# producir > produjese
+    D U C I R	> -CIR, JESE
+    [^D] U C I R > -R, ERA		# lucir > luciera o luciese
+    [^D] U C I R > -R, ESE
+    [^G] U I R	> -IR, YERA		# huir > huyese
+    [^G] U I R	> -IR, YESE
+    G Ü I R	> -ÜIR, UYESE		# argüir > arguyera o arguyese
+    G Ü I R	> -ÜIR, UYERA
+    U L L I R	> -IR, ERA		# mullir > mullera
+    U L L I R	> -IR, ESE		# mullir > mullese
+
+    A N D A R	> -AR, UVIESES		# andar > anduvieses o anduvieras
+    A N D A R 	> -AR, UVIERAS
+    [^A] N D A R> -R, SES		# recomendar > recomendases o recomendaras
+    [^A] N D A R> -R, RAS
+    [^N] D A R	> -R, SES		# recordar > recordases o recordaras
+    [^N] D A R 	> -R, RAS
+    [^D] A R	> -R, SES		# amar > amases o amaras
+    [^D] A R 	> -R, RAS
+    A B E R	> -ABER, UPIERAS	# caber > cupieras o cupieses
+    A B E R	> -ABER, UPIESES
+    [^FH] A C E R > -ER, IERAS		# nacer > nacieras o nacieses
+    [^FH] A C E R > -ER, IESES
+    [FH] A C E R > -ACER, ICIERAS	# hacer > hicieras o hicieses
+    [FH] A C E R > -ACER, ICIESES
+    A L E R	> -ER, IERAS		# valer > valieras o valieses
+    A L E R	> -ER, IESES
+    C A E R	> -ER, YESES		# caer >  cayeras o cayeses
+    C A E R	> -ER, YERAS
+    E [CD] E R	> -ER, IERAS		# parecer > parecieras o pareciese s
+    E [CD] E R	> -ER, IESES
+    [EO] E R	> -ER, YERAS		# leer > leyeras o leyeses
+    [EO] E R	> -ER, YESES
+    E N D E R	> -ER, IERAS		# tender > tendieras o tendieses
+    E N D E R	> -ER, IESES
+    E N E R	> -ENER, UVIERAS	# tener > tuvieras o tuvieses
+    E N E R	> -ENER, UVIESES
+    E R [DNT] E R > -ER, IERAS		# perder > perdieras o perdieses
+    E R [DNT] E R > -ER, IESES
+    E R E R	> -ERER, ISIERAS	# querer > quisieras o quisieses
+    E R E R	> -ERER, ISIESES
+    O [CLV] E R	> -ER, IERAS		# conocer > conocieras o conocieses
+    O [CLV] E R	> -ER, IESES
+    O D E R	> -ODER, UDIERAS	# poder > pudieras o pudieses
+    O D E R	> -ODER, UDIESES
+    O L V E R	> -ER, IERAS		# volver > volvieras o volvieses
+    O L V E R	> -ER, IESES
+    O N E R	> -ONER, USIERAS	# poner > pusieras o pusieses
+    O N E R	> -ONER, USIESES
+    O R [CD] E R > -ER, IERAS		# torcer > torcieras o torcieses
+    O R [CD] E R > -ER, IESES
+    R A E R	> -ER, JESES		# traer > trajeras o trajeses
+    R A E R	> -ER, JERAS
+    A L I R	> -R, ERAS		# salir > salieras o salieses
+    A L I R	> -R, ESES
+    E B I R	> -EBIR, IBIESES	# concebir > concibieses o concibieras
+    E B I R	> -EBIR, IBIERAS
+    E C I R	> -ECIR, IJESES		# decir > dijeses o dijeras
+    E C I R	> -ECIR, IJERAS
+    E D I R	> -EDIR, IDIESES	# pedir > pidieses o pidieras
+    E D I R	> -EDIR, IDIERAS
+    E G I R	> -EGIR, IGIESES	# elegir > eligieses o eligieras
+    E G I R	> -EGIR, IGIERAS
+    E M I R	> -EMIR, IMIESES	# gemir > gimieses o gimieras
+    E M I R	> -EMIR, IMIERAS
+    E Í R	> -EÍR, IESES		# reír > rieses o rieras
+    E Í R	> -EÍR, IERAS
+    E Ñ I R	> -EÑIR, IÑESES	# ceñir > ciñeras o ciñeses
+    E Ñ I R	> -EÑIR, IÑERAS
+    E G U I R	> -EGUIR, IGUIESES	# seguir > siguieses
+    E G U I R	> -EGUIR, IGUIERAS
+    E N C H I R	> -ENCHIR, INCHIESES	# henchir > hinchieras o hinchieses
+    E N C H I R	> -ENCHIR, INCHIERAS
+    E N D I R	> -ENDIR, INDIESES	# rendir > rindieras o rindieses
+    E N D I R	> -ENDIR, INDIERAS
+    E N I R	> -ENIR, INIESES	# venir > vinieras o vinieses
+    E N I R	> -ENIR, INIERAS
+    E N T I R	> -ENTIR, INTIERAS	# sentir > sintieses o sintieras
+    E N T I R	> -ENTIR, INTIESES
+    E R I R	> -ERIR, IRIERAS	# herir > hirieras o hirieses
+    E R I R	> -ERIR, IRIESES
+    E R N I R	> -R, ESES		# discernir > discernieses o discernieses
+    E R N I R	> -R, ERAS
+    E R T I R	> -ERTIR, IRTIERAS	# invertir > invirtieras o invirtieras
+    E R T I R	> -ERTIR, IRTIESES
+    E R V I R	> -ERVIR, IRVIERAS	# servir > sirvieras o sirvieses
+    E R V I R	> -ERVIR, IRVIESES
+    E S T I R	> -ESTIR, ISTIERAS	# vestir > vistieras o vistieses
+    E S T I R	> -ESTIR, ISTIESES
+    E U N I R	> -R, ESES		# reunir > reunieras o reunieses
+    E U N I R	> -R, ERAS
+    E T I R	> -ETIR, ITIERAS	# derretir > derritieras o derritieses
+    E T I R	> -ETIR, ITIESES
+    I R I R	> -IRIR, IRIERAS	# adquirir > adquirieses o adquirieras
+    I R I R	> -IRIR, IRIESES
+    O H I B I R > -R, ESES		# prohibir > prohibieras o prohibieses
+    O H I B I R > -R, ERAS
+    O Í R	> -ÍR, YERAS		# oír > oyeras u oyeses
+    O Í R	> -ÍR, YESES
+    O R I R	> -ORIR, URIERAS	# morir > murieras o murieses
+    O R I R	> -ORIR, URIESES
+    O R M I R	> -ORMIR, URMIERAS	# dormir > durmieras o durmieses
+    O R M I R	> -ORMIR, URMIESES
+    D U C I R	> -CIR, JERAS		# producir > produjeses o produjeras
+    D U C I R	> -CIR, JESES
+    [^D] U C I R > -R, ERAS		# lucir > lucieras o lucieses
+    [^D] U C I R > -R, ESES
+    [^G] U I R	> -IR, YERAS		# huir > huyeses o huyeras
+    [^G] U I R	> -IR, YESES
+    G Ü I R	> -ÜIR, UYESES	# argüir > arguyera o arguyese
+    G Ü I R	> -ÜIR, UYERAS
+    U L L I R	> -IR, ERAS		# mullir > mulleras o mulleses
+    U L L I R	> -IR, ESES
+
+    A N D A R	> -AR, UVIÉSEMOS	# andar > anduvieses o anduvieras
+    A N D A R 	> -AR, UVIÉRAMOS
+    [^A] N D A R> -R, ÁSEMOS		# recomendar > recomendases o recomendaras
+    [^A] N D A R> -AR, ÁRAMOS
+    [^N] D A R	> -AR, ÁSEMOS		# recordar > recordases o recordaras
+    [^N] D A R 	> -AR, ÁRAMOS
+    [^D] A R	> -AR, ÁSEMOS		# amar > amásemos o amáramos
+    [^D] A R 	> -AR, ÁRAMOS
+    A B E R	> -ABER, UPIÉRAMOS	# caber > cupiera o cupiese
+    A B E R	> -ABER, UPIÉSEMOS
+    [^FH] A C E R > -ER, IÉSEMOS	# nacer > naciéramos o naciésemos
+    [^FH] A C E R > -ER, IÉRAMOS
+    [FH] A C E R > -ACER, ICIÉRAMOS	# hacer > hiciéramos o hiciésemos
+    [FH] A C E R > -ACER, ICIÉSEMOS
+    A L E R	> -ER, IÉSEMOS		# valer > valiéramos o valiésemos
+    A L E R	> -ER, IÉRAMOS
+    C A E R	> -ER, YÉSEMOS		# caer > cayésemos o cayéramos
+    C A E R	> -ER, YÉRAMOS
+    E [CD] E R	> -ER, IÉSEMOS		# parecer > pareciéramos o pareciésemos
+    E [CD] E R	> -ER, IÉRAMOS 
+    [EO] E R	> -ER, YÉSEMOS		# leer > leyésemos o leyéramos
+    [EO] E R	> -ER, YÉRAMOS
+    E N D E R	> -ER, IÉSEMOS		# tender > tendiéramos o tendiésemos
+    E N D E R	> -ER, IÉRAMOS
+    E N E R	> -ENER, UVIÉSEMOS	# tener > tuviésemos o tuviéramos
+    E N E R	> -ENER, UVIÉRAMOS
+    E R [DNT] E R > -ER, IÉRAMOS	# perder > perdiéramos o perdiésemos
+    E R [DNT] E R > -ER, IÉSEMOS
+    E R E R	> -ERER, ISIÉSEMOS	# querer > quisiésemos o quisiéramos
+    E R E R	> -ERER, ISIÉRAMOS
+    O [CLV] E R	> -ER, IÉRAMOS		# conocer > conociéramos o conociésemos
+    O [CLV] E R	> -ER, IÉSEMOS
+    O D E R	> -ODER, UDIÉRAMOS	# poder > pudiéramos o pudiésemos
+    O D E R	> -ODER, UDIÉSEMOS
+    O L V E R	> -ER, IÉRAMOS		# volver > volviéramos o volviésemos
+    O L V E R	> -ER, IÉSEMOS
+    O N E R	> -ONER, USIÉSEMOS	# poner > pusiésemos o pusiéramos
+    O N E R	> -ONER, USIÉRAMOS
+    O R [CD] E R > -ER, IÉRAMOS	# torcer > torciéramos o torciésemos
+    O R [CD] E R > -ER, IÉSEMOS
+    R A E R	> -ER, JÉSEMOS		# traer > trajésemos o trajéramos
+    R A E R	> -ER, JÉRAMOS
+    A L I R	> -R, ÉSEMOS		# salir > saliéramos o saliésemos
+    A L I R	> -R, ÉRAMOS
+    E B I R	> -EBIR, IBIÉSEMOS	# concebir > concibiéramos o concibiésemos
+    E B I R	> -EBIR, IBIÉRAMOS
+    E C I R	> -ECIR, IJÉSEMOS	# decir > dijésemos o dijéramos
+    E C I R	> -ECIR, IJÉRAMOS
+    E D I R	> -EDIR, IDIÉSEMOS	# pedir > pidiéramos o pidiésemos
+    E D I R	> -EDIR, IDIÉRAMOS
+    E G I R	> -EGIR, IGIÉSEMOS	# elegir > elegiéramos o elegiésemos
+    E G I R	> -EGIR, IGIÉRAMOS
+    E M I R	> -EMIR, IMIÉSEMOS	# gemir > gimiéramos o gimiésemos
+    E M I R	> -EMIR, IMIÉRAMOS
+    E Í R	> -EÍR, IÉSEMOS	# reír > rieras o rieses
+    E Í R	> -EÍR, IÉRAMOS
+    E Ñ I R	> -EÑIR, IÑÉSEMOS	# ceñir > ciñéramos o ciñésemos
+    E Ñ I R	> -EÑIR, IÑÉRAMOS
+    E G U I R	> -EGUIR, IGUIÉSEMOS	# seguir > siguiéramos o siguiésemos
+    E G U I R	> -EGUIR, IGUIÉRAMOS
+    E N C H I R	> -ENCHIR, INCHIÉRAMOS	# henchir > hinchiéramos, hinchiésemos
+    E N C H I R	> -ENCHIR, INCHIÉSEMOS
+    E N D I R	> -ENDIR, INDIÉSEMOS	# rendir > rindiéramos o rindiésemos
+    E N D I R	> -ENDIR, INDIÉRAMOS
+    E N I R	> -ENIR, INIÉSEMOS	# venir > viniésemos o viniéramos
+    E N I R	> -ENIR, INIÉRAMOS
+    E N T I R	> -ENTIR, INTIÉRAMOS	# sentir > sintiéramos o sintiésemos
+    E N T I R	> -ENTIR, INTIÉSEMOS
+    E R I R	> -ERIR, IRIÉRAMOS	# herir > hiriéramos o hiriésemos
+    E R I R	> -ERIR, IRIÉSEMOS
+    E R N I R	> -R, ÉSEMOS		# discernir > discerniéramos
+    E R N I R	> -R, ÉRAMOS		# o discerniésemos
+    E R T I R	> -ERTIR, IRTIÉRAMOS	# invertir > invirtiéramos
+    E R T I R	> -ERTIR, IRTIÉSEMOS	# invertir > invirtiésemos
+    E R V I R	> -ERVIR, IRVIÉRAMOS	# servir > sirviéramos
+    E R V I R	> -ERVIR, IRVIÉSEMOS	# servir > sirviésemos
+    E S T I R	> -ESTIR, ISTIÉRAMOS	# vestir > vistiéramos
+    E S T I R	> -ESTIR, ISTIÉSEMOS	# vestir > vistiésemos
+    E U N I R	> -R, ÉSEMOS		# reunir > reuniéramos o reuniésemos
+    E U N I R	> -R, ÉRAMOS
+    E T I R	> -ETIR, ITIÉRAMOS	# derretir > derritiéramos
+    E T I R	> -ETIR, ITIÉSEMOS	# derretir > derritiésemos
+    I R I R	> -IRIR, IRIÉRAMOS	# adquirir > adquiriéramos
+    I R I R	> -IRIR, IRIÉSEMOS	# adquirir > adquiriésemos
+    O H I B I R > -R, ÉSEMOS		# prohibir > prohibiésemos o prohibiéramos
+    O H I B I R > -R, ÉRAMOS
+    O Í R	> -ÍR, YÉRAMOS	# oír > oyéramos u oyésemos
+    O Í R	> -ÍR, YÉSEMOS
+    O R I R	> -ORIR, URIÉRAMOS	# morir > muriéramos
+    O R I R	> -ORIR, URIÉSEMOS	# morir > muriésemos
+    O R M I R	> -ORMIR, URMIÉRAMOS	# dormir > durmiéramos
+    O R M I R	> -ORMIR, URMIÉSEMOS	# dormir > durmiésemos
+    D U C I R	> -CIR, JÉRAMOS	# producir > produjéramos o produjésemos
+    D U C I R	> -CIR, JÉSEMOS
+    [^D] U C I R > -R, ÉRAMOS		# lucir > lucierámos o luciesémos
+    [^D] U C I R > -R, ÉSEMOS
+    [^G] U I R	> -IR, YÉRAMOS		# huir > huyéramos o huyésemos
+    [^G] U I R	> -IR, YÉSEMOS
+    G Ü I R	> -ÜIR, UYÉSEMOS	# argüir > arguyéramos o arguyésemos
+    G Ü I R	> -ÜIR, UYÉRAMOS
+    U L L I R	> -IR, ÉRAMOS		# mullir > mulléramos o mullésemos
+    U L L I R	> -IR, ÉSEMOS
+
+    A N D A R	> -AR, UVIESEIS		# andar > anduvieseis o anduvierais
+    A N D A R 	> -AR, UVIERAIS
+    [^A] N D A R> -R, RAIS		# recomendar > recomendarais o recomendaseis
+    [^A] N D A R> -R, SEIS
+    [^N] D A R	> -R, RAIS		# recordar > recordarais o recordaseis
+    [^N] D A R 	> -R, SEIS
+    [^D] A R	> -R, RAIS		# amar > amásemos o amáramos
+    [^D] A R 	> -R, SEIS
+    A B E R	> -ABER, UPIERAIS	# caber > cupieras o cupieses
+    A B E R	> -ABER, UPIESEIS
+    [^FH] A C E R > -ER, IESEIS		# nacer > nacierais o nacieseis
+    [^FH] A C E R > -ER, IERAIS
+    [FH] A C E R > -ACER, ICIERAIS	# hacer > hicierais o hicieseis
+    [FH] A C E R > -ACER, ICIESEIS
+    A L E R	> -ER, IESEIS		# valer > valierais o valieseis
+    A L E R	> -ER, IERAIS
+    C A E R	> -ER, YESEIS		# caer > cayeseis o cayerais
+    C A E R	> -ER, YERAIS
+    E [CD] E R	> -ER, IESEIS		# parecer > pareciéramos o pareciésemos
+    E [CD] E R	> -ER, IERAIS
+    [EO] E R	> -ER, YESEIS		# leer > leyeseis o leyerais
+    [EO] E R	> -ER, YERAIS		#
+    E N D E R	> -ER, IESEIS		# tender > tendiéramos o tendiésemos
+    E N D E R	> -ER, IERAIS		#
+    E N E R	> -ENER, UVIESEIS	# tener > tuvieseis o tuvierais
+    E N E R	> -ENER, UVIERAIS	# tener > tuvieseis o tuvierais
+    E R [DNT] E R > -ER, IESEIS		# perder > perdiéramos o perdiésemos
+    E R [DNT] E R > -ER, IERAIS		#
+    E R E R	> -ERER, ISIESEIS	# querer > quisieseis o quisierais
+    E R E R	> -ERER, ISIERAIS
+    O [CLV] E R	> -ER, IESEIS		# conocer > conociéramos o conociésemos
+    O [CLV] E R	> -ER, IERAIS		#
+    O D E R	> -ODER, UDIESEIS	# poder > pudiérais o pudiéseis
+    O D E R	> -ODER, UDIERAIS	#
+    O L V E R	> -ER, IESEIS		# volver > volviéramos o volviésemos
+    O L V E R	> -ER, IERAIS		#
+    O N E R	> -ONER, USIESEIS	# poner > pusieseis o pusierais
+    O N E R	> -ONER, USIERAIS	#
+    O R [CD] E R > -ER, IESEIS		# torcer > torciéramos o torciésemos
+    O R [CD] E R > -ER, IERAIS		#
+    R A E R	> -ER, JESEIS		# traer > trajeseis o trajerais
+    R A E R	> -ER, JERAIS		#
+    A L I R	> -R, ESEIS		# salir > salierais o salieseis
+    A L I R	> -R, ERAIS		#
+    E B I R	> -EBIR, IBIESEIS	# concebir > concibieseis o concibierais
+    E B I R	> -EBIR, IBIERAIS	#
+    E C I R	> -ECIR, IJESEIS	# decir > dijeseis
+    E C I R	> -ECIR, IJERAIS	# decir > dijerais
+    E D I R	> -EDIR, IDIESEIS	# pedir > pidieseis o pidierais
+    E D I R	> -EDIR, IDIERAIS	#
+    E G I R	> -EGIR, IGIESEIS	# elegir > eligieseis o eligierais
+    E G I R	> -EGIR, IGIERAIS	#
+    E M I R	> -EMIR, IMIESEIS	# gemir > gimieseis o gimierais
+    E M I R	> -EMIR, IMIERAIS	#
+    E Í R	> -EÍR, IESEIS		# reír > rieseis
+    E Í R	> -EÍR, IERAIS		# reír> rierais
+    E Ñ I R	> -EÑIR, IÑESEIS	# ceñir > ciñeseis o ciñerais
+    E Ñ I R	> -EÑIR, IÑERAIS	#
+    E G U I R	> -EGUIR, IGUIESEIS	# seguir > siguieseis o siguierais
+    E G U I R	> -EGUIR, IGUIERAIS	#
+    E N C H I R	> -ENCHIR, INCHIESEIS	# henchir > hinchieseis o hinchierais
+    E N C H I R	> -ENCHIR, INCHIERAIS	#
+    E N D I R	> -ENDIR, INDIESEIS	# rendir > rindieseis o rindierais
+    E N D I R	> -ENDIR, INDIERAIS	#
+    E N I R	> -ENIR, INIESEIS	# venir > vinieseis
+    E N I R	> -ENIR, INIERAIS	# venir > vinierais
+    E N T I R	> -ENTIR, INTIESEIS	# sentir > sintierais
+    E N T I R	> -ENTIR, INTIERAIS	# sentir > sintieseis
+    E S T I R	> -ESTIR, ISTIESEIS	# vestir > vistierais
+    E S T I R	> -ESTIR, ISTIERAIS	# vestir > vistieseis
+    E R I R	> -ERIR, IRIESEIS	# herir > hirieseis
+    E R I R	> -ERIR, IRIERAIS	# herir > hirierais
+    E R N I R	> -R, ESEIS		# discernir > discernieseis o discernierais
+    E R N I R	> -R, ERAIS		#
+    E R T I R	> -ERTIR, IRTIESEIS	# invertir > invirtierais
+    E R T I R	> -ERTIR, IRTIERAIS	# invertir > invirtieseis
+    E R V I R	> -ERVIR, IRVIESEIS	# servir > sirvierais
+    E R V I R	> -ERVIR, IRVIERAIS	# servir > sirvieseis
+    E U N I R	> -R, ESEIS		# reunir > reunierais o reunieseis
+    E U N I R	> -R, ERAIS
+    E T I R	> -ETIR, ITIESEIS	# derretir > derritieseis
+    E T I R	> -ETIR, ITIERAIS	# derretir > derritierais
+    I R I R	> -IRIR, IRIESEIS	# adquirir > adquirieseis
+    I R I R	> -IRIR, IRIERAIS	# adquirir > adquirierais
+    O H I B I R > -R, ESEIS		# prohibir > prohibieseis o prohibierais
+    O H I B I R > -R, ERAIS
+    O Í R	> -ÍR, YERAIS		# oír > oyerais u oyeseis
+    O Í R	> -ÍR, YESEIS
+    O R I R	> -ORIR, URIESEIS	# morir > muriéseis
+    O R I R	> -ORIR, URIERAIS	# morir > muriérais
+    O R M I R	> -ORMIR, URMIESEIS	# dormir > durmiéseis
+    O R M I R	> -ORMIR, URMIERAIS	# dormir > durmiérais
+    D U C I R	> -CIR, JERAIS		# producir > produjeseis
+    D U C I R	> -CIR, JESEIS		# producir > produjerais
+    [^D] U C I R > -R, ERAIS		# lucir > lucierais o lucieseis
+    [^D] U C I R > -R, ESEIS
+    [^G] U I R	> -IR, YERAIS		# huir > huyeseis
+    [^G] U I R	> -IR, YESEIS		# huir > huyerais
+    G Ü I R	> -ÜIR, UYESEIS	# argüir > arguyerais o arguyeseis
+    G Ü I R	> -ÜIR, UYERAIS
+    U L L I R	> -IR, ERAIS		# mullir > mullerais o mulleseis
+    U L L I R	> -IR, ESEIS
+
+    A N D A R	> -AR, UVIESEN		# andar > anduvieran o anduviesen
+    A N D A R	> -AR, UVIERAN		#
+    [^A] N D A R> -R, SEN		# recomendar > recomendaran
+    [^A] N D A R> -R, RAN		# recomendasen
+    [^N] D A R	> -R, SEN		# recordar > recordaran o recordasen
+    [^N] D A R	> -R, RAN		# 
+    [^D] A R	> -R, SEN		# amar > amaran o amasen
+    [^D] A R 	> -R, RAN		# 
+    A B E R	> -ABER, UPIERAN	# caber > cupieran o cupiesen
+    A B E R	> -ABER, UPIESEN	#
+    [^FH] A C E R > -ER, IESEN		# nacer > nacieramos o naciesemos
+    [^FH] A C E R > -ER, IERAN		#
+    [FH] A C E R > -ACER, ICIERAN	# hacer > hicieran o hiciesen
+    [FH] A C E R > -ACER, ICIESEN	#
+    A L E R	> -ER, IESEN		# valer > valiesen o valieran
+    A L E R	> -ER, IERAN		#
+    C A E R	> -ER, YESEN		# caer > cayesen o cayeran
+    C A E R	> -ER, YERAN		#
+    E [CD] E R	> -ER, IESEN		# parecer > pareciéramos o pareciésemos
+    E [CD] E R	> -ER, IERAN		# 
+    [EO] E R	> -ER, YESEN		# leer > leyesen o leyeran
+    [EO] E R	> -ER, YERAN		#
+    E N D E R	> -ER, IESEN		# tender > tendiéramos o tendiésemos
+    E N D E R	> -ER, IERAN		#
+    E N E R	> -ENER, UVIERAN	# tener > tuvieran o tuviesen
+    E N E R	> -ENER, UVIESEN	# 
+    E R [DNT] E R > -ER, IESEN		# perder > perdiéramos o perdiésemos
+    E R [DNT] E R > -ER, IERAN		#
+    E R E R	> -ERER, ISIERAN	# querer > quisieran o quisiesen
+    E R E R	> -ERER, ISIESEN	# 
+    O [CLV] E R	> -ER, IESEN		# conocer > conociéramos o conociésemos
+    O [CLV] E R	> -ER, IERAN		#
+    O D E R	> -ODER, UDIESEN	# poder > pudieran o pudiesen
+    O D E R	> -ODER, UDIERAN	#
+    O L V E R	> -ER, IESEN		# volver > volviéramos o volviésemos
+    O L V E R	> -ER, IERAN		#
+    O N E R	> -ONER, USIERAN	# poner > pusieran o pusiesen
+    O N E R	> -ONER, USIESEN	# 
+    O R [CD] E R > -ER, IESEN		# torcer > torciéramos o torciésemos
+    O R [CD] E R > -ER, IERAN		#
+    R A E R	> -ER, JESEN		# traer > trajesen o trajeran
+    R A E R	> -ER, JERAN		#
+    A L I R	> -R, ESEN		# salir > saliesen o salieran
+    A L I R	> -R, ERAN		#
+    E B I R	> -EBIR, IBIESEN	# concebir > concibieran o concibiesen
+    E B I R	> -EBIR, IBIERAN	#
+    E C I R	> -ECIR, IJESEN		# decir > dijeran o dijesen
+    E C I R	> -ECIR, IJERAN		#
+    E D I R	> -EDIR, IDIESEN	# pedir > pidieran o pidiesen
+    E D I R	> -EDIR, IDIERAN	#
+    E G I R	> -EGIR, IGIESEN	# elegir > eligieran o eligiesen
+    E G I R	> -EGIR, IGIERAN	#
+    E M I R	> -EMIR, IMIESEN	# gemir > gimieran o gimiesen
+    E M I R	> -EMIR, IMIERAN
+    E Í R	> -EÍR, IESEN		# reír > riesen
+    E Í R	> -EÍR, IERAN
+    E Ñ I R	> -EÑIR, IÑESEN	# ceñir > ciñeran o ciñesen
+    E Ñ I R	> -EÑIR, IÑERAN
+    E G U I R	> -EGUIR, IGUIESEN	# seguir > siguieran o siguiesen
+    E G U I R	> -EGUIR, IGUIERAN
+    E N C H I R	> -ENCHIR, INCHIESEN	# henchir > hinchieran o hinchiesen
+    E N C H I R	> -ENCHIR, INCHIERAN
+    E N I R	> -ENIR, INIESEN	# venir > viniesen o vinieran
+    E N I R	> -ENIR, INIERAN
+    E N D I R	> -ENDIR, INDIESEN	# rendir > rindieran o rindiesen
+    E N D I R	> -ENDIR, INDIERAN	#
+    E N T I R	> -ENTIR, INTIESEN	# sentir > sintiesen o sintieran
+    E N T I R	> -ENTIR, INTIERAN	#
+    E R I R	> -ERIR, IRIESEN	# herir > hiriesen o hirieran
+    E R I R	> -ERIR, IRIERAN	#
+    E R N I R	> -R, ESEN		# discernir > discernieran o discerniesen
+    E R N I R	> -R, ERAN		#
+    E R T I R	> -ERTIR, IRTIESEN	# invertir > invirtiesen o invirtieran
+    E R T I R	> -ERTIR, IRTIERAN	#
+    E R V I R	> -ERVIR, IRVIESEN	# servir > sirvieran o sirviesen
+    E R V I R	> -ERVIR, IRVIERAN	#
+    E S T I R	> -ESTIR, ISTIESEN	# vestir > vistiesen o vistieran
+    E S T I R	> -ESTIR, ISTIERAN	#
+    E U N I R	> -R, ESEN		# reunir > reunieran o reuniesen
+    E U N I R	> -R, ERAN
+    E T I R	> -ETIR, ITIESEN	# derretir > derritiesen o derritieran
+    E T I R	> -ETIR, ITIERAN	#
+    I R I R	> -IRIR, IRIESEN	# adquirir > adquiriesen o adquirieran
+    I R I R	> -IRIR, IRIERAN	#
+    O H I B I R > -R, ESEN		# prohibir > prohibiesen o prohibieran
+    O H I B I R > -R, ERAN
+    O Í R	> -ÍR, YERAN		# oír > oyeran u oyesen
+    O Í R	> -ÍR, YESEN
+    O R I R	> -ORIR, URIESEN	# morir > muriesen o murieran
+    O R I R	> -ORIR, URIERAN	#
+    O R M I R	> -ORMIR, URMIESEN	# dormir > durmiesen o durmieran
+    O R M I R	> -ORMIR, URMIERAN	#
+    D U C I R	> -CIR, JERAN		# producir > produjesen o produjeran
+    D U C I R	> -CIR, JESEN
+    [^D] U C I R > -R, ERAN		# lucir > lucieran o luciesen
+    [^D] U C I R > -R, ESEN
+    [^G] U I R 	> -IR, YERAN		# huir > huyesen
+    [^G] U I R 	> -IR, YESEN		# huir > huyeran
+    G Ü I R	> -ÜIR, UYESEN	# argüir > arguyeran o arguyesen
+    G Ü I R	> -ÜIR, UYERAN
+    U L L I R	> -IR, ERAN		# mullir > mulleran o mullesen
+    U L L I R	> -IR, ESEN
+
+# SUBJUNTIVO FUTURO
+    A N D A R	> -AR, UVIERE		# andar > anduviere
+    [^A] N D A R> -R, RE		# recomendar > recomendare
+    [^N] D A R	> -R, RE		# recordar > recordare
+    [^D] A R	> -R, RE		# amar > amare
+    [^FH] A C E R > -ER, IERE		# nacer > naciere
+    [FH] A C E R > -ACER, ICIERE	# hacer > hiciere
+    A B E R	> -ABER, UPIERE		# saber > supiere
+    A L E R	> -ER, IERE		# valer > valiere
+    C A E R	> -ER, YERE		# caer > cayere
+    E [CD] E R	> -ER, IERE		# parecer > pareciere
+    [EO] E R	> -ER, YERE		# leer > leyere
+    E N D E R	> -ER, IERE		# tender > tendiere
+    E N E R	> -ENER, UVIERE		# tener > tuviere
+    E R [DNT] E R > -ER, IERE		# cerner > cerniere
+    E R E R	> -ERER, ISIERE		# querer > quisiere
+    O [CLV] E R	> -ER, IERE		# conocer > conociere
+    O D E R	> -ODER, UDIERE		# poder > pudiere
+    O L V E R	> -ER, IERE		# volver > volviere
+    O N E R	> -ONER, USIERE		# poner > pusiere
+    O R [CD] E R > -ER, IERE		# torcer > torciere
+    R A E R	> -ER, JERE		# traer > trajere
+    A L I R	> -R, ERE		# salir > saliere
+    E B I R	> -EBIR, IBIERE		# concebir > concibiere
+    E C I R	> -ECIR, IJERE		# decir > dijere
+    E D I R	> -EDIR, IDIERE		# pedir > pidiere
+    E G I R	> -EGIR, IGIERE		# elegir > eligiere
+    E M I R	> -EMIR, IMIERE		# gemir > gimiere
+    E Í R	> -EÍR, IERE		# reír > riere
+    E Ñ I R	> -EÑIR, IÑERE	# ceñir > ciñere
+    E G U I R	> -EGUIR, IGUIERE	# seguir > siguiere
+    E N C H I R	> -ENCHIR, INCHIERE	# henchir > hinchiere
+    E N D I R	> -ENDIR, INDIERE	# rendir > rindiere
+    E N I R	> -ENIR, INIERE		# venir > viniere
+    E N T I R	> -ENTIR, INTIERE	# sentir > sintiere
+    E R I R	> -ERIR, IRIERE		# herir > hiriere
+    E R N I R	> -R, ERE		# discernir > discerniere
+    E R T I R	> -ERTIR, IRTIERE	# invertir > invirtiere
+    E R V I R	> -ERVIR, IRVIERE	# servir > sirviere
+    E S T I R	> -ESTIR, ISTIERE	# sentir > vistiere
+    E U N I R	> -R, ERE		# reunir > reuniere
+    E T I R	> -ETIR, ITIERE		# derretir > derritiere
+    I R I R	> -IRIR, IRIERE		# adquirir > adquiriere
+    O H I B I R > -R, ERE		# prohibir > prohibiere
+    O Í R	> -ÍR, YERE		# oír > oyere
+    O R I R	> -ORIR, URIERE		# morir > muriere
+    O R M I R	> -ORMIR, URMIERE	# dormir > durmiere
+    D U C I R	> -CIR, JERE		# producir > produjere
+    [^D] U C I R > -R, ERE		# lucir > luciere
+    [^G] U I R	> -IR, YERE		# huir > huyere
+    G Ü I R	> -ÜIR, UYERE		# argüir > arguyere
+    U L L I R	> -IR, ERE		# mullir > mullere
+
+    A N D A R	> -AR, UVIERES		# andar > anduvieres
+    [^A] N D A R> -R, RES		# recomendar > recomendares
+    [^N] D A R	> -R, RES		# recordar > recordares
+    [^D] A R	> -R, RES		# amar > amares
+    A B E R	> -ABER, UPIERES	# saber > supieres
+    [^FH] A C E R > -ER, IERES		# nacer > nacieres
+    [FH] A C E R > -ACER, ICIERES	# hacer > hicieres
+    A L E R	> -ER, IERES		# valer > valieres
+    C A E R	> -ER, YERES		# caer > cayeres
+    E [CD] E R	> -ER, IERES		# parecer > parecieres
+    [EO] E R	> -ER, YERES		# leer > leyeres
+    E N D E R	> -ER, IERES		# tender > tendieres
+    E N E R	> -ENER, UVIERES	# tener > tuvieres
+    E R [DNT] E R > -ER, IERES		# perder > perdieres
+    E R E R	> -ERER, ISIERES	# querer > quisieres
+    O [CLV] E R	> -ER, IERES		# conocer > conocieres
+    O D E R	> -ODER, UDIERES	# poder > pudieres
+    O L V E R	> -ER, IERES		# volver > volvieres
+    O N E R	> -ONER, USIERES	# poner > pusieres
+    O R [CD] E R > -ER, IERES		# torcer > torcieres
+    R A E R	> -ER, JERES		# traer > trajeres
+    A L I R	> -R, ERES		# salir > salieres
+    E B I R	> -EBIR, IBIERES	# concebir > concibieres
+    E C I R	> -ECIR, IJERES		# decir > dijeres
+    E D I R	> -EDIR, IDIERES	# pedir > pidieres
+    E G I R	> -EGIR, IGIERES	# elegir > eligieres
+    E M I R	> -EMIR, IMIERES	# gemir > gimieres
+    E Í R	> -EÍR, IERES		# reír > rieres
+    E Ñ I R	> -EÑIR, IÑERES	# ceñir > ciñeres
+    E G U I R	> -EGUIR, IGUIERES	# seguir > siguieres
+    E N C H I R	> -ENCHIR, INCHIERES	# henchir > hinchieres
+    E N D I R	> -ENDIR, INDIERES	# rendir > rindieres
+    E N I R	> -ENIR, INIERES	# venir > vinieres
+    E N T I R	> -ENTIR, INTIERES	# sentir > sintieres
+    E R I R	> -ERIR, IRIERES	# herir > hirieres
+    E R N I R	> -R, ERES		# discernir > discernieres
+    E R T I R	> -ERTIR, IRTIERES	# invertir > invirtieres
+    E R V I R	> -ERVIR, IRVIERES	# servir > sirvieres
+    E S T I R	> -ESTIR, ISTIERES	# vestir > vistieres
+    E U N I R	> -R, ERES		# reunir > reunieres
+    E T I R	> -ETIR, ITIERES	# derretir > derritieres
+    I R I R	> -IRIR, IRIERES	# adquirir > adquirieres
+    O H I B I R > -R, ERES		# prohibir > prohibieres
+    O Í R	> -ÍR, YERES		# oír > oyeres
+    O R I R	> -ORIR, URIERES	# morir > murieres
+    O R M I R	> -ORMIR, URMIERES	# dormir > durmieres
+    D U C I R	> -CIR, JERES		# producir > produjeres
+    [^D] U C I R > -R, ERES		# lucir > lucieres
+    [^G] U I R	> -IR, YERES		# huir > huyeres
+    G Ü I R	> -ÜIR, UYERES	# argüir > arguyeres
+    U L L I R	> -IR, ERES		# mullir > mulleres
+
+    A N D A R	> -AR, UVIÉREMOS	# andar > anduviéremos
+    [^A] N D A R> -AR, ÁREMOS		# recomendar > recomendáremos
+    [^N] D A R	> -AR, ÁREMOS		# recordar > recordáremos
+    [^D] A R	> -AR, ÁREMOS		# amar > amáremos
+    A B E R	> -ABER, UPIÉREMOS	# saber > supiéremos
+    [^FH] A C E R > -ER, IÉREMOS	# nacer > naciéremos
+    [FH] A C E R > -ACER, ICIÉREMOS	# hacer > hiciéremos
+    A L E R	> -ER, IÉREMOS		# valer > valiéremos
+    C A E R	> -ER, YÉREMOS		# caer > cayéremos
+    E [CD] E R	> -ER, IÉREMOS		# parecer > pareciéremos
+    [EO] E R	> -ER, YÉREMOS		# leer > leyéremos
+    E N D E R	> -ER, IÉREMOS		# tender > tendiéremos
+    E N E R	> -ENER, UVIÉREMOS	# tener > tuviéremos
+    E R [DNT] E R > -ER, IÉREMOS	# perder > perdiéremos
+    E R E R	> -ERER, ISIÉREMOS	# querer > quisiéremos
+    O [CLV] E R	> -ER, IÉREMOS		# conocer > conociéremos
+    O D E R	> -ODER, UDIÉREMOS	# poder > pudiéremos
+    O L V E R	> -ER, IÉREMOS		# volver > colviéremos
+    O N E R	> -ONER, USIÉREMOS	# poner > pusiéremos
+    O R [CD] E R > -ER, IÉREMOS	# torcer > torciéremos
+    R A E R	> -ER, JÉREMOS		# traer > trajéremos
+    A L I R	> -R, ÉREMOS		# salir > saliéremos
+    E B I R	> -EBIR, IBIÉREMOS	# concebir > concibiéremos
+    E C I R	> -ECIR, IJÉREMOS	# decir > dijéremos
+    E D I R	> -EDIR, IDIÉREMOS	# pedir > pidiéremos
+    E G I R	> -EGIR, IGIÉREMOS	# elegir > eligiéremos
+    E M I R	> -EMIR, IMIÉREMOS	# gemir > gimiéremos
+    E Í R	> -EÍR, IÉREMOS	# reír > rieres
+    E Ñ I R	> -EÑIR, IÑÉREMOS	# ceñir > ciñéremos
+    E G U I R	> -EGUIR, IGUIÉREMOS	# seguir > siguiéremos
+    E N C H I R	> -ENCHIR, INCHIÉREMOS	# henchir > hinchiéremos
+    E N D I R	> -ENDIR, INDIÉREMOS	# rendir > rindiéremos
+    E N I R	> -ENIR, INIÉREMOS	# venir > viniéremos
+    E N T I R	> -ENTIR, INTIÉREMOS	# sentir > sintiéremos
+    E R I R	> -ERIR, IRIÉREMOS	# herir > hiriéremos
+    E R N I R	> -R, ÉREMOS		# discernir > discerniéremos
+    E R T I R	> -ERTIR, IRTIÉREMOS	# invertir > invirtiéremos
+    E R V I R	> -ERVIR, IRVIÉREMOS	# servir > sirviéremos
+    E S T I R	> -ESTIR, ISTIÉREMOS	# vestir > vistiéremos
+    E U N I R	> -R, ÉREMOS		# reunir > reuniéremos
+    E T I R	> -ETIR, ITIÉREMOS	# derretir > derritiéremos
+    I R I R	> -IRIR, IRIÉREMOS	# adquirir > adquiriéremos
+    O H I B I R > -R, ÉREMOS		# prohibir > prohibiéremos
+    O Í R	> -ÍR, YÉREMOS	# oír > oyéremos
+    O R I R	> -ORIR, URIÉREMOS	# morir > muriéremos
+    O R M I R	> -ORMIR, URMIÉREMOS	# dormir > durmiéremos
+    D U C I R	> -CIR, JÉREMOS	# producir > produjéremos
+    [^D] U C I R > -R, ÉREMOS		# lucir > luciéremos
+    [^G] U I R	> -IR, YÉREMOS		# huir > huyéremos
+    G Ü I R	> -ÜIR, UYÉREMOS	# argüir > arguyeres
+    U L L I R	> -IR, ÉREMOS		# mullir > mulléremos
+
+    A N D A R	> -AR, UVIEREIS		# andar > anduviereis
+    [^A] N D A R> -R, REIS		# recomendar > recomendareis
+    [^N] D A R	> -R, REIS		# recordar > recordareis
+    [^D] A R	> -R, REIS		# amar > amareis
+    A B E R	> -ABER, UPIEREIS	# saber > supiereis
+    [^FH] A C E R > -ER, IEREIS		# nacer > naciereis
+    [FH] A C E R > -ACER, ICIEREIS	# hacer > hiciereis
+    A L E R	> -ER, IEREIS		# valer > valiereis
+    C A E R	> -ER, YEREIS		# caer > cayereis
+    E [CD] E R	> -ER, IEREIS		# parecer > pareciereis
+    [EO] E R	> -ER, YEREIS		# leer > leyereis
+    E N D E R	> -ER, IEREIS		# tender > tendiereis
+    E N E R	> -ENER, UVIEREIS	# tener > tuviereis
+    E R [DNT] E R > -ER, IEREIS		# perder > perdiereis
+    E R E R	> -ERER, ISIÉREIS	# querer > quisiéreis
+    O [CLV] E R	> -ER, IEREIS		# conocer > conociereis
+    O D E R	> -ODER, UDIEREIS	# poder > pudiereis
+    O L V E R	> -ER, IEREIS		# volver > colviereis
+    O N E R	> -ONER, USIEREIS	# tener > tuviereis
+    O R [CD] E R > -ER, IEREIS		# torcer > torciereis
+    R A E R	> -ER, JEREIS		# traer > trajereis
+    A L I R	> -R, EREIS		# salir > saliereis
+    E B I R	> -EBIR, IBIEREIS	# concebir > concibiereis
+    E C I R	> -ECIR, IJEREIS	# decir > dijereis
+    E D I R	> -EDIR, IDIEREIS	# pedir > pidiereis
+    E G I R	> -EGIR, IGIEREIS	# elegir > eligiereis
+    E M I R	> -EMIR, IMIEREIS	# gemir > gimiereis
+    E G U I R	> -EGUIR, IGUIEREIS	# seguir > siguiereis
+    E N C H I R	> -ENCHIR, INCHIEREIS	# henchir > hinchiereis
+    E N D I R	> -ENDIR, INDIEREIS	# rendir > rindiereis
+    E Í R	> -EÍR, IEREIS		# reír > riereis
+    E Ñ I R	> -EÑIR, IÑEREIS	# ceñir > ciñereis
+    E N I R	> -ENIR, INIEREIS	# venir > viniereis
+    E N T I R	> -ENTIR, INTIEREIS	# sentir > sintiereis
+    E R I R	> -ERIR, IRIEREIS	# herir > hiriereis
+    E R N I R	> -R, EREIS		# discernir > discerniereis
+    E R T I R	> -ERTIR, IRTIEREIS	# invertir > invirtiereis
+    E R V I R	> -ERVIR, IRVIEREIS	# servir > sirviereis
+    E S T I R	> -ESTIR, ISTIEREIS	# vestir > vistiereis
+    E T I R	> -ETIR, ITIEREIS	# derretir > derritiereis
+    I R I R	> -IRIR, IRIEREIS	# adquirir > adquiriereis
+    O H I B I R > -R, EREIS		# prohibir > prohibiereis
+    O Í R	> -ÍR, YEREIS		# oír > oyereis
+    O R I R	> -ORIR, URIEREIS	# morir > muriereis
+    O R M I R	> -ORMIR, URMIEREIS	# dormir > durmiereis
+    D U C I R	> -CIR, JEREIS		# producir > produjereis
+    [^D] U C I R > -R, ERIS		# lucir > luciereis
+    [^G] U I R	> -IR, YEREIS		# huir > huyereis
+    G Ü I R	> -ÜIR, UYEREIS	# argüir > arguyereis
+    U L L I R	> -IR, EREIS		# mullir > mullereis
+
+    A N D A R	> -AR, UVIEREN		# andar > anduvieren
+    [^A] N D A R> -R, REN		# recomendar > recomendaren
+    [^N] D A R	> -R, REN		# recordar > recordaren
+    [^D] A R	> -R, REN		# amar > amaren
+    A B E R	> -ABER, UPIEREN	# saber > supieren
+    [^FH] A C E R > -ER, IEREN		# nacer > nacieren
+    [FH] A C E R > -ACER, ICIEREN	# hacer > hicieren
+    A L E R	> -ER, IEREN		# valer > valieren
+    C A E R	> -ER, YEREN		# caer > cayeren
+    E [CD] E R	> -ER, IEREN		# parecer > parecieren
+    [EO] E R	> -ER, YEREN		# leer > leyeren
+    E N D E R	> -ER, IEREN		# tender > tendieren
+    E N E R	> -ENER, UVIEREN	# tener > tuvieren
+    E R [DNT] E R > -ER, IEREN		# perder > perdieren
+    E R E R	> -ERER, ISIEREN	# querer > quisieren
+    O [CLV] E R	> -ER, IEREN		# conocer > conocieren
+    O D E R	> -ODER, UDIEREN	# poder > pudieren
+    O L V E R	> -ER, IEREN		# volver > colvieren
+    O N E R	> -ONER, USIEREN	# poner > pusieren
+    O R [CD] E R > -ER, IEREN		# torcer > torcieren
+    R A E R	> -ER, JEREN		# traer > trajeren
+    A L I R	> -R, EREN		# salir > salieren
+    E B I R	> -EBIR, IBIEREN	# concebir > concibieren
+    E C I R	> -ECIR, IJEREN		# decir > dijeren
+    E D I R	> -EDIR, IDIEREN	# pedir > pidieren
+    E G I R	> -EGIR, IGIEREN	# elegir > eligieren
+    E M I R	> -EMIR, IMIEREN	# gemir > gimieren
+    E Í R	> -EÍR, IEREN		# reír > rieren
+    E Ñ I R	> -EÑIR, IÑEREN	# ceñir > ciñeren
+    E G U I R	> -EGUIR, IGUIEREN	# seguir > siguieren
+    E N C H I R	> -ENCHIR, INCHIEREN	# henchir > hinchieren
+    E N D I R	> -ENDIR, INDIEREN	# rendir > rindieren
+    E N I R	> -ENIR, INIEREN	# venir > vinieren
+    E N T I R	> -ENTIR, INTIEREN	# sentir > sintieren
+    E R I R	> -ERIR, IRIEREN	# herir > hirieren
+    E R N I R 	> -R, EREN		# discernir > discernieren
+    E R T I R	> -ERTIR, IRTIEREN	# invertir > invirtieren
+    E R V I R	> -ERVIR, IRVIEREN	# servir > sirvieren
+    E S T I R	> -ESTIR, ISTIEREN	# vestir > vistieren
+    E U N I R	> -R, EREN		# reunir > reunieren
+    E T I R	> -ETIR, ITIEREN	# derretir > derritieren
+    I R I R	> -IRIR, IRIEREN	# adquirir > adquirieren
+    O H I B I R > -R, EREN		# prohibir > prohibieren
+    O Í R	> -ÍR, YEREN		# oír > oyeren
+    O R I R	> -ORIR, URIEREN	# morir > murieren
+    O R M I R	> -ORMIR, URMIEREN	# dormir > durmieren
+    D U C I R	> -CIR, JEREN		# producir > produjeren
+    [^D] U C I R > -R, EREN		# lucir > lucieren
+    [^G] U I R	> -IR, YEREN		# huir > huyeren
+    G Ü I R	> -ÜIR, UYEREN	# argüir > arguyeren
+    U L L I R	> -IR, EREN		# mullir > mulleren
+
+# IMPERATIVO
+	# La segunda persona de imperativo es la misma que la tercera
+	# de indicativo, salvo excepciones (hacer, poner)
+
+
+    [FH] A C E R > -CER, Z		# hacer > haz
+#    E C I R	> -ECIR, I		# decir > di
+    [AEIÍ] R	> -R, D			# enviar > enviad
+
+flag *Y: # Participios y Gerundio. Verbos Irregulares.
+    [AEO] E R	> -ER, ÍDO		# caer > caído
+    [AEO] E R	> -ER, ÍDOS		# comer > comidos
+    [AEO] E R 	> -ER, ÍDA		# comer > comida
+    [AEO] E R	> -ER, ÍDAS		# comer > comidas
+    [FH] A C E R > -ACER, ECHO		# hacer > hecho
+    [FH] A C E R > -ACER, ECHOS		# hacer > hechos
+    [FH] A C E R > -ACER, ECHA		# hacer > hecha
+    [FH] A C E R > -ACER, ECHAS		# hacer > hechas
+    O D E R	> -ER, IDO		# poder > podido
+    O D E R	> -ER, IDOS		# poder > podidos
+    O D E R	> -ER, IDA		# poder > podida
+    O D E R	> -ER, IDAS		# poder > podidas
+    O L V E R	> -OLVER, UELTO		# volver > vuelto
+    O L V E R	> -OLVER, UELTOS	# volver > vueltos
+    O L V E R	> -OLVER, UELTA		# volver > vuelta
+    O L V E R	> -OLVER, UELTAS	# volver > vueltas
+    O N E R	> -ONER, UESTO		# poner > puesto
+    O N E R	> -ONER, UESTOS		# poner > puestos
+    O N E R	> -ONER, UESTA		# poner > puesta
+    O N E R	> -ONER, UESTAS		# poner > puestas
+
+    A B R I R	> -RIR, IERTO		# abrir > abierto
+    A B R I R	> -RIR, IERTOS		# abrir > abiertos
+    A B R I R	> -RIR, IERTA		# abrir > abierta
+    A B R I R	> -RIR, IERTAS		# abrir > abiertas
+    E [BDGMNRTÑ] I R > -R, DO		# pedir > pedido
+    E [BDGMNRTÑ] I R > -R, DOS		# pedir > pedidos
+    E [BDGMNRTÑ] I R > -R, DA		# pedir > pedida
+    E [BDGMNRTÑ] I R > -R, DAS		# pedir > pedidas
+    E C I R	> -ECIR, ICHO		# decir > dicho
+    E C I R	> -ECIR, ICHOS		# decir > dichos
+    E C I R	> -ECIR, ICHA		# decir > dicha
+    E C I R	> -ECIR, ICHAS		# decir > dichas
+    [EO] Í R	> -R, DO		# reír > reído
+    [EO] Í R	> -R, DOS		# reír > reídos
+    [EO] Í R	> -R, DA		# reír > reída
+    [EO] Í R	> -R, DAS		# reír > reídas
+    E N C H I R	> -R, DO		# henchir > henchido
+    E N C H I R	> -R, DOS		# henchir > henchidos
+    E N C H I R	> -R, DA		# henchir > henchida
+    E N C H I R	> -R, DAS		# henchir > henchidas
+    E N [DT] I R > -R, DO		# rendir > rendido
+    E N [DT] I R > -R, DOS		# rendir > rendidos
+    E N [DT] I R > -R, DA		# rendir > rendida
+    E N [DT] I R > -R, DAS		# rendir > rendidas
+    E R [TV] I R > -R, DO		# invertir > invertido
+    E R [TV] I R > -R, DOS		# invertir > invertidos
+    E R [TV] I R > -R, DA		# invertir > invertida
+    E R [TV] I R > -R, DAS		# invertir > invertidas
+    E S T I R	> -R, DO		# vestir > vestido
+    E S T I R	> -R, DOS		# vestir > vestidos
+    E S T I R	> -R, DA		# vestir > vestida
+    E S T I R	> -R, DAS		# vestir > vestidas
+    I B I R	> -BIR, TO		# escribir > escrito
+    I B I R	> -BIR, TOS		# escribir > escritos
+    I B I R	> -BIR, TA		# escribir > escrita
+    I B I R	> -BIR, TAS		# escribir > escritas
+    O R I R	> -ORIR, UERTO		# morir > muerto
+    O R I R	> -ORIR, UERTOS		# morir > muertos
+    O R I R	> -ORIR, UERTA		# morir > muerta
+    O R I R	> -ORIR, UERTAS		# morir > muertas
+    O R M I R	> -R, DO		# dormir > dormido
+    O R M I R	> -R, DOS		# dormir > dormidos
+    O R M I R	> -R, DA		# dormir > dormida
+    O R M I R	> -R, DAS		# dormir > dormidas
+    U B R I R	> -RIR, IERTO		# dormir > dormido
+    U B R I R	> -RIR, IERTOS		# dormir > dormidos
+    U B R I R	> -RIR, IERTA		# dormir > dormida
+    U B R I R	> -RIR, IERTAS		# dormir > dormidas
+    [ÜU] I R	> -R, DO		# huir > huido
+    [ÜU] I R	> -R, DA		# huir > huidos
+    [ÜU] I R	> -R, DOS		# huir > huida
+    [ÜU] I R	> -R, DAS		# huir > huidas
+    U L L I R	> -R, DO		# mullir > mullido
+    U L L I R	> -R, DA		# mullir > mullida
+    U L L I R	> -R, DOS		# mullir > mullidos
+    U L L I R	> -R, DAS		# mullir > mullidas
+
+    [FH] A C E R > -ER, IENDO		# hacer > haciendo
+    [AEO] E R 	> -ER, YENDO		# caer > cayendo
+    O D E R	> -ODER, UDIENDO	# poder > pudiendo
+    O L V E R	> -ER, IENDO		# volver > volviendo
+    O N E R	> -ER, IENDO		# poner > poniendo
+    O M P E R	> -ER, IENDO		# romper > rompiendo
+
+    A B R I R	> -R, ENDO		# abrir > abriendo
+    E B I R	> -EBIR, IBIENDO	# concebir > concibiendo
+    E C I R	> -ECIR, ICIENDO	# decir > diciendo
+    E D I R	> -EDIR, IDIENDO	# pedir > pidiendo
+    E G I R	> -EGIR, IGIENDO	# elegir > eligiendo
+    E M I R	> -EMIR, IMIENDO	# gemir > gimiendo
+    E Í R	> -EÍR, IENDO		# reír > riendo
+    E Ñ I R	> -EÑIR, IÑENDO	# ceñir > ciñendo
+    E N C H I R	> -ENCHIR, INCHIENDO	# henchir > hinchiendo
+    E N D I R	> -ENDIR, INDIENDO	# rendir > rindiendo
+    E N I R	> -ENIR, INIENDO	# venir > viniendo
+    E N T I R	> -ENTIR, INTIENDO	# sentir > sintiendo
+    E R T I R	> -ERTIR, IRTIENDO	# invertir > invirtiendo
+    E R V I R	> -ERVIR, IRVIENDO	# hervir > hirviendo
+    E S T I R	> -ESTIR, ISTIENDO	# vestir > vistiendo
+    E G U I R	> -EGUIR, IGUIENDO	# seguir > siguiendo
+    E R I R	> -ERIR, IRIENDO	# herir > hiriendo
+    E T I R	> -ETIR, ITIENDO	# derretir > derritiendo
+    I B I R	> -R, ENDO		# escribir > escribiendo
+    O Í R	> -ÍR, YENDO		# oír > oyendo
+    O R I R	> -ORIR, URIENDO	# morir > muriendo
+    O R M I R	> -ORMIR, URMIENDO	# dormir > durmiendo
+    U B R I R	> -R, ENDO		# cubrir > cubriendo
+    [^G] U I R	> -IR, YENDO		# huir > huyendo
+    G Ü I R	> -ÜIR, UYENDO	# argüir > arguyendo
+    U L L I R	> -IR, ENDO		# mullir > mullendo
+
+# FINAL de las conjugaciones verbales irregulares.
+
+flag *O:        # Verbos pronominales irregulares en el gerundio
+    [EIÍ] R	> ME			# comer > comerme
+    [EIÍ] R	> TE			# comer > comerte
+    [EIÍ] R	> SE			# comer > comerse
+    [EIÍ] R	> NOS			# comer > comerse
+    [EIÍ] R	> OS			# comer > comerse
+    [AEO] E R	> -ER, YÉNDOME		# caer > cayendo
+    [AEO] E R	> -ER, YÉNDOTE		# caer > cayendo
+    [AEO] E R	> -ER, YÉNDOSE		# caer > cayendo
+    [AEO] E R	> -ER, YÉNDONOS	# caer > cayendo
+    [AEO] E R	> -ER, YÉNDOOS		# caer > cayendo
+    O D E R	> -ODER, UDIÉNDOME	# poder > pudiendo
+    O D E R	> -ODER, UDIÉNDOTE	# poder > pudiendo
+    O D E R	> -ODER, UDIÉNDOSE	# poder > pudiendo
+    O D E R	> -ODER, UDIÉNDONOS	# poder > pudiendo
+    O D E R	> -ODER, UDIÉNDOOS	# poder > pudiendo
+
+    E B I R	> -EBIR, IBIÉNDOME	# concebir > concibiendo
+    E B I R	> -EBIR, IBIÉNDOTE	# concebir > concibiendo
+    E B I R	> -EBIR, IBIÉNDOSE	# concebir > concibiendo
+    E B I R	> -EBIR, IBIÉNDONOS	# concebir > concibiendo
+    E B I R	> -EBIR, IBIÉNDOOS	# concebir > concibiendo
+    E C I R	> -ECIR, ICIÉNDOME	# decir > diciendo
+    E C I R	> -ECIR, ICIÉNDOTE	# decir > diciendo
+    E C I R	> -ECIR, ICIÉNDOSE	# decir > diciendo
+    E C I R	> -ECIR, ICIÉNDONOS	# decir > diciendo
+    E C I R	> -ECIR, ICIÉNDOOS	# decir > diciendo
+    E D I R	> -EDIR, IDIÉNDOME	# pedir > pidiendo
+    E D I R	> -EDIR, IDIÉNDOTE	# pedir > pidiendo
+    E D I R	> -EDIR, IDIÉNDOSE	# pedir > pidiendo
+    E D I R	> -EDIR, IDIÉNDONOS	# pedir > pidiendo
+    E D I R	> -EDIR, IDIÉNDOOS	# pedir > pidiendo
+    E G I R	> -EGIR, IGIÉNDOME	# elegir > eligiendo
+    E G I R	> -EGIR, IGIÉNDOTE	# elegir > eligiendo
+    E G I R	> -EGIR, IGIÉNDOSE	# elegir > eligiendo
+    E G I R	> -EGIR, IGIÉNDONOS	# elegir > eligiendo
+    E G I R	> -EGIR, IGIÉNDOOS	# elegir > eligiendo
+    E M I R	> -EMIR, IMIÉNDOME	# gemir > gimiendo
+    E M I R	> -EMIR, IMIÉNDOTE	# gemir > gimiendo
+    E M I R	> -EMIR, IMIÉNDOSE	# gemir > gimiendo
+    E M I R	> -EMIR, IMIÉNDONOS	# gemir > gimiendo
+    E M I R	> -EMIR, IMIÉNDOOS	# gemir > gimiendo
+    E Í R	> -EÍR, IÉNDOME	# reír > riendo
+    E Í R	> -EÍR, IÉNDOTE	# reír > riendo
+    E Í R	> -EÍR, IÉNDOSE	# reír > riendo
+    E Í R	> -EÍR, IÉNDONOS	# reír > riendo
+    E Í R	> -EÍR, IÉNDOOS	# reír > riendo
+    E Ñ I R	> -EÑIR, IÑÉNDOME	# ceñir > ciñendo
+    E Ñ I R	> -EÑIR, IÑÉNDOTE	# ceñir > ciñendo
+    E Ñ I R	> -EÑIR, IÑÉNDOSE	# ceñir > ciñendo
+    E Ñ I R	> -EÑIR, IÑÉNDONOS	# ceñir > ciñendo
+    E Ñ I R	> -EÑIR, IÑÉNDOOS	# ceñir > ciñendo
+    E N D I R	> -ENDIR, INDIÉNDOME	# rendir > rindiendo
+    E N D I R	> -ENDIR, INDIÉNDOTE	# rendir > rindiendo
+    E N D I R	> -ENDIR, INDIÉNDOSE	# rendir > rindiendo
+    E N D I R	> -ENDIR, INDIÉNDONOS	# rendir > rindiendo
+    E N D I R	> -ENDIR, INDIÉNDOOS	# rendir > rindiendo
+    E N I R	> -ENIR, INIÉNDOME	# venir > viniendo
+    E N I R	> -ENIR, INIÉNDOTE	# venir > viniendo
+    E N I R	> -ENIR, INIÉNDOSE	# venir > viniendo
+    E N I R	> -ENIR, INIÉNDONOS	# venir > viniendo
+    E N I R	> -ENIR, INIÉNDOOS	# venir > viniendo
+    E N T I R	> -ENTIR, INTIÉNDOME	# sentir > sintiendo
+    E N T I R	> -ENTIR, INTIÉNDOTE	# sentir > sintiendo
+    E N T I R	> -ENTIR, INTIÉNDOSE	# sentir > sintiendo
+    E N T I R	> -ENTIR, INTIÉNDONOS	# sentir > sintiendo
+    E N T I R	> -ENTIR, INTIÉNDOOS	# sentir > sintiendo
+    E R T I R	> -ERTIR, IRTIÉNDOME	# invertir > invirtiendo
+    E R T I R	> -ERTIR, IRTIÉNDOTE	# invertir > invirtiendo
+    E R T I R	> -ERTIR, IRTIÉNDOSE	# invertir > invirtiendo
+    E R T I R	> -ERTIR, IRTIÉNDONOS	# invertir > invirtiendo
+    E R T I R	> -ERTIR, IRTIÉNDOOS	# invertir > invirtiendo
+    E R V I R	> -ERVIR, IRVIÉNDOME	# hervir > hirviendo
+    E R V I R	> -ERVIR, IRVIÉNDOTE	# hervir > hirviendo
+    E R V I R	> -ERVIR, IRVIÉNDOSE	# hervir > hirviendo
+    E R V I R	> -ERVIR, IRVIÉNDONOS	# hervir > hirviendo
+    E R V I R	> -ERVIR, IRVIÉNDOOS	# hervir > hirviendo
+    E S T I R	> -ESTIR, ISTIÉNDOME	# vestir > vistiendo
+    E S T I R	> -ESTIR, ISTIÉNDOTE	# vestir > vistiendo
+    E S T I R	> -ESTIR, ISTIÉNDOSE	# vestir > vistiendo
+    E S T I R	> -ESTIR, ISTIÉNDONOS	# vestir > vistiendo
+    E S T I R	> -ESTIR, ISTIÉNDOOS	# vestir > vistiendo
+    E G U I R	> -EGUIR, IGUIÉNDOME	# seguir > siguiendo
+    E G U I R	> -EGUIR, IGUIÉNDOTE	# seguir > siguiendo
+    E G U I R	> -EGUIR, IGUIÉNDOSE	# seguir > siguiendo
+    E G U I R	> -EGUIR, IGUIÉNDONOS	# seguir > siguiendo
+    E G U I R	> -EGUIR, IGUIÉNDOOS	# seguir > siguiendo
+    E R I R	> -ERIR, IRIÉNDOME	# herir > hiriendo
+    E R I R	> -ERIR, IRIÉNDOTE	# herir > hiriendo
+    E R I R	> -ERIR, IRIÉNDOSE	# herir > hiriendo
+    E R I R	> -ERIR, IRIÉNDONOS	# herir > hiriendo
+    E R I R	> -ERIR, IRIÉNDOOS	# herir > hiriendo
+    E T I R	> -ETIR, ITIÉNDOME	# derretir > derritiendo
+    E T I R	> -ETIR, ITIÉNDOTE	# derretir > derritiendo
+    E T I R	> -ETIR, ITIÉNDOSE	# derretir > derritiendo
+    E T I R	> -ETIR, ITIÉNDONOS	# derretir > derritiendo
+    E T I R	> -ETIR, ITIÉNDOOS	# derretir > derritiendo
+    O Í R	> -ÍR, YÉNDOME	# oír > oyéndome
+    O Í R	> -ÍR, YÉNDOTE	# oír > oyéndote
+    O Í R	> -ÍR, YÉNDOSE	# oír > oyéndose
+    O Í R	> -ÍR, YÉNDONOS	# oír > oyéndonos
+    O Í R	> -ÍR, YÉNDOOS	# oír > oyéndoos
+    O R I R	> -ORIR, URIÉNDOME	# morir > muriendo
+    O R I R	> -ORIR, URIÉNDOTE	# morir > muriendo
+    O R I R	> -ORIR, URIÉNDOSE	# morir > muriendo
+    O R I R	> -ORIR, URIÉNDONOS	# morir > muriendo
+    O R I R	> -ORIR, URIÉNDOOS	# morir > muriendo
+    O R M I R	> -ORMIR, URMIÉNDOME	# dormir > durmiendo
+    O R M I R	> -ORMIR, URMIÉNDOTE	# dormir > durmiendo
+    O R M I R	> -ORMIR, URMIÉNDOSE	# dormir > durmiendo
+    O R M I R	> -ORMIR, URMIÉNDONOS	# dormir > durmiendo
+    O R M I R	> -ORMIR, URMIÉNDOOS	# dormir > durmiendo
+    [^G] U I R	> -IR, YÉNDOME		# concluir > concluyéndose
+    [^G] U I R	> -IR, YÉNDOTE		# concluir > concluyéndose
+    [^G] U I R	> -IR, YÉNDOSE		# concluir > concluyéndose
+    [^G] U I R	> -IR, YÉNDONOS	# concluir > concluyéndose
+    [^G] U I R	> -IR, YÉNDOOS		# concluir > concluyéndose
+    U L L I R	> -IR, ÉNDOME		# mullir > mulléndome
+    U L L I R	> -IR, ÉNDOTE		# mullir > mulléndote
+    U L L I R	> -IR, ÉNDOSE		# mullir > mulléndose
+    U L L I R	> -IR, ÉNDONOS		# mullir > mulléndonos
+    U L L I R	> -IR, ÉNDOOS		# mullir > mulléndoos
+
+flag *Q:        # Verbos transitivos irregulares en el gerundio
+    [EIÍ] R	> LO			# comer > comerme
+    [EIÍ] R	> LA			# comer > comerte
+    [EIÍ] R	> LOS			# comer > comerse
+    [EIÍ] R	> LAS			# comer > comerse
+    [EIÍ] R	> LE			# comer > comerse
+    [EIÍ] R	> LES			# comer > comerse
+    [AEO] E R	> -ER, YÉNDOLO		# caer > cayendo
+    [AEO] E R	> -ER, YÉNDOLA		# caer > cayendo
+    [AEO] E R	> -ER, YÉNDOLOS	# caer > cayendo
+    [AEO] E R	> -ER, YÉNDOLAS	# caer > cayendo
+    [AEO] E R	> -ER, YÉNDOLE		# caer > cayendo
+    [AEO] E R	> -ER, YÉNDOLES	# caer > cayendo
+    O D E R	> -ODER, UDIÉNDOLO	# poder > pudiendo
+    O D E R	> -ODER, UDIÉNDOLA	# poder > pudiendo
+    O D E R	> -ODER, UDIÉNDOLOS	# poder > pudiendo
+    O D E R	> -ODER, UDIÉNDOLAS	# poder > pudiendo
+    O D E R	> -ODER, UDIÉNDOLE	# poder > pudiendo
+    O D E R	> -ODER, UDIÉNDOLES	# poder > pudiendo
+
+    E B I R	> -EBIR, IBIÉNDOLO	# concebir > concibiendo
+    E B I R	> -EBIR, IBIÉNDOLOS	# concebir > concibiendo
+    E B I R	> -EBIR, IBIÉNDOLA	# concebir > concibiendo
+    E B I R	> -EBIR, IBIÉNDOLAS	# concebir > concibiendo
+    E B I R	> -EBIR, IBIÉNDOLE	# concebir > concibiendo
+    E B I R	> -EBIR, IBIÉNDOLES	# concebir > concibiendo
+    E C I R	> -ECIR, ICIÉNDOLO	# decir > diciendo
+    E C I R	> -ECIR, ICIÉNDOLOS	# decir > diciendo
+    E C I R	> -ECIR, ICIÉNDOLA	# decir > diciendo
+    E C I R	> -ECIR, ICIÉNDOLAS	# decir > diciendo
+    E C I R	> -ECIR, ICIÉNDOLE	# decir > diciendo
+    E C I R	> -ECIR, ICIÉNDOLES	# decir > diciendo
+    E D I R	> -EDIR, IDIÉNDOLO	# pedir > pidiendo
+    E D I R	> -EDIR, IDIÉNDOLOS	# pedir > pidiendo
+    E D I R	> -EDIR, IDIÉNDOLA	# pedir > pidiendo
+    E D I R	> -EDIR, IDIÉNDOLAS	# pedir > pidiendo
+    E D I R	> -EDIR, IDIÉNDOLE	# pedir > pidiendo
+    E D I R	> -EDIR, IDIÉNDOLES	# pedir > pidiendo
+    E G I R	> -EGIR, IGIÉNDOLO	# elegir > eligiendo
+    E G I R	> -EGIR, IGIÉNDOLOS	# elegir > eligiendo
+    E G I R	> -EGIR, IGIÉNDOLA	# elegir > eligiendo
+    E G I R	> -EGIR, IGIÉNDOLAS	# elegir > eligiendo
+    E G I R	> -EGIR, IGIÉNDOLE	# elegir > eligiendo
+    E G I R	> -EGIR, IGIÉNDOLES	# elegir > eligiendo
+    E M I R	> -EMIR, IMIÉNDOLO	# gemir > gimiendo
+    E M I R	> -EMIR, IMIÉNDOLOS	# gemir > gimiendo
+    E M I R	> -EMIR, IMIÉNDOLA	# gemir > gimiendo
+    E M I R	> -EMIR, IMIÉNDOLAS	# gemir > gimiendo
+    E M I R	> -EMIR, IMIÉNDOLE	# gemir > gimiendo
+    E M I R	> -EMIR, IMIÉNDOLES	# gemir > gimiendo
+    E Í R	> -EÍR, IÉNDOLO	# reír > riendo
+    E Í R	> -EÍR, IÉNDOLOS	# reír > riendo
+    E Í R	> -EÍR, IÉNDOLA	# reír > riendo
+    E Í R	> -EÍR, IÉNDOLAS	# reír > riendo
+    E Í R	> -EÍR, IÉNDOLE	# reír > riendo
+    E Í R	> -EÍR, IÉNDOLES	# reír > riendo
+    E Ñ I R	> -EÑIR, IÑÉNDOLO	# ceñir > ciñendo
+    E Ñ I R	> -EÑIR, IÑÉNDOLOS	# ceñir > ciñendo
+    E Ñ I R	> -EÑIR, IÑÉNDOLA	# ceñir > ciñendo
+    E Ñ I R	> -EÑIR, IÑÉNDOLAS	# ceñir > ciñendo
+    E Ñ I R	> -EÑIR, IÑÉNDOLE	# ceñir > ciñendo
+    E Ñ I R	> -EÑIR, IÑÉNDOLES	# ceñir > ciñendo
+    E N D I R	> -ENDIR, INDIÉNDOLO	# rendir > rindiendo
+    E N D I R	> -ENDIR, INDIÉNDOLOS	# rendir > rindiendo
+    E N D I R	> -ENDIR, INDIÉNDOLA	# rendir > rindiendo
+    E N D I R	> -ENDIR, INDIÉNDOLAS	# rendir > rindiendo
+    E N D I R	> -ENDIR, INDIÉNDOLE	# rendir > rindiendo
+    E N D I R	> -ENDIR, INDIÉNDOLES	# rendir > rindiendo
+    E N I R	> -ENIR, INIÉNDOLO	# venir > viniendo
+    E N I R	> -ENIR, INIÉNDOLOS	# venir > viniendo
+    E N I R	> -ENIR, INIÉNDOLA	# venir > viniendo
+    E N I R	> -ENIR, INIÉNDOLAS	# venir > viniendo
+    E N I R	> -ENIR, INIÉNDOLE	# venir > viniendo
+    E N I R	> -ENIR, INIÉNDOLES	# venir > viniendo
+    E N T I R	> -ENTIR, INTIÉNDOLO	# sentir > sintiendo
+    E N T I R	> -ENTIR, INTIÉNDOLOS	# sentir > sintiendo
+    E N T I R	> -ENTIR, INTIÉNDOLA	# sentir > sintiendo
+    E N T I R	> -ENTIR, INTIÉNDOLAS	# sentir > sintiendo
+    E N T I R	> -ENTIR, INTIÉNDOLE	# sentir > sintiendo
+    E N T I R	> -ENTIR, INTIÉNDOLES	# sentir > sintiendo
+    E R T I R	> -ERTIR, IRTIÉNDOLO	# invertir > invirtiendo
+    E R T I R	> -ERTIR, IRTIÉNDOLOS	# invertir > invirtiendo
+    E R T I R	> -ERTIR, IRTIÉNDOLA	# invertir > invirtiendo
+    E R T I R	> -ERTIR, IRTIÉNDOLAS	# invertir > invirtiendo
+    E R T I R	> -ERTIR, IRTIÉNDOLE	# invertir > invirtiendo
+    E R T I R	> -ERTIR, IRTIÉNDOLES	# invertir > invirtiendo
+    E R V I R	> -ERVIR, IRVIÉNDOLO	# hervir > hirviendo
+    E R V I R	> -ERVIR, IRVIÉNDOLOS	# hervir > hirviendo
+    E R V I R	> -ERVIR, IRVIÉNDOLA	# hervir > hirviendo
+    E R V I R	> -ERVIR, IRVIÉNDOLAS	# hervir > hirviendo
+    E R V I R	> -ERVIR, IRVIÉNDOLE	# hervir > hirviendo
+    E R V I R	> -ERVIR, IRVIÉNDOLES	# hervir > hirviendo
+    E S T I R	> -ESTIR, ISTIÉNDOLO	# vestir > vistiendo
+    E S T I R	> -ESTIR, ISTIÉNDOLOS	# vestir > vistiendo
+    E S T I R	> -ESTIR, ISTIÉNDOLA	# vestir > vistiendo
+    E S T I R	> -ESTIR, ISTIÉNDOLAS	# vestir > vistiendo
+    E S T I R	> -ESTIR, ISTIÉNDOLE	# vestir > vistiendo
+    E S T I R	> -ESTIR, ISTIÉNDOLES	# vestir > vistiendo
+    E G U I R	> -EGUIR, IGUIÉNDOLO	# seguir > siguiendo
+    E G U I R	> -EGUIR, IGUIÉNDOLOS	# seguir > siguiendo
+    E G U I R	> -EGUIR, IGUIÉNDOLA	# seguir > siguiendo
+    E G U I R	> -EGUIR, IGUIÉNDOLAS	# seguir > siguiendo
+    E G U I R	> -EGUIR, IGUIÉNDOLE	# seguir > siguiendo
+    E G U I R	> -EGUIR, IGUIÉNDOLES	# seguir > siguiendo
+    E R I R	> -ERIR, IRIÉNDOLO	# herir > hiriendo
+    E R I R	> -ERIR, IRIÉNDOLOS	# herir > hiriendo
+    E R I R	> -ERIR, IRIÉNDOLA	# herir > hiriendo
+    E R I R	> -ERIR, IRIÉNDOLAS	# herir > hiriendo
+    E R I R	> -ERIR, IRIÉNDOLE	# herir > hiriendo
+    E R I R	> -ERIR, IRIÉNDOLES	# herir > hiriendo
+    E T I R	> -ETIR, ITIÉNDOLO	# derretir > derritiendo
+    E T I R	> -ETIR, ITIÉNDOLOS	# derretir > derritiendo
+    E T I R	> -ETIR, ITIÉNDOLA	# derretir > derritiendo
+    E T I R	> -ETIR, ITIÉNDOLAS	# derretir > derritiendo
+    E T I R	> -ETIR, ITIÉNDOLE	# derretir > derritiendo
+    E T I R	> -ETIR, ITIÉNDOLES	# derretir > derritiendo
+    O Í R	> -ÍR, YÉNDOLO	# oír > oyéndolo
+    O Í R	> -ÍR, YÉNDOLOS	# oír > oyéndolos
+    O Í R	> -ÍR, YÉNDOLA	# oír > oyéndola
+    O Í R	> -ÍR, YÉNDOLAS	# oír > oyéndolas
+    O Í R	> -ÍR, YÉNDOLE	# oír > oyéndole
+    O Í R	> -ÍR, YÉNDOLES	# oír > oyéndoles
+    O R I R	> -ORIR, URIÉNDOLO	# morir > muriendo
+    O R I R	> -ORIR, URIÉNDOLOS	# morir > muriendo
+    O R I R	> -ORIR, URIÉNDOLA	# morir > muriendo
+    O R I R	> -ORIR, URIÉNDOLAS	# morir > muriendo
+    O R I R	> -ORIR, URIÉNDOLE	# morir > muriendo
+    O R I R	> -ORIR, URIÉNDOLES	# morir > muriendo
+    O R M I R	> -ORMIR, URMIÉNDOLO	# dormir > durmiendo
+    O R M I R	> -ORMIR, URMIÉNDOLOS	# dormir > durmiendo
+    O R M I R	> -ORMIR, URMIÉNDOLA	# dormir > durmiendo
+    O R M I R	> -ORMIR, URMIÉNDOLAS	# dormir > durmiendo
+    O R M I R	> -ORMIR, URMIÉNDOLE	# dormir > durmiendo
+    O R M I R	> -ORMIR, URMIÉNDOLES	# dormir > durmiendo
+    [^G] U I R	> -IR, YÉNDOLO		# concluir > concluyéndose
+    [^G] U I R	> -IR, YÉNDOLOS	# concluir > concluyéndose
+    [^G] U I R	> -IR, YÉNDOLA		# concluir > concluyéndose
+    [^G] U I R	> -IR, YÉNDOLAS	# concluir > concluyéndose
+    [^G] U I R	> -IR, YÉNDOLE		# concluir > concluyéndose
+    [^G] U I R	> -IR, YÉNDOLES	# concluir > concluyéndose
+    U L L I R	> -IR, ÉNDOLO		# mullir > mulléndolo
+    U L L I R	> -IR, ÉNDOLOS		# mullir > mulléndolos
+    U L L I R	> -IR, ÉNDOLA		# mullir > mulléndola
+    U L L I R	> -IR, ÉNDOLAS		# mullir > mulléndolas
+    U L L I R	> -IR, ÉNDOLE		# mullir > mulléndole
+    U L L I R	> -IR, ÉNDOLES		# mullir > mulléndoles
+
+flag *Z:        # Verbos transitivos pronominales irregulares en el gerundio
+    E R		> -ER, ÉRMELO		# comer > comerse
+    E R		> -ER, ÉRMELA		# comer > comerse
+    E R		> -ER, ÉRMELOS		# comer > comerse
+    E R		> -ER, ÉRMELAS		# comer > comerse
+    E R		> -ER, ÉRTELO		# comer > comerse
+    E R		> -ER, ÉRTELA		# comer > comerse
+    E R		> -ER, ÉRTELOS		# comer > comerse
+    E R		> -ER, ÉRTELAS		# comer > comerse
+    E R		> -ER, ÉRSELO		# comer > comerse
+    E R		> -ER, ÉRSELA		# comer > comerse
+    E R		> -ER, ÉRSELOS		# comer > comerse
+    E R		> -ER, ÉRSELAS		# comer > comerse
+    E R		> -ER, ÉROSLO		# comer > comerse
+    E R		> -ER, ÉROSLA		# comer > comerse
+    E R		> -ER, ÉROSLOS		# comer > comerse
+    E R		> -ER, ÉROSLAS		# comer > comerse
+    E R		> -ER, ÉRNOSLO		# comer > comerse
+    E R		> -ER, ÉRNOSLA		# comer > comerse
+    E R		> -ER, ÉRNOSLOS	# comer > comerse
+    E R		> -ER, ÉRNOSLAS	# comer > comerse
+    E R		> -ER, ÉRNOSLES	# comer > comerse
+    I R		> -IR, ÍRMELO		# comer > comerse
+    I R		> -IR, ÍRMELA		# comer > comerse
+    I R		> -IR, ÍRMELE		# comer > comerse
+    I R		> -IR, ÍRMELOS		# comer > comerse
+    I R		> -IR, ÍRMELAS		# comer > comerse
+    I R		> -IR, ÍRMELES		# comer > comerse
+    I R		> -IR, ÍRTELO		# comer > comerse
+    I R		> -IR, ÍRTELA		# comer > comerse
+    I R		> -IR, ÍRTELE		# comer > comerse
+    I R		> -IR, ÍRTELOS		# comer > comerse
+    I R		> -IR, ÍRTELAS		# comer > comerse
+    I R		> -IR, ÍRTELES		# comer > comerse
+    I R		> -IR, ÍRSELO		# comer > comerse
+    I R		> -IR, ÍRSELA		# comer > comerse
+    I R		> -IR, ÍRSELE		# comer > comerse
+    I R		> -IR, ÍRSELOS		# comer > comerse
+    I R		> -IR, ÍRSELAS		# comer > comerse
+    I R		> -IR, ÍRSELES		# comer > comerse
+    I R		> -IR, ÍROSLO		# comer > comerse
+    I R		> -IR, ÍROSLA		# comer > comerse
+    I R		> -IR, ÍROSLE		# comer > comerse
+    I R		> -IR, ÍROSLOS		# comer > comerse
+    I R		> -IR, ÍROSLAS		# comer > comerse
+    I R		> -IR, ÍROSLES		# comer > comerse
+    I R		> -IR, ÍRNOSLO		# comer > comerse
+    I R		> -IR, ÍRNOSLA		# comer > comerse
+    I R		> -IR, ÍRNOSLE		# comer > comerse
+    I R		> -IR, ÍRNOSLOS	# comer > comerse
+    I R		> -IR, ÍRNOSLAS	# comer > comerse
+    I R		> -IR, ÍRNOSLES	# comer > comerse
+
+    [AEO] E R	> -ER, YÉNDOMELO	# traer > comerse
+    [AEO] E R	> -ER, YÉNDOMELA	# traer > comerse
+    [AEO] E R	> -ER, YÉNDOMELE	# traer > comerse
+    [AEO] E R	> -ER, YÉNDOMELOS	# traer > comerse
+    [AEO] E R	> -ER, YÉNDOMELAS	# traer > comerse
+    [AEO] E R	> -ER, YÉNDOMELES	# traer > comerse
+    [AEO] E R	> -ER, YÉNDOTELO	# traer > comerse
+    [AEO] E R	> -ER, YÉNDOTELA	# traer > comerse
+    [AEO] E R	> -ER, YÉNDOTELE	# traer > comerse
+    [AEO] E R	> -ER, YÉNDOTELOS	# traer > comerse
+    [AEO] E R	> -ER, YÉNDOTELAS	# traer > comerse
+    [AEO] E R	> -ER, YÉNDOTELES	# traer > comerse
+    [AEO] E R	> -ER, YÉNDOSELO	# traer > comerse
+    [AEO] E R	> -ER, YÉNDOSELA	# traer > comerse
+    [AEO] E R	> -ER, YÉNDOSELE	# traer > comerse
+    [AEO] E R	> -ER, YÉNDOSELOS	# traer > comerse
+    [AEO] E R	> -ER, YÉNDOSELAS	# traer > comerse
+    [AEO] E R	> -ER, YÉNDOSELES	# traer > comerse
+    [AEO] E R	> -ER, YÉNDOOSLO	# traer > comerse
+    [AEO] E R	> -ER, YÉNDOOSLA	# traer > comerse
+    [AEO] E R	> -ER, YÉNDOOSLE	# traer > comerse
+    [AEO] E R	> -ER, YÉNDOOSLOS	# traer > comerse
+    [AEO] E R	> -ER, YÉNDOOSLAS	# traer > comerse
+    [AEO] E R	> -ER, YÉNDOOSLES	# traer > comerse
+    [AEO] E R	> -ER, YÉNDONOSLO	# traer > comerse
+    [AEO] E R	> -ER, YÉNDONOSLA	# traer > comerse
+    [AEO] E R	> -ER, YÉNDONOSLE	# traer > comerse
+    [AEO] E R	> -ER, YÉNDONOSLOS	# traer > comerse
+    [AEO] E R	> -ER, YÉNDONOSLAS	# traer > comerse
+    [AEO] E R	> -ER, YÉNDONOSLES	# traer > comerse
+    [^G] U I R 	> -IR, YÉNDOMELO	# incluir > incluyéndomelo
+    [^G] U I R 	> -IR, YÉNDOMELOS	# incluir > incluyéndose
+    [^G] U I R 	> -IR, YÉNDOMELA	# incluir > incluyéndose
+    [^G] U I R 	> -IR, YÉNDOMELAS	# incluir > incluyéndose
+    [^G] U I R 	> -IR, YÉNDOMELE	# incluir > incluyéndose
+    [^G] U I R 	> -IR, YÉNDOMELES	# incluir > incluyéndose
+    [^G] U I R 	> -IR, YÉNDOTELO	# incluir > incluyéndomelo
+    [^G] U I R 	> -IR, YÉNDOTELOS	# incluir > incluyéndose
+    [^G] U I R 	> -IR, YÉNDOTELA	# incluir > incluyéndose
+    [^G] U I R 	> -IR, YÉNDOTELAS	# incluir > incluyéndose
+    [^G] U I R 	> -IR, YÉNDOTELE	# incluir > incluyéndose
+    [^G] U I R 	> -IR, YÉNDOTELES	# incluir > incluyéndose
+    [^G] U I R 	> -IR, YÉNDOSELO	# incluir > incluyéndomelo
+    [^G] U I R 	> -IR, YÉNDOSELOS	# incluir > incluyéndose
+    [^G] U I R 	> -IR, YÉNDOSELA	# incluir > incluyéndose
+    [^G] U I R 	> -IR, YÉNDOSELAS	# incluir > incluyéndose
+    [^G] U I R 	> -IR, YÉNDOSELE	# incluir > incluyéndose
+    [^G] U I R 	> -IR, YÉNDOSELES	# incluir > incluyéndose
+    [^G] U I R 	> -IR, YÉNDOOSLO	# incluir > incluyéndomelo
+    [^G] U I R 	> -IR, YÉNDOOSLOS	# incluir > incluyéndose
+    [^G] U I R 	> -IR, YÉNDOOSLA	# incluir > incluyéndose
+    [^G] U I R 	> -IR, YÉNDOOSLAS	# incluir > incluyéndose
+    [^G] U I R 	> -IR, YÉNDOOSLE	# incluir > incluyéndose
+    [^G] U I R 	> -IR, YÉNDOOSLES	# incluir > incluyéndose
+    [^G] U I R 	> -IR, YÉNDONOSLO	# incluir > incluyéndomelo
+    [^G] U I R 	> -IR, YÉNDONOSLOS	# incluir > incluyéndose
+    [^G] U I R 	> -IR, YÉNDONOSLA	# incluir > incluyéndose
+    [^G] U I R 	> -IR, YÉNDONOSLAS	# incluir > incluyéndose
+    [^G] U I R 	> -IR, YÉNDONOSLE	# incluir > incluyéndose
+    [^G] U I R 	> -IR, YÉNDONOSLES	# incluir > incluyéndose
+    E G I R	> -EGIR, IGIÉNDOMELO
+    E G I R	> -EGIR, IGIÉNDOMELOS
+    E G I R	> -EGIR, IGIÉNDOMELA
+    E G I R	> -EGIR, IGIÉNDOMELAS
+    E G I R	> -EGIR, IGIÉNDOMELE
+    E G I R	> -EGIR, IGIÉNDOMELES
+    E G I R	> -EGIR, IGIÉNDOTELO
+    E G I R	> -EGIR, IGIÉNDOTELOS
+    E G I R	> -EGIR, IGIÉNDOTELA
+    E G I R	> -EGIR, IGIÉNDOTELAS
+    E G I R	> -EGIR, IGIÉNDOTELE
+    E G I R	> -EGIR, IGIÉNDOTELES
+    E G I R	> -EGIR, IGIÉNDOSELO
+    E G I R	> -EGIR, IGIÉNDOSELOS
+    E G I R	> -EGIR, IGIÉNDOSELA
+    E G I R	> -EGIR, IGIÉNDOSELAS
+    E G I R	> -EGIR, IGIÉNDOSELE
+    E G I R	> -EGIR, IGIÉNDOSELES
+    E G I R	> -EGIR, IGIÉNDOOSLO
+    E G I R	> -EGIR, IGIÉNDOOSLOS
+    E G I R	> -EGIR, IGIÉNDOOSLA
+    E G I R	> -EGIR, IGIÉNDOOSLAS
+    E G I R	> -EGIR, IGIÉNDOOSLE
+    E G I R	> -EGIR, IGIÉNDOOSLES
+    E G I R	> -EGIR, IGIÉNDONOSLO
+    E G I R	> -EGIR, IGIÉNDONOSLOS
+    E G I R	> -EGIR, IGIÉNDONOSLA
+    E G I R	> -EGIR, IGIÉNDONOSLAS
+    E G I R	> -EGIR, IGIÉNDONOSLE
+    E G I R	> -EGIR, IGIÉNDONOSLES
+    E G U I R	> -EGUIR, IGUIÉNDOMELO		# incluir > incluyéndomelo
+    E G U I R	> -EGUIR, IGUIÉNDOMELOS	# incluir > incluyéndose
+    E G U I R	> -EGUIR, IGUIÉNDOMELA		# incluir > incluyéndose
+    E G U I R	> -EGUIR, IGUIÉNDOMELAS	# incluir > incluyéndose
+    E G U I R	> -EGUIR, IGUIÉNDOMELE		# incluir > incluyéndose
+    E G U I R	> -EGUIR, IGUIÉNDOMELES	# incluir > incluyéndose
+    E G U I R	> -EGUIR, IGUIÉNDOTELO		# incluir > incluyéndomelo
+    E G U I R	> -EGUIR, IGUIÉNDOTELOS	# incluir > incluyéndose
+    E G U I R	> -EGUIR, IGUIÉNDOTELA		# incluir > incluyéndose
+    E G U I R	> -EGUIR, IGUIÉNDOTELAS	# incluir > incluyéndose
+    E G U I R	> -EGUIR, IGUIÉNDOTELE		# incluir > incluyéndose
+    E G U I R	> -EGUIR, IGUIÉNDOTELES	# incluir > incluyéndose
+    E G U I R	> -EGUIR, IGUIÉNDOSELO		# incluir > incluyéndomelo
+    E G U I R	> -EGUIR, IGUIÉNDOSELOS	# incluir > incluyéndose
+    E G U I R	> -EGUIR, IGUIÉNDOSELA		# incluir > incluyéndose
+    E G U I R	> -EGUIR, IGUIÉNDOSELAS	# incluir > incluyéndose
+    E G U I R	> -EGUIR, IGUIÉNDOSELE		# incluir > incluyéndose
+    E G U I R	> -EGUIR, IGUIÉNDOSELES	# incluir > incluyéndose
+    E G U I R	> -EGUIR, IGUIÉNDOOSLO		# incluir > incluyéndomelo
+    E G U I R	> -EGUIR, IGUIÉNDOOSLOS	# incluir > incluyéndose
+    E G U I R	> -EGUIR, IGUIÉNDOOSLA		# incluir > incluyéndose
+    E G U I R	> -EGUIR, IGUIÉNDOOSLAS	# incluir > incluyéndose
+    E G U I R	> -EGUIR, IGUIÉNDOOSLE		# incluir > incluyéndose
+    E G U I R	> -EGUIR, IGUIÉNDOOSLES	# incluir > incluyéndose
+    E G U I R	> -EGUIR, IGUIÉNDONOSLO	# incluir > incluyéndomelo
+    E G U I R	> -EGUIR, IGUIÉNDONOSLOS	# incluir > incluyéndose
+    E G U I R	> -EGUIR, IGUIÉNDONOSLA	# incluir > incluyéndose
+    E G U I R	> -EGUIR, IGUIÉNDONOSLAS	# incluir > incluyéndose
+    E G U I R	> -EGUIR, IGUIÉNDONOSLE	# incluir > incluyéndose
+    E G U I R	> -EGUIR, IGUIÉNDONOSLES	# incluir > incluyéndose

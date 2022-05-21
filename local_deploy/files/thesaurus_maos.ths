@@ -1,0 +1,122 @@
+aciflex : alambre maxilo aciflex
+versitomic : implante suspension versitomic
+orthocord : sutura orthocord
+fiberwire : sutura fiberwire
+ultrabraid : sutura ultrabraid
+fiberloop : sutura fiberloop
+forcefiber : sutura forcefiber
+omnispan : sutura omnispan
+suturelasso : sutura suturelasso
+fibertape : sutura fibertape
+maxbraid : sutura maxbraid
+fiberstick : sutura fiberstick
+fiberlink : sutura fiberlink
+tornillo_acutrack : tornillo acutrak
+tornillo_acutrak : tornillo acutrak
+tornillo_cortical : tornillo cortical
+tornillo_canulado : tornillo canulado
+tornillo_bloqueo : tornillo bloqueo
+tornillo_esponjoso : tornillo esponjoso
+tornillo_fijacion: tornillo fijacion
+tornillo_cierre : tornillo cierre
+tornillo_interferencia : tornillo interferencia
+tornillo_autoperforante : tornillo autoperforante
+cortical_esponjoso : cortical esponjoso
+reprobone : mineross reprobone
+dbm_chips : chips sustituto oseo
+dbx : dbm chips sustituto oseo
+chips: chips sustituto oseo
+surechips: chips sustituto oseo surechips
+putty : dbm sustituto oseo putty
+dbm : dbm sustituto oseo
+novabone : dbm sustituto oseo novabone
+mineross : dbm sustituto oseo mineross
+surefuse : dbm sustituto oseo surefuse
+triturado : dbm sustituto oseo
+allomatrix : dbm sustituto oseo triturado
+matriz_osea_desmineralizada : dbm sustituto oseo
+m.o.d : dbm sustituto oseo
+milagro: bioabsorbible milagro tornillo interferencia
+softsilk: bioabsorbible softsilk
+biosteon: bioabsorbible biosteon tornillo interferencia
+peek: bioabsorbible peek
+brustean: bioabsorbible brustean
+ligafix: bioabsorbible ligafix
+duragen: parche duragen
+duraform: parche duragen
+tissuepatch: parche tissuepatch
+duramatrix: parche duramatrix
+duramadre: parche duramadre
+steinmann_kirschner: clavo kirschner steinmann
+cbstart: tornillo cbstart
+golf : placa golf
+dyonics: tubo dyonics
+altrx: inserto altrx 
+hookpi: gancho hookpi
+juggerknot : anclaje juggerknot
+quickanchor : anclaje quickanchor
+gryphon : anclaje gryphon
+allthread : anclaje allthread
+footprint : anclaje footprint
+twinfix : anclaje twinfix
+healix : anclaje healix
+corkscrew : anclaje corkscrew
+button : implante suspension
+ultrabutton : implante suspension ultrabutton
+xobutton : implante suspension xobutton
+endobutton : implante suspension endobutton
+versitomic : implante suspension versitomic
+rigidloop : implante suspension rigidloop
+dogbone : implante suspension dogbone
+tightrope : anclaje tightrope
+flipptack : implante suspension flipptack
+graftmax : implante suspension graftmax
+ziptight : implante suspension ziptight
+ziploop : implante suspension ziploop
+max braid : sutura max braid
+cranial-loop : fijacion craneal cranialloop
+speedyflap : fijacion craneal speedyflap
+placaBicolumnar : placa bicolumnar
+plvalcp : placa angulo variable lcp
+pl_lcp : placa lcp
+pl-lcp : placa lcp
+clavo_steinmann : clavo steinmann
+tfn : clavo femoral
+tfna : clavo femoral
+va : angulo variable
+av : angulo variable
+volar: angulo variable
+chfn : clavo femoral
+p/m : proximal medial
+p/l : proximal lateral
+biorci : tornillo interferencia bioabsorbible biorci
+parafuso : tornillo
+aloinjerto : dbm sustituto oseo
+udrape : campo udrape
+drape : campo udrape
+foliodrape : campo foliodrape
+abutment : pilar dental abutment temporal
+acl: ligamento cruzado anterior 
+cf: maxilo
+espondilo: columna espondilo
+ptn: proximal femur clavo titanio
+trocanter: femur trocanter
+cefalomedular: intramedular
+ioban: campo ioban
+swivelock: anclaje swivelock
+scrwslf: tornillo autorroscante
+acltightrope: anclaje ligamento cruzado anterior tightrope
+pfna: clavo femur proximal
+pfn: clavo femur proximal
+efn: clavo femur proximal
+shaver: cuchilla artroscopia shaver
+ufn: clavo femoral
+cfn: clavo femoral
+incisor: cuchilla artroscopia
+lumbar : columna lumbar
+fibra : sutura
+pl-va-lcp : placa angulo variable lcp
+lcp : placa lcp
+vastago: vastago reemplazo articular
+microplaca: micro placa
+hcs: tornillo acutrak
